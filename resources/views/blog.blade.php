@@ -142,11 +142,11 @@ $currentPage = $currentPage ?? 'blog';
 
                 <span>Optimize Your Energy Usage</span>
 
-                <span>Maximize Industrial Savings</span>
+                <span>Maximize Commercial Savings</span>
 
                 <span>Powering a Greener Future</span>
 
-                <span>Smart Energy, Smart Industry</span>
+                <span>Smart Energy, Smart Business</span>
 
                 <span>Reliable 24×7 Monitoring</span>
 
@@ -160,11 +160,11 @@ $currentPage = $currentPage ?? 'blog';
 
                 <span>Optimize Your Energy Usage</span>
 
-                <span>Maximize Industrial Savings</span>
+                <span>Maximize Commercial Savings</span>
 
                 <span>Powering a Greener Future</span>
 
-                <span>Smart Energy, Smart Industry</span>
+                <span>Smart Energy, Smart Business</span>
 
                 <span>Reliable 24×7 Monitoring</span>
 

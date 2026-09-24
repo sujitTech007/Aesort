@@ -532,10 +532,8 @@
                             <img src="assets/images/realtime-icon.png" alt="">
                         </div>
 
-                        <h3>Real-Time Insights</h3>
-                        <p>Access real-time data to monitor,
-                            analyze, and optimize your energy
-                            consumption effortlessly.</p>
+                        <h3>Energy Insights</h3>
+                        <p>Access actionable energy data to monitor, analyze, and optimize your energy consumption.</p>
                     </div>
                 </div>
                 <!-- Why Choose Item End -->
@@ -594,10 +592,9 @@
                             <img src="assets/images/seamless-icon.png" alt="">
                         </div>
 
-                        <h3> Seamless Integration</h3>
-                        <p> Our platform integrates effortlessly
-                            with your existing systems for
-                            streamlined operations.</p>
+                        <h3> Flexible Integration</h3>
+                        <p>  Connect AESORT with supported building and energy systems
+    through available integration options and APIs.</p>
                     </div>
                 </div>
                 <!-- Why Choose Item End -->
@@ -894,18 +891,18 @@ document.getElementById('solarForm').addEventListener('submit', function(e) {
         <div class="scrolling-ticker-box">
             <div class="scrolling-content">
                <span>Optimize Your Energy Usage</span>
-<span>Maximize Industrial Savings</span>
+<span>Maximize Commercial Savings</span>
 <span>Powering a Greener Future</span>
-<span>Smart Energy, Smart Industry</span>
+<span>Smart Energy, Smart Business</span>
 <span>Reliable 24×7 Monitoring</span>
 
             </div>
 
             <div class="scrolling-content">
               <span>Optimize Your Energy Usage</span>
-<span>Maximize Industrial Savings</span>
+<span>Maximize Commercial Savings</span>
 <span>Powering a Greener Future</span>
-<span>Smart Energy, Smart Industry</span>
+<span>Smart Energy, Smart Business</span>
 <span>Reliable 24×7 Monitoring</span>
 
             </div>

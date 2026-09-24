@@ -90,7 +90,7 @@ $currentPage = $currentPage ?? 'terms.conditions';
 
 
 
-<h4>escription of Services</h4>
+<h4>Description of Services</h4>
 
 <p class="mb-2">Aesort provides a cloud-based energy monitoring and optimization platform that leverages IoT sensors, machine learning, predictive analytics, and automated controls to help commercial users:</p>
 
@@ -112,7 +112,7 @@ $currentPage = $currentPage ?? 'terms.conditions';
 
 
 
-<h4>ccount Registration</h4>
+<h4>Account Registration</h4>
 
 <p class="mb-2">To access the platform, users must register for an account. You agree to:</p>
 
@@ -128,7 +128,7 @@ $currentPage = $currentPage ?? 'terms.conditions';
 
 <p>Aesort is not responsible for any loss resulting from unauthorized account use.</p>
 
-<h4>ubscription, Fees & Payments</h4>
+<h4>Subscription, Fees & Payments</h4>
 
 <p class="mb-2">Aesort offers subscription-based access to the platform and optional consulting services. By subscribing, you agree to:</p>
 
@@ -146,7 +146,7 @@ $currentPage = $currentPage ?? 'terms.conditions';
 
 
 
-<h4>se of IoT Devices & Integrations</h4>
+<h4>Use of IoT Devices & Integrations</h4>
 
 <p class="mb-2">The platform integrates with IoT sensors, switches, clamps, and third-party systems via API. Users agree not to:</p>
 
@@ -164,7 +164,7 @@ $currentPage = $currentPage ?? 'terms.conditions';
 
 
 
-<h4>ermitted Use</h4>
+<h4>Permitted Use</h4>
 
 <p>You agree to use the Services only for lawful, commercial purposes related to managing your organization’s energy consumption.</p>
 
@@ -182,15 +182,42 @@ $currentPage = $currentPage ?? 'terms.conditions';
 
 
 
-<h4>ntellectual Property</h4>
+<h4>Intellectual Property</h4>
 
-<p>All intellectual property, including software code, dashboards, analytics, device integrations, trademarks, algorithms, and documentation, is the sole property of Aesort Smart Energy Inc.</p>
+<ul class="ms-4">
+    <li>
+        All intellectual property, including software code, dashboards,
+        analytics, device integrations, trademarks, algorithms, and
+        documentation, remains the property of Aesort Smart Energy Inc.
+    </li>
 
-<p>Users receive a limited, non-exclusive, non-transferable license to access the platform for business use. No IP rights are transferred to Users.</p>
+    <li>
+        Users receive a limited, non-exclusive, non-transferable license
+        to access and use the platform for business purposes.
+    </li>
+
+    <li>
+        For paid Consulting &amp; Advisory Services, customers may use
+        reports, analyses, recommendations, and other deliverables prepared
+        specifically for them for their internal business purposes.
+    </li>
+
+    <li>
+        Unless otherwise agreed in writing, Aesort retains ownership of
+        its pre-existing materials, methodologies, software, tools,
+        templates, models, and other intellectual property used to prepare
+        such deliverables.
+    </li>
+
+    <li>
+        Any different ownership or licensing terms for consulting
+        deliverables will be governed by the applicable written consulting
+        agreement or statement of work.
+    </li>
+</ul>
 
 
-
-<h4>ata Ownership & Usage</h4>
+<h4>Data Ownership & Usage</h4>
 
 <p class="mb-2">Aesort collects data from:</p>
 
@@ -290,7 +317,33 @@ $currentPage = $currentPage ?? 'terms.conditions';
 
 <h4>Disclaimer</h4>
 
-<p>Aesort provides the Services “as-is” without warranties of accuracy, uninterrupted operation, or suitability for your specific use case. All energy-saving estimations, AI-generated recommendations, or predictive analytics are provided for informational purposes only and are not guaranteed.</p>
+<p>
+    Aesort provides the Services “as-is” without warranties of accuracy,
+    uninterrupted operation, or suitability for your specific use case.
+</p>
+
+<p>
+    The platform may provide measured energy-use information from available
+    monitoring devices, connected systems, utility data, or other data sources.
+    The accuracy and completeness of such information depend on the availability,
+    quality, configuration, and reliability of the underlying data sources.
+</p>
+
+<p>
+    Aesort may also provide energy-saving estimates, forecasts, predictive
+    analytics, and recommendations based on available data. These outputs are
+    intended to support energy-management and decision-making activities and are
+    not guarantees of actual energy savings, cost reductions, or future energy
+    performance. Estimated or projected savings may differ from actual results
+    due to operating conditions, occupancy, weather, equipment performance,
+    utility rates, data availability, and other site-specific conditions.
+</p>
+
+<p>
+    Unless expressly identified otherwise in a separate written agreement,
+    Aesort does not represent that estimated or projected savings have been
+    independently verified or certified.
+</p>
 
 
 

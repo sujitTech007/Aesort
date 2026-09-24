@@ -446,7 +446,8 @@ $currentPage = $currentPage ?? 'services';
 										<img src="{{ asset('assets/images/icon-benefits-3.svg') }}" alt="">
 									</div>
 									<h3>Easy Installation</h3>
-									<p>Quick to install and powerful in performance for all environments.</p>
+									<p> AESORT supports flexible deployment based on site requirements,
+    connected systems, and monitoring needs.</p>
 								</div>
 							</div>
 
@@ -714,11 +715,11 @@ $currentPage = $currentPage ?? 'services';
 
 				<span>Optimize Your Energy Usage</span>
 
-				<span>Maximize Industrial Savings</span>
+				<span>Maximize Commercial Savings</span>
 
 				<span>Powering a Greener Future</span>
 
-				<span>Smart Energy, Smart Industry</span>
+				<span>Smart Energy, Smart Business</span>
 
 				<span>Reliable 24×7 Monitoring</span>
 
@@ -732,11 +733,11 @@ $currentPage = $currentPage ?? 'services';
 
 				<span>Optimize Your Energy Usage</span>
 
-				<span>Maximize Industrial Savings</span>
+				<span>Maximize Commercial Savings</span>
 
 				<span>Powering a Greener Future</span>
 
-				<span>Smart Energy, Smart Industry</span>
+				<span>Smart Energy, Smart Business</span>
 
 				<span>Reliable 24×7 Monitoring</span>
 

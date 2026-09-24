@@ -65,7 +65,7 @@ $currentPage = $currentPage ?? 'contact';
                               
                                 <div class="contact-info-content">
                                     <h3>Emails:</h3>
-                                    <p>info@aesortenergy.com<br>Support@aesortenergy.com</p>
+                                    <p>info@aesort.ca<br>Support@aesortenergy.com</p>
                                 </div>
                                 <div class="contact-icon">
                                     <img src="assets/images/icon-mail.svg" alt="">
@@ -73,7 +73,7 @@ $currentPage = $currentPage ?? 'contact';
                             </div>
                         </div>
 
-                        <div class="col-lg-12 col-md-12 mb-4">
+                        <!-- <div class="col-lg-12 col-md-12 mb-4">
                             <div class="contact-info-item wow fadeInUp" data-wow-delay="0.75s">
                                
                                 <div class="contact-info-content">
@@ -84,7 +84,7 @@ $currentPage = $currentPage ?? 'contact';
                                     <img src="assets/images/icon-phone.svg" alt="">
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                     </div>
                 </div>
@@ -121,13 +121,43 @@ $currentPage = $currentPage ?? 'contact';
                                 <div class="form-group col-md-6 mb-4">
                                     <input type="text" name="subject" class="form-control" id="subject" placeholder="Subject" required>
                                 </div>
+                                  <!-- Company / Organization -->
+            <div class="form-group col-md-6 mb-4"> 
+                <input type="text" name="company" class="form-control" id="company" placeholder="Company / Organization" required> 
+            </div> 
+
+            <!-- Industry -->
+            <div class="form-group col-md-6 mb-4"> 
+                <select name="industry" class="form-control" id="industry" required>
+                    <option value="" selected disabled>Industry</option>
+                    <option value="Hospitality">Hospitality</option>
+                    <option value="Retail">Retail</option>
+                    <option value="Educational Institution">Educational Institution</option>
+                    <option value="Office">Office</option>
+                    <option value="Recreational Facility">Recreational Facility</option>
+                    <option value="Warehouse">Warehouse</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <!-- What are you interested in? -->
+            <div class="form-group col-md-12 mb-4"> 
+                <select name="interest" class="form-control" id="interest" required>
+                    <option value="" selected disabled>What are you interested in?</option>
+                    <option value="Energy Monitoring">Energy Monitoring</option>
+                    <option value="Energy Optimization">Energy Optimization</option>
+                    <option value="Consulting & Advisory">Consulting & Advisory</option>
+                    <option value="Data Insights & Analytics">Data Insights & Analytics</option>
+                </select>
+            </div>
+
 
                                 <div class="form-group col-md-12 mb-4">
                                     <textarea name="msg" class="form-control" id="msg" rows="4" placeholder="Write a Message" required></textarea>
                                 </div>
 
                                 <div class="col-md-12 text-center">
-                                    <button type="submit" class="btn-default">Submit Now</button>
+                                    <button type="submit" class="btn-default">Request a Consultation</button>
                                 </div>
 
                             </div>
