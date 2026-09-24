@@ -351,7 +351,7 @@
                 <!-- Section Title Start -->
                 <div class="section-title">
                     <h3 class="wow fadeInUp">Our Team</h3>
-                    <h2 class="text-anime">Meet Our Best Experts</h2>
+                    <h2 class="text-anime">Meet the AESORT Leadership Team</h2>
                 </div>
                 <!-- Section Title End -->
             </div>
@@ -362,11 +362,11 @@
                 <!-- Team Item Start -->
                 <div class="testimonial-item2 wow fadeInUp" data-wow-delay="0.25s">                    
                     <div class="testimonial-author-info">
-                        <h4> Ayodele Adegboyega Adeyemi</h4>
+                        <h4>Ayodele Adegboyega Adeyemi</h4>
                         <p>Co-Founder & CEO</p>                       
                     </div>
                     <div class="testimonial-body">
-                        <p>Ayodele brings visionary leadership and innovation to the core of our company's mission.</p>
+                        <p>Ayodele provides leadership and strategic direction for AESORT, supporting the company's business development and growth of its smart energy management platform.</p>
                     </div>
                 </div>
                 <!-- Team Item End -->
@@ -376,11 +376,11 @@
                 <!-- Team Item Start -->
                 <div class="testimonial-item2 wow fadeInUp" data-wow-delay="0.5s">                    
                     <div class="testimonial-author-info">
-                        <h4>Emmanuel Ilesanmi</h4>
+                        <h4>Emmanuel Abiodun Ilesanmi</h4>
                         <p>Co-Founder & CTCO</p>                      
                     </div>
                     <div class="testimonial-body">
-                <p>Emmanuel leads our technology team with a passion for solving complex problems through smart systems.</p>
+                <p>Emmanuel brings extensive experience in mechanical engineering, operations planning, technical procedures, quality assurance, and compliance for technology implementation.</p>
             </div>
                 </div>
                 <!-- Team Item End -->
@@ -390,11 +390,11 @@
                 <!-- Team Item Start -->
                 <div class="testimonial-item2 wow fadeInUp" data-wow-delay="0.75s">                    
                     <div class="testimonial-author-info">
-                        <h4>Oluwaseyi Ajayi</h4>
+                        <h4>Oluwaseyi Christopher Ajayi</h4>
                         <p>Co-Founder & COO</p>                      
                     </div>
                     <div class="testimonial-body">
-                <p>Oluwaseyi ensures that our operations run smoothly and our clients receive the best experience.</p>
+                <p>Oluwaseyi brings extensive experience in operations and process leadership, including strategy development, team management, supplier oversight, and KPI development.    </p>
             </div>
                 </div>
                 <!-- Team Item End -->
@@ -408,7 +408,7 @@
                         <p>Co-Founder & Chief Analytics Officer</p>                      
                     </div>
                     <div class="testimonial-body">
-                <p>Ekhorutomwen transforms data into actionable insights that drive our energy intelligence.</p>
+                <p>Ekhorutomwen brings experience in engineering, research and development, data analysis, and performance optimization, supporting AESORT's analytics and technology development.</p>
             </div>
                 </div>
                 <!-- Team Item End -->

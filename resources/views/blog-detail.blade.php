@@ -135,7 +135,7 @@
 
 									<li><a href="{{ route('blog.detail', $blog->id ) }}"><i class="fa-regular fa-calendar-days"></i> {{ $blog->created_at->format('d M Y') }}</a></li>
 
-									<li><a href="{{ route('blog.detail', $blog->id ) }}"><i class="fa-solid fa-tag"></i> Solar Panel</a></li>
+									<li><a href="{{ route('blog.detail', $blog->id ) }}"><i class="fa-solid fa-tag"></i>Energy Management</a></li>
 
 								</ul>
 
