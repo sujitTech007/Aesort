@@ -2,17 +2,17 @@
 
 <div class="preloader">
 
-        <div class="loading-container">
+    <div class="loading-container">
 
-            <div class="loading"></div>
+        <div class="loading"></div>
 
-            <div id="loading-icon"><img src="assets/images/loader-icon.png" alt=""></div>
-
-        </div>
+        <div id="loading-icon"><img src="assets/images/loader-icon.png" alt=""></div>
 
     </div>
 
-    
+</div>
+
+
 <!-- Hero Layout 2 Section Start -->
 <div class="hero parallaxie">
     <div class="container">
@@ -21,11 +21,13 @@
                 <!-- Hero Left Content Start -->
                 <div class="hero-content">
                     <div class="section-title">
-<h3 class="wow fadeInUp 
-" style="color:white">Welcome to Aesort</h3>                        <h1 class="text-anime"> Your Partner in Smart Sustainability</h1>
+                        <h3 class="wow fadeInUp" style="color:white">Welcome to Aesort</h3>
+                        <h1 class="text-anime"> Your Partner in Smart Sustainability</h1>
                     </div>
                     <div class="hero-content-body wow fadeInUp" data-wow-delay="0.5s">
-                        <p>Smart energy management industry is set to revolutionize energy management in commercial buildings. This technology involves the use of automated systems to control energy usage, monitor energy consumption, and optimize building performance.</p>
+                        <p>AESORT helps commercial businesses understand energy use, identify inefficiencies, and make
+                            informed decisions to
+                            improve efficiency and support sustainability.</p>
                     </div>
 
                     <div class="hero-content-footer wow fadeInUp" data-wow-delay="0.75s">
@@ -73,14 +75,22 @@
 
                 <!-- About us Content Start -->
                 <div class="about-content wow fadeInUp" data-wow-delay="0.25s">
-                    At Aesort Smart Energy Inc., we are revolutionizing energy management for commercial spaces. With cutting-edge IoT technology and predictive analytics, we empower businesses to optimize energy usage, cut costs, and reduce their carbon footprint.</p>
 
-                    <p>We provide a user-friendly, data-driven platform that enable our customers to monitor, analyze,
-                        and optimize their energy usage, ultimately driving cost savings, reducing environmental impact,
-                        and fostering a more sustainable future for generations to come.</p>
+                    <p>
+                        At Aesort Smart Energy Inc., we are revolutionizing energy management
+                        for commercial spaces. With cutting-edge IoT technology and predictive
+                        analytics, we empower businesses to optimize energy usage, cut costs,
+                        and reduce their carbon footprint.
+                    </p>
+
+                    <p>
+                        We provide a user-friendly, data-driven platform that enables our customers
+                        to monitor, analyze, and optimize their energy usage, helping drive cost
+                        savings, reduce environmental impact, and support a more sustainable future.
+                    </p>
 
                     <ul>
-                        <li>Real-time Monitoring</li>
+                        <li>Energy Monitoring</li>
                         <li>Dashboard Control</li>
                         <li>Utility Monitoring</li>
                         <li>Customized Solutions</li>
@@ -104,7 +114,7 @@
                 <!-- Section Title Start -->
                 <div class="section-title">
                     <h3 class="wow fadeInUp">Our Services</h3>
-                    <h2 class="text-anime">Best Offer For Renewable Energy</h2>
+                    <h2 class="text-anime"> Smart Energy Solutions for Your Business </h2>
                 </div>
                 <!-- Section Title End -->
             </div>
@@ -152,7 +162,7 @@
 
                                     <div class="service-content">
                                         <h3>Cost Mitigation</h3>
-                                        <p>Commercial users can effectively guide and justify energy efficiency.</p>
+                                        <p>Identify opportunities to reduce energy costs and improve efficiency.</p>
                                     </div>
                                 </div>
                             </div>
@@ -195,7 +205,7 @@
 
                                     <div class="service-content">
                                         <h3>Effective Management</h3>
-                                        <p>By using real-time recommendations and predictive analytics.</p>
+                                        <p>Make informed energy decisions with data-driven insights.</p>
                                     </div>
 
                                 </div>
@@ -220,8 +230,8 @@
             <div class="col-md-12">
                 <!-- Section Title Start -->
                 <div class="section-title">
-                    <h3 class="wow fadeInUp">Our Latest Process</h3>
-                    <h2 class="text-anime">Our Work Process</h2>
+                    <h3 class="wow fadeInUp">Our Process</h3>
+                    <h2 class="text-anime">How Aesort Works</h2>
                 </div>
                 <!-- Section Title End -->
             </div>
@@ -240,9 +250,7 @@
                     </div>
                     <div class="step-content">
                         <h3>Analyze</h3>
-                        <p>Collect and assess real-time energy data to
-                            identify.
-                        </p>
+                        <p>Collect and assess energy data to identify usage patterns and inefficiencies.</p>
                     </div>
                 </div>
             </div>
@@ -259,7 +267,7 @@
                     </div>
                     <div class="step-content">
                         <h3>Diagnose</h3>
-                        <p>Pinpoint root causes of energy waste.</p>
+                        <p>Identify the causes of energy waste and areas for improvement.</p>
                     </div>
                 </div>
             </div>
@@ -276,7 +284,7 @@
                     </div>
                     <div class="step-content">
                         <h3>Optimize</h3>
-                        <p> Implement actionable recommendations.</p>
+                        <p>Implement actionable recommendations to improve energy efficiency.</p>
                     </div>
                 </div>
             </div>
@@ -293,7 +301,7 @@
                     </div>
                     <div class="step-content">
                         <h3>Maintain</h3>
-                        <p>Ensure ongoing efficiency with continuous.</p>
+                        <p>Monitor performance and refine strategies for continued efficiency.</p>
                     </div>
                 </div>
             </div>
@@ -303,209 +311,257 @@
 </div>
 <!-- Our Process Section End -->
 
-	<!-- Pricing Layout 2 Start -->
-	<div class="pricing-layout2" id="subscription">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<!-- Section Title Start -->
-					<div class="section-title">
-						<h3 class="wow fadeInUp">Our Pricing</h3>
-						<h2 class="text-anime">Choose Your Best Offer</h2>
-					</div>
-					<!-- Section Title End -->
-				</div>
-			</div>
+<!-- Pricing Layout 2 Start -->
+<div class="pricing-layout2" id="subscription">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Section Title Start -->
+                <div class="section-title">
+                    <h3 class="wow fadeInUp">Our Pricing</h3>
+                    <h2 class="text-anime">Choose Your Best Offer</h2>
+                </div>
+                <!-- Section Title End -->
+            </div>
+        </div>
 
-		<div class="row">
-				<div class="col-lg-4">
-					<!-- Pricing Item Box Start -->
-					<div class="pricing-item2 wow fadeInUp" data-wow-delay="0.25s">
-						<div class="package-icon-box">
-							<img src="assets/images/icon-pricing-1.svg" alt="">
-						</div>
+        <div class="row">
+            <div class="col-lg-4">
+                <!-- Pricing Item Box Start -->
+                <div class="pricing-item2 wow fadeInUp" data-wow-delay="0.25s">
+                    <div class="package-icon-box">
+                        <img src="assets/images/icon-pricing-1.svg" alt="">
+                    </div>
 
-						<div class="price-header">
-							<h2>Basic</h2>
-							
-						</div>
+                    <div class="price-header">
+                        <h2>Basic</h2>
 
-						<div class="price-body">
-							<ul>
-								<li>$2,499 per month for users with up to 2,000 sq ft of commercial space</li>
-								<li>$5,999 per month for users with more than 2,000 sq. ft. up to 5,000 of sq. ft. commercial space.</li>
-								<li>Custom Quote for users with more than 5,000 of sq ft commercial space.</li>
-								
-								
-							</ul>
-						</div>
+                    </div>
 
-						<!-- <div class="price-buy-button">
+                    <div class="price-body">
+                        <ul>
+                            <li>$2,499 per month for users with up to 2,000 sq ft of commercial space</li>
+                            <li>$5,999 per month for users with more than 2,000 sq. ft. up to 5,000 of sq. ft.
+                                commercial space.</li>
+                            <li>Custom Quote for users with more than 5,000 of sq ft commercial space.</li>
+
+
+                        </ul>
+                    </div>
+
+                    <!-- <div class="price-buy-button">
                             <a href="{{ route('contact') }}" class="btn-default">Subscribe</a>
 						</div>						 -->
-					</div>
-					<!-- Pricing Item Box End -->
-				</div>
+                </div>
+                <!-- Pricing Item Box End -->
+            </div>
 
-				<div class="col-lg-4">
-					<!-- Pricing Item Box Start -->
-					<div class="pricing-item2 wow fadeInUp" data-wow-delay="0.5s">
-						<div class="package-icon-box">
-							<img src="assets/images/icon-pricing-2.svg" alt="">
-						</div>
+            <div class="col-lg-4">
+                <!-- Pricing Item Box Start -->
+                <div class="pricing-item2 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="package-icon-box">
+                        <img src="assets/images/icon-pricing-2.svg" alt="">
+                    </div>
 
-						<div class="price-header">
-							<h2>Standard</h2>
-							
-						</div>
+                    <div class="price-header">
+                        <h2>Standard</h2>
 
-						<div class="price-body">
-							<ul>
-								<li>$399 per month for users with up to 2,000 sq. ft. of commercial space.</li>
-								<li>$599 per month for users with more than 2,000 sq. ft. up to 5,000 of sq. ft. commercial space.</li>
-								<li>Custom Quote for users with more than 5,000 of sq. ft. commercial space.</li>
-								
-								
-							</ul>
-						</div>
+                    </div>
 
-						<!-- <div class="price-buy-button">
+                    <div class="price-body">
+                        <ul>
+                            <li>$399 per month for users with up to 2,000 sq. ft. of commercial space.</li>
+                            <li>$599 per month for users with more than 2,000 sq. ft. up to 5,000 of sq. ft. commercial
+                                space.</li>
+                            <li>Custom Quote for users with more than 5,000 of sq. ft. commercial space.</li>
+
+
+                        </ul>
+                    </div>
+
+                    <!-- <div class="price-buy-button">
                             <a href="{{ route('contact') }}" class="btn-default">Subscribe</a>
 						</div>						 -->
-					</div>
-					<!-- Pricing Item Box End -->
-				</div>
+                </div>
+                <!-- Pricing Item Box End -->
+            </div>
 
-				<div class="col-lg-4">
-					<!-- Pricing Item Box Start -->
-					<div class="pricing-item2 wow fadeInUp" data-wow-delay="0.75s">
-						<div class="package-icon-box">
-							<img src="assets/images/icon-pricing-3.svg" alt="">
-						</div>
+            <div class="col-lg-4">
+                <!-- Pricing Item Box Start -->
+                <div class="pricing-item2 wow fadeInUp" data-wow-delay="0.75s">
+                    <div class="package-icon-box">
+                        <img src="assets/images/icon-pricing-3.svg" alt="">
+                    </div>
 
-						<div class="price-header">
-							<h2>Premium</h2>
-							
-						</div>
+                    <div class="price-header">
+                        <h2>Premium</h2>
 
-						<div class="price-body">
-							<ul>
-								<li>Data Insights and Analytics ($699/ report)</li>
-								<li>This model includes data insights and analytics generated by the system for details into energy consumption patterns, cost-saving opportunities, and environmental impact assessments.</li>
-								
-								
-								
-							</ul>
-						</div>
+                    </div>
 
-						<!-- <div class="price-buy-button">
+                    <div class="price-body">
+                        <ul>
+                            <li>Data Insights and Analytics ($699/ report)</li>
+                            <li>This model includes data insights and analytics generated by the system for details into
+                                energy consumption patterns, cost-saving opportunities, and environmental impact
+                                assessments.</li>
+
+
+
+                        </ul>
+                    </div>
+
+                    <!-- <div class="price-buy-button">
                             <a href="{{ route('contact') }}" class="btn-default">Subscribe</a>
 						</div>						 -->
-					</div>
-					<!-- Pricing Item Box End -->
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Pricing Layout 2 End -->
+                </div>
+                <!-- Pricing Item Box End -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Pricing Layout 2 End -->
 
 
 <!-- Our Sklii Section Start -->
-	<div class="our-skills">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6">
-					<!-- Section Title Start -->
-					<div class="section-title">
-						<h3 class="wow fadeInUp">Energy Progress</h3>
-						<h2 class="text-anime">Best Solution For Your Solar Energy</h2>
-						<p class="wow fadeInUp" data-wow-delay="0.25s">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-					</div>
-					<!-- Section Title End -->
-				</div>
+<div class="our-skills">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <!-- Section Title Start -->
+                <div class="section-title">
+                    <h3 class="wow fadeInUp">Energy Performance</h3>
+                    <h2 class="text-anime">Understand and Improve Your Energy Performance</h2>
+                    <p class="wow fadeInUp" data-wow-delay="0.25s">
+                        Gain clearer insight into energy performance and identify opportunities
+                        to improve efficiency across your operations.
+                    </p>
+                </div>
+                <!-- Section Title End -->
+            </div>
 
-				<div class="col-lg-6">
-					<div class="skills-box">
-						<!-- Skill Item Start -->
-						<div class="skillbar" data-percent="95%">
-							<div class="skill-data">
-								<div class="title">Solar Panels</div>
-								<div class="count">95%</div>
-							</div>
-							<div class="skill-progress">
-								<div class="count-bar"></div>
-							</div>
-						</div>
-						<!-- Skill Item End -->
+            <div class="col-lg-6">
+                <div class="skills-box">
+                    <!-- Skill Item Start -->
+                    <div class="skillbar" data-percent="95%">
+                        <div class="skill-data">
+                            <div class="title">Solar Panels</div>
+                            <div class="count">95%</div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="count-bar"></div>
+                        </div>
+                    </div>
+                    <!-- Skill Item End -->
 
-						<!-- Skill Item Start -->
-						<div class="skillbar" data-percent="80%">
-							<div class="skill-data">
-								<div class="title">Hybrid Energy</div>
-								<div class="count">80%</div>
-							</div>
-							<div class="skill-progress">
-								<div class="count-bar"></div>
-							</div>
-						</div>
-						<!-- Skill Item End -->
+                    <!-- Skill Item Start -->
+                    <div class="skillbar" data-percent="80%">
+                        <div class="skill-data">
+                            <div class="title">Hybrid Energy</div>
+                            <div class="count">80%</div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="count-bar"></div>
+                        </div>
+                    </div>
+                    <!-- Skill Item End -->
 
-						<!-- Skill Item Start -->
-						<div class="skillbar" data-percent="70%">
-							<div class="skill-data">
-								<div class="title">Marketing</div>
-								<div class="count">70%</div>
-							</div>
-							<div class="skill-progress">
-								<div class="count-bar"></div>
-							</div>
-						</div>
-						<!-- Skill Item End -->
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Our Sklii Section End -->
+                    <!-- Skill Item Start -->
+                    <div class="skillbar" data-percent="70%">
+                        <div class="skill-data">
+                            <div class="title">Marketing</div>
+                            <div class="count">70%</div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="count-bar"></div>
+                        </div>
+                    </div>
+                    <!-- Skill Item End -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Our Sklii Section End -->
 
-    <!-- Infobar Section Start -->
-	<div class="infobar">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="cta-box">
-						<div class="row align-items-center">
-							<div class="col-lg-4">
-								<!-- CTA Image Start -->
-								<div class="cta-image">
-									<figure class="image-anime">
-										<img src="assets/images/cta-image.jpg" alt="">
-									</figure>
-								</div>
-								<!-- CTA Image End -->
-							</div>
+<!-- Infobar Section Start -->
+<div class="infobar">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {{-- <div class="cta-box">
+                    <div class="row align-items-center">
+                        <div class="col-lg-4">
+                            <!-- CTA Image Start -->
+                            <div class="cta-image">
+                                <figure class="image-anime">
+                                    <img src="assets/images/cta-image.jpg" alt="">
+                                </figure>
+                            </div>
+                            <!-- CTA Image End -->
+                        </div>
 
-							<div class="col-lg-8">
-								<!-- CTA Content Start -->
-								<div class="cta-content">
-									<div class="phone-icon">
-										<figure>
-											<img src="assets/images/icon-cta-phone.svg" alt="">
-										</figure>
-									</div>									
-									<h3 class="text-anime">Have Questions? <span>Call Us</span> 800-001-658</h3>
-									<p class="wow fadeInUp" data-wow-delay="0.25s">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-								</div>
-								<!-- CTA Content End -->
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Infobar Section End -->
-     <!-- Why Choose us Section Start -->
+                        <div class="col-lg-8">
+                            <!-- CTA Content Start -->
+                            <div class="cta-content">
+                                <div class="phone-icon">
+                                    <figure>
+                                        <img src="assets/images/icon-cta-phone.svg" alt="">
+                                    </figure>
+                                </div>
+                                <h3 class="text-anime">Have Questions? <span>Call Us</span> 800-001-658</h3>
+                                <p class="wow fadeInUp" data-wow-delay="0.25s">
+                                    Have questions about your energy performance? Our team can help you
+                                    explore the right approach for your business.
+                                </p>
+                            </div>
+                            <!-- CTA Content End -->
+                        </div>
+                    </div>
+                </div> --}}
+
+                <div class="cta-box">
+                    <div class="row align-items-center">
+
+                        <div class="col-lg-4">
+                            <!-- CTA Image Start -->
+                            <div class="cta-image">
+                                <figure class="image-anime">
+                                    <img src="assets/images/cta-image.jpg" alt="AESORT energy solutions">
+                                </figure>
+                            </div>
+                            <!-- CTA Image End -->
+                        </div>
+
+                        <div class="col-lg-8">
+                            <!-- CTA Content Start -->
+                            <div class="cta-content">
+
+                                <h3 class="text-anime">
+                                    Have Questions? <span>Contact Us Today</span>
+                                </h3>
+
+                                <p class="wow fadeInUp" data-wow-delay="0.25s">
+                                    Our team is here to help you explore the right energy solutions
+                                    for your business.
+                                </p>
+
+                                <a href="{{ route('contact') }}" class="btn-default fw-medium mt-4 px-4 py-2">
+                                    Contact Us
+                                </a>
+
+                            </div>
+                            <!-- CTA Content End -->
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Infobar Section End -->
+<!-- Why Choose us Section Start -->
 <div class="why-choose-us">
     <div class="container">
         <div class="row">
@@ -519,7 +575,8 @@
             </div>
         </div>
 
-         <div class="row">
+        <div class="row">
+
             <div class="col-lg-3 col-md-6">
                 <!-- Why Choose Item Start -->
                 <div class="why-choose-item wow fadeInUp" data-wow-delay="0.25s">
@@ -532,8 +589,12 @@
                             <img src="assets/images/realtime-icon.png" alt="">
                         </div>
 
-                        <h3>Energy Insights</h3>
-                        <p>Access actionable energy data to monitor, analyze, and optimize your energy consumption.</p>
+                        <h3>Actionable Energy Insights</h3>
+                        <p>
+                            Turn energy data into clear insights that help
+                            identify consumption patterns, inefficiencies,
+                            and opportunities for improvement.
+                        </p>
                     </div>
                 </div>
                 <!-- Why Choose Item End -->
@@ -581,7 +642,6 @@
             </div>
 
             <div class="col-lg-3 col-md-6">
-                <!-- Why Choose Item Start -->
                 <div class="why-choose-item wow fadeInUp" data-wow-delay="1.0s">
                     <div class="why-choose-image">
                         <img src="assets/images/whyus-left-img.jpg" alt="">
@@ -592,12 +652,14 @@
                             <img src="assets/images/seamless-icon.png" alt="">
                         </div>
 
-                        <h3> Flexible Integration</h3>
-                        <p>  Connect AESORT with supported building and energy systems
-    through available integration options and APIs.</p>
+                        <h3>Flexible Integration</h3>
+
+                        <p>
+                            Works with compatible systems and devices,
+                            based on integration requirements.
+                        </p>
                     </div>
                 </div>
-                <!-- Why Choose Item End -->
             </div>
         </div>
     </div>
@@ -613,9 +675,9 @@
                     <div class="row">
                         <div class="col-lg-5">
                             <div class="section-title">
-                                <h3>Solar Calculator</h3>
-                                <h2>Your Solar Savings Calculator</h2>
-                                <p>Estimate your monthly and yearly solar savings</p>
+                                <h3>Energy Calculator</h3>
+                                <h2>Estimate Your Energy Savings</h2>
+                                <p>Explore potential savings based on your energy usage.</p>
                             </div>
                         </div>
 
@@ -633,28 +695,30 @@
                                         </div>
 
                                         <div class="form-group col-md-6 mb-3">
-                                            <input type="text" name="name" class="form-control"
-                                                placeholder="Full Name" required>
+                                            <input type="text" name="name" class="form-control" placeholder="Full Name">
                                         </div>
 
                                         <div class="form-group col-md-6 mb-3">
                                             <input type="email" name="email" class="form-control"
-                                                placeholder="Email Address" required>
+                                                placeholder="Email Address">
                                         </div>
 
                                         <div class="form-group col-md-6 mb-3">
                                             <input type="tel" name="phone" class="form-control"
-                                                placeholder="Phone Number" required>
+                                                placeholder="Phone Number" inputmode="numeric" pattern="[0-9]{10,12}"
+                                                maxlength="12" minlength="10">
                                         </div>
 
                                         <div class="form-group col-md-6 mb-3">
                                             <input type="number" name="bill" class="form-control"
-                                                placeholder="Average Monthly Electricity Bill (₹)" required>
+                                                placeholder="Average Monthly Electricity Bill (CAD)" min="0" step="0.01"
+                                                required>
                                         </div>
 
                                         <div class="form-group col-md-6 mb-3">
                                             <input type="number" name="capacity" class="form-control"
-                                                placeholder="Required Solar Capacity (kW)" required>
+                                                placeholder="Estimated Solar System Size (kW)" min="0" step="0.1"
+                                                required>
                                         </div>
 
                                         <div class="col-md-12">
@@ -678,38 +742,49 @@
     </div>
 </div>
 
-
 <script>
-document.getElementById('solarForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+    document.getElementById('solarForm').addEventListener('submit', function (e) {
+        e.preventDefault();
 
-    let bill = parseFloat(document.querySelector('[name="bill"]').value);
-    let capacity = parseFloat(document.querySelector('[name="capacity"]').value);
+        const bill = parseFloat(document.querySelector('[name="bill"]').value);
+        const capacity = parseFloat(document.querySelector('[name="capacity"]').value);
 
-    if (!bill || !capacity) {
-        alert('Please enter valid values');
-        return;
-    }
+        // Only bill and system size are required for the calculation
+        if (!bill || bill <= 0 || !capacity || capacity <= 0) {
+            alert('Please enter a valid electricity bill and system size.');
+            return;
+        }
 
-    // Basic solar estimation logic
-    let monthlySaving = bill * 0.7; // 70% saving
-    let yearlySaving = monthlySaving * 12;
-    let costPerKW = 55000; // approx cost in INR
-    let plantCost = capacity * costPerKW;
-    let paybackYears = (plantCost / yearlySaving).toFixed(1);
+        // Estimated energy savings
+        const savingsRate = 0.70;
+        const costPerKW = 3000;
 
-    let resultHTML = `
-        <strong>Estimated Results:</strong><br>
-        Monthly Saving: ₹${monthlySaving.toFixed(0)}<br>
-        Yearly Saving: ₹${yearlySaving.toFixed(0)}<br>
-        Estimated Plant Cost: ₹${plantCost.toLocaleString()}<br>
-        Payback Period: ${paybackYears} Years
-    `;
+        const monthlySaving = bill * savingsRate;
+        const yearlySaving = monthlySaving * 12;
+        const estimatedSystemCost = capacity * costPerKW;
+        const paybackYears = estimatedSystemCost / yearlySaving;
 
-    let resultBox = document.getElementById('calculatorResult');
-    resultBox.innerHTML = resultHTML;
-    resultBox.classList.remove('d-none');
-});
+        const formatCAD = (amount) => {
+            return new Intl.NumberFormat('en-CA', {
+                style: 'currency',
+                currency: 'CAD',
+                maximumFractionDigits: 0
+            }).format(amount);
+        };
+
+        const resultHTML = `
+            <strong>Estimated Energy Savings</strong><br>
+            Estimated Monthly Savings: ${formatCAD(monthlySaving)}<br>
+            Estimated Annual Savings: ${formatCAD(yearlySaving)}<br>
+            Estimated Solar System Cost: ${formatCAD(estimatedSystemCost)}<br>
+            Estimated Payback Period: ${paybackYears.toFixed(1)} years
+        `;
+
+        const resultBox = document.getElementById('calculatorResult');
+
+        resultBox.innerHTML = resultHTML;
+        resultBox.classList.remove('d-none');
+    });
 </script>
 <!-- Solar Calculator Section End -->
 
@@ -738,7 +813,8 @@ document.getElementById('solarForm').addEventListener('submit', function(e) {
                     </div>
 
                     <div class="post-item-body">
-                        <h2><a href="{{ route('blog.detail') }}">Transforming Energy Efficiency with Machine Learning</a></h2>
+                        <h2><a href="{{ route('blog.detail') }}">Transforming Energy Efficiency with Machine
+                                Learning</a></h2>
                         <div class="post-meta">
                             <ul>
                                 <li><a href="#"><i class="fa-regular fa-calendar-days"></i> 09 Feb 2025</a></li>
@@ -764,7 +840,8 @@ document.getElementById('solarForm').addEventListener('submit', function(e) {
                     </div>
 
                     <div class="post-item-body">
-                        <h2><a href="{{ route('blog.detail') }}">Why Real-Time Monitoring is a Game Changer for Businesses</a></h2>
+                        <h2> <a href="{{ route('blog.detail') }}"> Why Energy Monitoring Matters for Businesses </a>
+                        </h2>
                         <div class="post-meta">
                             <ul>
                                 <li><a href="#"><i class="fa-regular fa-calendar-days"></i> 09 Feb 2025</a></li>
@@ -792,7 +869,7 @@ document.getElementById('solarForm').addEventListener('submit', function(e) {
                         <h2><a href="{{ route('blog.detail') }}">Sustainability Trends to Watch in 2025</a></h2>
                         <div class="post-meta">
                             <ul>
-                                <li><a href="#"><i class="fa-regular fa-calendar-days"></i> 09 Feb 2025</a></li>
+                                <li><a href=" #"><i class="fa-regular fa-calendar-days"></i> 09 Feb 2025</a></li>
                                 <li><a href="#"><i class="fa-solid fa-tag"></i> Solar Panel</a></li>
                             </ul>
                         </div>
@@ -827,52 +904,87 @@ document.getElementById('solarForm').addEventListener('submit', function(e) {
             </div>
         </div>
 
-    <section class="faq-container">
-    <div class="faq-item">
-      <button class="faq-question">
-        What payment methods do you accept?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        We accept all major credit and debit cards, PayPal, and UPI payments. 
-        For business clients, we also offer invoice-based payments.
-      </div>
-    </div>
+        <section class="faq-container">
 
-    <div class="faq-item">
-      <button class="faq-question">
-        How can I reset my password?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        Go to the login page and click on “Forgot Password.” 
-        Enter your registered email address, and you’ll receive a password reset link.
-      </div>
-    </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    What does AESORT’s energy management platform do?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    AESORT helps businesses monitor, analyze, and optimize their energy
+                    consumption using available energy data, advanced analytics, and
+                    actionable insights. The platform helps identify inefficiencies and
+                    opportunities to improve energy performance.
+                </div>
+            </div>
 
-    <div class="faq-item">
-      <button class="faq-question">
-        Do you offer international shipping?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        Yes, we offer worldwide shipping. Delivery times and costs vary depending on the location.
-      </div>
-    </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    How does AESORT identify energy-saving opportunities?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    AESORT analyzes available and historical energy data to identify
+                    consumption patterns, inefficiencies, and unusual usage. The platform
+                    then provides insights and recommendations to help businesses make
+                    informed energy-management decisions.
+                </div>
+            </div>
 
-    <div class="faq-item">
-      <button class="faq-question">
-        Can I cancel or modify my order?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        Orders can be modified or canceled within 2 hours of placement. 
-        Contact our support team immediately to make changes.
-      </div>
-    </div>
-    </section>
-    
-    
+            <div class="faq-item">
+                <button class="faq-question">
+                    What utilities can AESORT monitor?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    AESORT provides a holistic view of resource consumption, including
+                    electricity, gas, and water. This gives businesses greater visibility
+                    into their overall resource usage and efficiency.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Is AESORT suitable for different types of commercial businesses?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    Yes. AESORT is designed to support a range of commercial sectors,
+                    including hospitality, retail, offices, educational institutions,
+                    recreational facilities, and warehouses. Solutions can be adapted to
+                    the specific requirements of each business.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Can AESORT integrate with existing building systems?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    Yes. AESORT is designed to integrate with existing infrastructure,
+                    including building management systems, energy management systems,
+                    IoT devices, and other compatible technologies.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    What insights can businesses access through AESORT?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    Businesses can access energy usage data, historical usage patterns,
+                    reporting and analytics, and actionable recommendations. These insights
+                    help teams understand performance, identify areas for improvement, and
+                    make more informed energy decisions.
+                </div>
+            </div>
+
+        </section>
+
+
     </div>
 </div>
 
@@ -890,20 +1002,20 @@ document.getElementById('solarForm').addEventListener('submit', function(e) {
     <div class="scrolling-ticker">
         <div class="scrolling-ticker-box">
             <div class="scrolling-content">
-               <span>Optimize Your Energy Usage</span>
-<span>Maximize Commercial Savings</span>
-<span>Powering a Greener Future</span>
-<span>Smart Energy, Smart Business</span>
-<span>Reliable 24×7 Monitoring</span>
+                <span>Optimize Your Energy Usage</span>
+                <span>Maximize Industrial Savings</span>
+                <span>Powering a Greener Future</span>
+                <span>Smart Energy, Smart Industry</span>
+                <span>Reliable Energy Monitoring</span>
 
             </div>
 
             <div class="scrolling-content">
-              <span>Optimize Your Energy Usage</span>
-<span>Maximize Commercial Savings</span>
-<span>Powering a Greener Future</span>
-<span>Smart Energy, Smart Business</span>
-<span>Reliable 24×7 Monitoring</span>
+                <span>Optimize Your Energy Usage</span>
+                <span>Maximize Industrial Savings</span>
+                <span>Powering a Greener Future</span>
+                <span>Smart Energy, Smart Industry</span>
+                <span>Reliable Energy Monitoring</span>
 
             </div>
         </div>
@@ -926,12 +1038,26 @@ document.getElementById('solarForm').addEventListener('submit', function(e) {
     const faqs = document.querySelectorAll(".faq-item");
 
     faqs.forEach((faq) => {
-      faq.querySelector(".faq-question").addEventListener("click", () => {
-        faqs.forEach((item) => {
-          if (item !== faq) item.classList.remove("active");
+        faq.querySelector(".faq-question").addEventListener("click", () => {
+            faqs.forEach((item) => {
+                if (item !== faq) item.classList.remove("active");
+            });
+            faq.classList.toggle("active");
         });
-        faq.classList.toggle("active");
-      });
     });
-  </script>
+</script>
+
+<script>
+    const phoneInput = document.querySelector('[name="phone"]');
+
+    phoneInput.addEventListener('input', function () {
+
+        this.value = this.value.replace(/\D/g, '');
+
+        if (this.value.length > 12) {
+            this.value = this.value.slice(0, 12);
+        }
+    });
+</script>
+
 @include('include.footer')
