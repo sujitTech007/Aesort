@@ -63,6 +63,10 @@ $currentPage = $currentPage ?? 'privacy.policy';
 
 
             <h2>Cookie Policy</h2>
+            <p class="mb-4">
+    <strong>Effective Date:</strong> September 25, 2026<br>
+    <strong>Last Updated:</strong> September 25, 2026
+</p>
 
 
   
@@ -101,7 +105,7 @@ $currentPage = $currentPage ?? 'privacy.policy';
 
     <li><strong>Functional Cookies:</strong> Remember your preferences and settings.</li>
 
-    <li><strong>Targeting/Advertising Cookies:</strong> Provide relevant advertisements based on your interests.</li>
+    <!-- <li><strong>Targeting/Advertising Cookies:</strong> Provide relevant advertisements based on your interests.</li> -->
 
   </ul>
 

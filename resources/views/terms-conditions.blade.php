@@ -67,10 +67,25 @@ $currentPage = $currentPage ?? 'terms.conditions';
 
 
             <h2>Terms and Conditions</h2>
+            <p class="mb-4">
+    <strong>Effective Date:</strong> September 25, 2026<br>
+    <strong>Last Updated:</strong> September 25, 2026
+</p>
+<p>
+    These Terms apply to the Aesort public website, proof-of-concept (POC)
+    services, and paid production platform services, as applicable to the
+    user's access and customer agreement.
+</p>
 
-<p> These Terms & Conditions govern your access to and use of the Aesort website, dashboard, IoT integrations, consulting services, and any other services provided by Aesort.</p>
+<p>
+    Certain features, services, data access, integrations, hardware,
+    consulting, and platform functionality may only be available during a
+    POC or under a paid subscription or separate written agreement.
+</p>
 
-<p>By accessing or using the Services, you  agree to be bound by these Terms. If you do not agree to these Terms, you must discontinue using the Services.</p>
+<!-- <p> These Terms & Conditions govern your access to and use of the Aesort website, dashboard, IoT integrations, consulting services, and any other services provided by Aesort.</p>
+
+<p>By accessing or using the Services, you  agree to be bound by these Terms. If you do not agree to these Terms, you must discontinue using the Services.</p> -->
 
 
 
@@ -91,77 +106,226 @@ $currentPage = $currentPage ?? 'terms.conditions';
 
 
 <h4>Description of Services</h4>
-
-<p class="mb-2">Aesort provides a cloud-based energy monitoring and optimization platform that leverages IoT sensors, machine learning, predictive analytics, and automated controls to help commercial users:</p>
+<p>
+    The availability of predictive analytics, machine learning outputs,
+    automated controls, or other advanced functionality depends on the
+    applicable service, supported systems, and customer agreement.
+</p>
+<p>
+    Aesort provides an energy-management platform and related services for
+    commercial and institutional customers. Depending on the applicable
+    arrangement, the Services may include:
+</p>
 
 <ul class="ms-4">
+    <li>
+        <strong>Public Website:</strong> General information about Aesort,
+        its services, capabilities, resources, and contact options.
+    </li>
 
-    <li>Monitor real-time energy consumption;</li>
+    <li>
+        <strong>Proof of Concept (POC):</strong> Limited evaluation or pilot
+        access provided to assess applicable Aesort capabilities, data
+        integrations, analytics, recommendations, or other agreed
+        functionality.
+    </li>
 
-    <li>Receive actionable recommendations;</li>
+    <li>
+    <strong>Data and Measurement:</strong> Analytics, estimates, and
+    recommendations may depend on available energy, operational, equipment,
+    and site data. Results may vary where data is incomplete, unavailable,
+    or inaccurate.
+</li>
+    <li>
+        <strong>Paid Production Platform:</strong> Subscription-based access
+        to applicable Aesort platform features, dashboards, analytics,
+        integrations, reporting, and other services included in the
+        customer's applicable plan or agreement.
+    </li>
 
-    <li>Access predictive analytics;</li>
-
-    <li>Generate reports and dashboards;</li>
-
-    <li>Utilize customized consulting & advisory services.</li>
-
+    <li>
+        <strong>Consulting and Advisory Services:</strong> Optional services
+        provided under the applicable service agreement or customer
+        engagement.
+    </li>
 </ul>
 
-<p>Aesort may update or enhance the Services at any time.</p>
+<p>
+    The specific features, access rights, integrations, hardware, service
+    levels, and deliverables available to a customer may depend on the
+    applicable subscription, POC arrangement, or separate written
+    agreement.
+</p>
+<h4>Order of Precedence</h4>
 
+<p>
+    If these Terms conflict with a POC Agreement, proposal, Statement of
+    Work (SOW), subscription agreement, or other written agreement signed
+    between Aesort and a customer, the terms of the signed or applicable
+    customer agreement will control to the extent of the conflict.
+</p>
+<h4>Proof of Concept (POC)</h4>
+
+<p>
+    Aesort may provide a limited Proof of Concept (POC) to evaluate its
+    energy-management platform, monitoring capabilities, data integrations,
+    analytics, and recommendations at an agreed customer site.
+</p>
+
+<ul class="ms-4">
+    <li>
+        <strong>POC Equipment:</strong> Aesort may temporarily provide
+        monitoring equipment, sensors, or other applicable devices for the
+        agreed POC period. Any equipment provided by Aesort remains the
+        property of Aesort unless otherwise agreed in writing.
+    </li>
+
+    <li>
+        <strong>Duration:</strong> The POC will operate for the period
+        agreed with the customer and may end or be extended only as agreed
+        by the parties.
+    </li>
+
+    <li>
+        <strong>Site Access:</strong> The customer will provide reasonable
+        access to the agreed site, equipment, systems, and information
+        necessary to perform the POC, subject to applicable site safety and
+        security requirements.
+    </li>
+
+    <li>
+        <strong>Scope:</strong> The POC will be limited to the sites,
+        equipment, data sources, integrations, services, and activities
+        agreed with the customer. Features or services outside the agreed
+        scope may require a separate agreement.
+    </li>
+
+    <li>
+        <strong>Success Criteria:</strong> The POC will be evaluated against
+        the objectives and success criteria agreed with the customer before
+        or during the POC. POC results, estimates, recommendations, or
+        analytics do not guarantee specific energy savings or financial
+        outcomes unless expressly agreed in writing.
+    </li>
+</ul>
+
+<p>
+    At the end of the POC, Aesort may remove or arrange the return of
+    temporary equipment and may provide agreed findings, reports, or
+    recommendations. Continued access to the production platform or
+    additional services may require a separate subscription or written
+    agreement.
+</p>
 
 
 <h4>Account Registration</h4>
 
-<p class="mb-2">To access the platform, users must register for an account. You agree to:</p>
+<p class="mb-2">
+    An account may be required to access certain Aesort platform features,
+    POC environments, or paid production services. Public website visitors
+    may access publicly available website content without registering for
+    an account.
+</p>
+
+<p class="mb-2">Where registration is required, you agree to:</p>
 
 <ul class="ms-4">
-
     <li>Provide accurate and complete information;</li>
 
     <li>Maintain the confidentiality of your login credentials;</li>
 
-    <li>Notify us immediately of any unauthorized access.</li>
+    <li>Use your account only for authorized purposes;</li>
 
+    <li>Notify Aesort promptly of any suspected unauthorized access.</li>
 </ul>
-
-<p>Aesort is not responsible for any loss resulting from unauthorized account use.</p>
 
 <h4>Subscription, Fees & Payments</h4>
 
-<p class="mb-2">Aesort offers subscription-based access to the platform and optional consulting services. By subscribing, you agree to:</p>
+<p class="mb-2">
+    Aesort offers subscription-based access to the platform, with optional
+    setup, hardware, installation, consulting, and advisory services where applicable.
+    By subscribing or purchasing applicable services, you agree to:
+</p>
 
 <ul class="ms-4">
+    <li>Pay applicable subscription or platform fees based on the selected service plan or custom quote;</li>
 
-    <li>Pay all applicable fees based on your commercial space usage or custom quote;</li>
+    <li>Pay applicable setup, onboarding, hardware, or installation fees where agreed;</li>
 
-    <li>Allow recurring billing unless cancelled in accordance with these Terms;</li>
+    <li>Pay applicable consulting and advisory fees agreed under a separate service agreement;</li>
 
-    <li>Provide accurate billing information.</li>
+    <li>Allow recurring billing for subscription services unless cancelled in accordance with these Terms;</li>
 
+    <li>Provide accurate and complete billing information.</li>
 </ul>
 
-<p>All fees are non-refundable unless otherwise stated. Aesort reserves the right to change prices with notice.</p>
-
+<p>
+    Applicable fees, service inclusions, and payment terms will be communicated
+    before the relevant services are provided or activated. All fees are
+    non-refundable unless otherwise stated in writing. Aesort reserves the
+    right to change subscription prices with appropriate notice.
+</p>
 
 
 <h4>Use of IoT Devices & Integrations</h4>
 
-<p class="mb-2">The platform integrates with IoT sensors, switches, clamps, and third-party systems via API. Users agree not to:</p>
+<p>
+    Aesort may provide temporary IoT devices, sensors, switches, clamps,
+    or other monitoring equipment as part of an agreed Proof of Concept
+    (POC). Unless otherwise agreed in writing, temporary POC equipment
+    remains the property of Aesort.
+</p>
 
 <ul class="ms-4">
+    <li>
+        <strong>Custody:</strong> Customers are responsible for taking
+        reasonable care of temporary POC equipment while it is located at
+        their site and for providing reasonable access for installation,
+        maintenance, inspection, or removal.
+    </li>
 
-    <li>Tamper with device firmware;</li>
+    <li>
+        <strong>Use:</strong> Temporary equipment may only be used for the
+        agreed POC purposes and must not be modified, relocated, tampered
+        with, or used outside the agreed scope without Aesort's approval.
+    </li>
 
-    <li>Misuse the APIs;</li>
+    <li>
+        <strong>Return:</strong> Temporary POC equipment must be made
+        available for return or removal at the end of the agreed POC period
+        or earlier termination of the POC.
+    </li>
 
-    <li>Interfere with the platform’s data collection.</li>
+    <li>
+        <strong>Loss or Damage:</strong> The customer should promptly notify
+        Aesort of any loss, theft, damage, malfunction, or unauthorized
+        removal of temporary POC equipment.
+    </li>
+    <li>
+    <strong>Site Safety:</strong> Customers must provide a safe installation
+    environment and inform Aesort of any known site hazards or safety
+    requirements.
+</li>
 
+<li>
+    <strong>Electrical Installation:</strong> Electrical installation or
+    removal of sensors, clamps, or other equipment must be performed by
+    Aesort or appropriately qualified personnel, where required.
+</li>
+
+    <li>
+        <strong>Replacement:</strong> Responsibility for repair or replacement
+        costs arising from loss or damage will be determined in accordance
+        with the applicable POC or customer agreement.
+    </li>
 </ul>
 
-<p>Hardware installation may require coordination with certified professionals. Aesort is not liable for damages caused by improper installation not performed by Aesort.</p>
-
+<p>
+    Hardware installation may require coordination with qualified or
+    authorized professionals. Aesort is not responsible for damage resulting
+    from installation, modification, relocation, or handling not performed
+    or authorized by Aesort.
+</p>
 
 
 <h4>Permitted Use</h4>
@@ -216,65 +380,68 @@ $currentPage = $currentPage ?? 'terms.conditions';
     </li>
 </ul>
 
-
 <h4>Data Ownership & Usage</h4>
 
-<p class="mb-2">Aesort collects data from:</p>
+<p class="mb-2">
+    Upon termination, customers may request a copy or export of their
+    customer data, subject to applicable agreements, technical limitations,
+    and legal requirements. Aesort will provide the data in a reasonably
+    usable format where available.
+</p>
+
+<p class="mb-2">Aesort may process data from:</p>
 
 <ul class="ms-4">
-
     <li>Connected IoT devices;</li>
-
     <li>User inputs;</li>
-
-    <li>Usage analytics;</li>
-
+    <li>Usage analytics; and</li>
     <li>Environmental and operational factors.</li>
-
 </ul>
 
-<p class="mb-2">Users retain ownership of their raw energy usage data. Aesort retains ownership of:</p>
+<p>
+    Customers retain ownership of their raw energy, operational, and
+    customer-provided data. Aesort retains ownership of its software,
+    models, algorithms, methodologies, and proprietary technology.
+</p>
 
-<ul class="ms-4">
+<p>
+    Aesort may generate derived analytics, insights, recommendations, and
+    model outputs while providing the Services. Aesort may use aggregated
+    or de-identified information for analytics, benchmarking, research,
+    and improvement of the Services, where permitted by applicable law
+    and agreements.
+</p>
 
-    <li>Aggregated data,</li>
-
-    <li>Derived analytics,</li>
-
-    <li>Machine learning model outputs,</li>
-
-    <li>Recommendations and system insights.</li>
-
-</ul>
-
-<p>Aesort may use anonymized and aggregated data to improve the platform, conduct analytics, or support benchmarking initiatives.</p>
-
-
+<p>
+    Aesort will not use identifiable customer data for unrelated purposes
+    except as permitted by the applicable agreement or law.
+</p>
 
 <h4>Consulting & Advisory Services</h4>
 
 <p>Consulting services are optional and subject to separate service agreements. Deliverables, reports, and insights generated during engagement remain Aesort’s intellectual property unless otherwise agreed in writing.</p>
 
 
-
 <h4>Service Availability</h4>
 
-<p class="mb-2">Aesort strives to maintain 24/7 uptime but does not guarantee uninterrupted service. Downtime may occur due to:</p>
+<p class="mb-2">
+    Aesort aims to keep the platform available on an ongoing basis but
+    does not guarantee uninterrupted or 24/7 availability. Downtime may
+    occur due to:
+</p>
 
 <ul class="ms-4">
-
-    <li>Maintenance,</li>
-
-    <li>Network outages,</li>
-
-    <li>Third-party system failures,</li>
-
-    <li>Hardware issues.</li>
-
+    <li>Scheduled or emergency maintenance;</li>
+    <li>Network or infrastructure outages;</li>
+    <li>Third-party system failures; and</li>
+    <li>Hardware or other technical issues.</li>
 </ul>
 
-<p>Aesort is not liable for losses resulting from service unavailability.</p>
-
+<p>
+    Any applicable uptime targets, support hours, maintenance windows, or
+    service levels will be defined in the customer's agreement or SLA,
+    where applicable.
+</p>
 
 
 <h4>Third-Party Integrations</h4>
@@ -285,38 +452,63 @@ $currentPage = $currentPage ?? 'terms.conditions';
 
 <h4>Termination</h4>
 
+<p>
+    Following termination, Aesort may retain customer data where necessary
+    to meet legal, security, contractual, or legitimate business
+    requirements. Subject to those requirements, customer data will be
+    handled in accordance with the Data Retention provisions of this
+    Policy.
+</p>
+
+<p>
+    Following termination, historical data and reports may remain available
+    subject to the applicable agreement and Aesort's data-retention
+    requirements. Customer integrations may be disconnected, and any
+    temporary Aesort-owned equipment may be removed or returned as
+    applicable.
+</p>
+
 <p class="mb-2">Aesort may suspend or terminate your account if:</p>
 
 <ul class="ms-4">
-
     <li>You breach these Terms;</li>
-
     <li>You misuse the platform;</li>
-
     <li>Required payments fail.</li>
-
 </ul>
 
-<p>You may terminate your subscription anytime, but fees already paid are non-refundable.</p>
-
-
+<p>
+    You may terminate your subscription anytime, but fees already paid are
+    non-refundable.
+</p>
 
 <h4>Limitation of Liability</h4>
 
-<p class="mb-2">To the fullest extent permitted by law:</p>
+<p>
+    To the fullest extent permitted by applicable law, Aesort will not be
+    liable for indirect, incidental, special, or consequential damages
+    arising from or related to the Services.
+</p>
+
+<p>
+    Aesort's maximum aggregate liability for direct losses arising from
+    the Services will be limited to the amount specified in the applicable
+    customer agreement, subject to applicable law.
+</p>
+<h4>Customer Responsibilities</h4>
 
 <ul class="ms-4">
-
-    <li>Aesort is not liable for indirect, incidental, or consequential damages;</li>
-
-    <li>Aesort’s maximum liability for direct losses shall not exceed the total fees paid in the last 3 months.</li>
-
+    <li>Provide accurate and reasonably complete data and information required for the Services.</li>
+    <li>Provide reasonable access to agreed sites, systems, and equipment where required.</li>
+    <li>Evaluate and implement recommendations using appropriate personnel or contractors.</li>
 </ul>
 
-
-
 <h4>Disclaimer</h4>
-
+<p>
+    Aesort recommendations and estimates are based on available data and
+    applicable measurement assumptions. Customers are responsible for
+    deciding whether and how to implement recommendations, including any
+    required operational, maintenance, or electrical work.
+</p>
 <p>
     Aesort provides the Services “as-is” without warranties of accuracy,
     uninterrupted operation, or suitability for your specific use case.
@@ -355,7 +547,19 @@ $currentPage = $currentPage ?? 'terms.conditions';
 
 <h4>Changes to Terms</h4>
 
-<p>Aesort may update these Terms at any time. Continued platform use constitutes acceptance of the updated Terms.</p>
+<p>
+    Aesort may update these Terms from time to time to reflect changes to
+    the Services, business practices, legal requirements, or other
+    applicable circumstances. Updated Terms will be posted on Aesort.ca
+    with the revised effective date.
+</p>
+
+<p>
+    Where required or appropriate, Aesort will provide notice of material
+    changes through the platform, by email, or by another reasonable
+    communication method. Material changes will take effect in accordance
+    with the applicable notice or contractual requirements.
+</p>
 
 
 
@@ -365,7 +569,7 @@ $currentPage = $currentPage ?? 'terms.conditions';
 
 Email: info@aesort.ca<br>
 
-Address: Suite 301, 231 Oak Park Blvd, Oakville, ON L6H 7S8</p>
+Address: 55 Village Centre Place, Suite 200, Mississauga, ON L4Z1V9</p>
 
 
 
