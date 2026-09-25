@@ -174,6 +174,13 @@ class PagesController extends Controller
         return $this->view('auth.signup', ['currentPage' => 'signup']);
 
     }
+    
+    public function requestDemo()
+{
+    return $this->view('request-a-demo', [
+        'currentPage' => 'request-demo'
+    ]);
+}
 
     public function termsConditions()
 
