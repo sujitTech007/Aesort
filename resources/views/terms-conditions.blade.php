@@ -501,6 +501,9 @@ $currentPage = $currentPage ?? 'terms.conditions';
     <li>Provide reasonable access to agreed sites, systems, and equipment where required.</li>
     <li>Evaluate and implement recommendations using appropriate personnel or contractors.</li>
 </ul>
+<h4>Service Responsibility</h4>
+
+<p>AESORT provides recommendations, optimization, and automation services according to the agreed scope. Unless implementation is specifically included, the client is responsible for implementing recommendations. AESORT's responsibility is limited to the services and deliverables defined in the applicable agreement or subscription plan.</p>
 
 <h4>Disclaimer</h4>
 <p>

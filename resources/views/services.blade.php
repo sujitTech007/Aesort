@@ -182,7 +182,20 @@
     </div>
 </div>
 <!-- Infobar Section End -->
+<section class="py-5"> <div class="container"> <div class="row align-items-center g-4"> <div class="col-lg-5"> <span class="text-uppercase small fw-semibold">Service Scope</span> <h2 class="mt-2 mb-0">Implementation & Responsibility</h2> </div>
 
+        <div class="col-lg-7">
+            <p class="mb-0 text-muted">
+                AESORT provides recommendations, optimization, and automation services
+                according to the agreed scope. Implementation and ongoing maintenance
+                are provided only when included in the applicable service or
+                subscription plan.
+            </p>
+        </div>
+    </div>
+</div>
+
+</section>
 
 <!-- Why Choose us Section Start -->
 <!-- Services Benefits Section Start -->
