@@ -272,51 +272,43 @@
 
                             </li>
 
-                           @if(auth()->check())
-
-                            <li class="nav-item highlighted-menu">
-
-                                <a class="nav-link" href="{{ route('client.dashboard') }}">Dashboard</a>
-
-                            </li>
-
-                            @else
-
-                            <li class="nav-item highlighted-menu">
-
-                                <a class="nav-link" href="{{ route('login') }}">LogIn</a>
-
-                            </li>
-
-                             <li class="nav-item highlighted-menu">
-
-                                <a class="nav-link" href="{{ route('signup') }}">SignUp</a>
-
-                            </li>
-
-                            @endif
+                          
 
                         </ul>
 
+                        <div class="header_login">
+                            <ul class="p-0 d-flex header-btn-group">
+                                 @if(auth()->check())
+
+                                <li class="nav-item highlighted-menu">
+
+                                    <a class="fw-bold theme_text_color theme_btn" href="{{ route('client.dashboard') }}">Dashboard</a>
+
+                                </li>
+
+                                @else
+                                <li class="nav-item highlighted-menu">
+
+                                    <!-- <a class="nav-link" href="{{ route('signup') }}">SignUp</a> -->
+                                    <a class="fw-bold theme_text_color" href="{{ route('login') }}"><i class="fa-solid fa-user me-1"></i> LogIn</a>
+
+                                </li>
+
+                                <li>
+                                    <a class="btn-default" href="{{ route('request.demo') }}">Request a Demo</a>
+
+                                    
+
+                                </li>
+
+                                
+
+                                @endif
+                            </ul>
+                        </div>
 
 
-                        <!-- Book Now Button on Right -->
-
-                        <ul class="navbar-nav">
-
-                            <!-- <li class="nav-item highlighted-menu">
-
-            <a class="nav-link" href="login.php">LogIn Now</a>
-
-        </li>
-
-         <li class="nav-item highlighted-menu">
-
-            <a class="nav-link" href="signup.php">SignUp</a>
-
-        </li> -->
-
-                        </ul>
+                        
 
                     </div>
 

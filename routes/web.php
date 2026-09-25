@@ -49,6 +49,8 @@ Route::get('/cookies-policy', [PagesController::class, 'cookiesPolicy'])->name('
 Route::get('/damage-policy', [PagesController::class, 'damagePolicy'])->name('damage.policy');
 Route::get('/support-policy', [PagesController::class, 'supportPage'])->name('support.page');
 
+Route::get('/request-a-demo', [PagesController::class, 'requestDemo'])->name('request.demo');
+
 // Auth action routes
 Route::post('/register', [AuthController::class, 'register'])->name('register.perform');
 Route::post('/login', [AuthController::class, 'login'])->name('login.perform');

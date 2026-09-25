@@ -106,7 +106,7 @@ $currentPage = $currentPage ?? 'contact';
 
                         <div class="form-group col-md-6 mb-3">
                             <select name="industry"
-                                    class="form-control"
+                                    class="form-select"
                                     required>
                                 <option value="" selected disabled>
                                     Industry
@@ -127,7 +127,7 @@ $currentPage = $currentPage ?? 'contact';
 
                         <div class="form-group col-md-12 mb-3">
                             <select name="interest"
-                                    class="form-control"
+                                    class="form-select"
                                     required>
                                 <option value="" selected disabled>
                                     What are you interested in?

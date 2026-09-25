@@ -903,8 +903,7 @@ header.main-header .header-sticky.active {
 
 	font-weight: 500;
 
-	border-bottom: 2px solid #7bae2b !important;
-	/* Optional: Add underline effect */
+    border-bottom: 2px solid #7bae2b !important; 
 
 }
 
@@ -916,19 +915,16 @@ header.main-header .header-sticky.active {
 
 
 
-.main-menu {
 
-	font-family: var(--default-font);
 
-	justify-content: flex-end;
-
-}
 
 
 
 .main-menu ul {
 
 	align-items: center;
+	margin: 0 auto;
+	list-style: none;
 
 }
 
@@ -986,21 +982,18 @@ header.main-header .header-sticky.active {
 
 
 
-.main-menu ul li a {
+.main-menu ul li a.nav-link {
 
 	font-size: 17px;
-
 	font-weight: 400;
-
-	padding: 12px 10px !important;
-
+	padding: 12px 10px;
 	color: var(--primary-color);
 
 }
 
 
 
-.main-menu ul li.highlighted-menu a {
+/* .main-menu ul li.highlighted-menu a{
 
 	display: block;
 
@@ -1008,17 +1001,17 @@ header.main-header .header-sticky.active {
 
 	color: #ffffff;
 
-	font-size: 15px;
+    font-size: 14px;
 
 	font-weight: 500;
 
 	border: 2px solid #ffffff;
 
-	padding: 8px !important;
+    padding: 12px 20px!important;
 
 	border-radius: 30px;
 
-	width: 120px;
+    
 
 	text-align: center;
 
@@ -1080,9 +1073,19 @@ header.main-header .header-sticky.active {
 
 	color: var(--accent-color);
 
+} */
+
+.theme_text_color{
+	color: #7BAE2B;
+}
+.header_login .btn-default {
+    padding: 10px 15px;
+    font-size: 15px;
 }
 
-
+.header_login .theme_text_color:hover{
+	color: var(--primary-color);
+}
 
 .main-menu ul li a:hover,
 
@@ -8998,19 +9001,7 @@ figure.image-anime img {
 
 
 
-.contact-form .form-control {
 
-	padding: 10px 20px;
-
-	border: none;
-
-	box-shadow: none;
-
-	background: var(--secondary-color);
-
-	border-radius: 10px;
-
-}
 
 
 
@@ -10254,11 +10245,7 @@ figure.image-anime img {
 
 
 
-	.main-menu ul li a {
-
-		padding: 12px 4px !important;
-
-	}
+	
 
 
 
@@ -10326,11 +10313,6 @@ figure.image-anime img {
 
 @media only screen and (max-width: 1024px) {
 
-	.main-menu ul li a {
-
-		padding: 12px 2px !important;
-
-	}
 
 
 
@@ -11981,7 +11963,9 @@ figure.image-anime img {
 		text-align: center;
 		/* saare menu ko center */
 
-	}
+        text-align: center; 
+
+    }
 
 
 
@@ -11993,8 +11977,8 @@ figure.image-anime img {
 
 		align-items: center;
 
-		gap: 10px;
-		/* button ke beech thoda gap */
+        gap: 10px; 
+
 
 	}
 
@@ -13492,11 +13476,6 @@ figure.image-anime img {
 
 /* my css */
 
-li.nav-item.highlighted-menu {
-
-	left: 120px;
-
-}
 
 a.btn-default.btn-border {
 
@@ -13696,21 +13675,8 @@ a.btn-default.btn-border {
 
 }
 
-header i {
 
-	color: #4070f4;
 
-	font-size: 32px;
-
-}
-
-header h2 {
-
-	color: #4070f4;
-
-	font-weight: 500;
-
-}
 
 .wrapper .data {
 
@@ -13902,14 +13868,22 @@ header h2 {
 .contact-form-box .section-title h2 {
 	font-size: 30px;
 }
-
 .contact-form-box .form-control {
-	border: 1px solid #e1e1e1;
-	border-radius: 8px;
-	padding: 12px 15px;
-	box-shadow: none;
-	font-size: 14px;
-	appearance: auto;
+   border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    padding: 12px 15px;
+    box-shadow: none;
+    font-size: 14px;
+	    appearance: auto;
+		background: transparent;
+		height: 50px;
+}
+
+.contact-form-box select.form-select,
+.contact-form-box .form-control {
+   
+    font-size: 14px;
+		height: 50px;
 }
 
 .contact-form-box textarea.form-control {
