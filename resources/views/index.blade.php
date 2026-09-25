@@ -78,37 +78,37 @@
                     <h3 class="wow fadeInUp">About Us</h3>
 
                     <h2 class="text-anime">
-                        Transforming the Way Businesses Manage Energy
+                        Transforming the way businesses manage energy
                     </h2>
                 </div>
 
                 <div class="about-content wow fadeInUp" data-wow-delay="0.25s">
 
-                    <p>
-                        At Aesort Smart Energy Inc., we help building owners, property and
-                        facility managers, sustainability leads, and finance teams understand
-                        energy usage, identify inefficiencies, and make informed decisions to
-                        improve energy performance.
-                    </p>
+    <p>
+        At Aesort Smart Energy Inc., we help building owners, property and
+        facility managers, sustainability leads, and finance teams understand
+        energy usage, identify inefficiencies, and make informed decisions to
+        improve energy performance.
+    </p>
 
-                    <p>
-                        Our data-driven platform helps businesses monitor, analyze, and
-                        optimize energy usage while supporting cost management and
-                        sustainability goals.
-                    </p>
+    <p>
+        Our data-driven platform helps businesses monitor, analyze, and
+        optimize energy usage while supporting cost management and
+        sustainability goals.
+    </p>
 
-                    <ul>
-                        <li>Energy Monitoring</li>
-                        <li>Dashboard Control</li>
-                        <li>Utility Monitoring</li>
-                        <li>Verified Savings Reports</li>
-                    </ul>
+    <ul>
+        <li>Energy Monitoring</li>
+        <li>Dashboard Control</li>
+        <li>Utility Monitoring</li>
+        <li>Energy Performance Reports</li>
+    </ul>
 
-                    <a href="{{ route('about') }}" class="btn-default">
-                        More About
-                    </a>
+    <a href="{{ route('about') }}" class="btn-default">
+        More About
+    </a>
 
-                </div>
+</div>
             </div>
         </div>
     </div>
@@ -936,7 +936,7 @@
                         <div class="post-meta">
                             <ul>
                                 <li><a href="#"><i class="fa-regular fa-calendar-days"></i> 09 Feb 2025</a></li>
-                                <li><a href="#"><i class="fa-solid fa-tag"></i> Solar Panel</a></li>
+                                <li><a href="#"><i class="fa-solid fa-tag"></i> Energy Management</a></li>
                             </ul>
                         </div>
 
@@ -963,7 +963,7 @@
                         <div class="post-meta">
                             <ul>
                                 <li><a href="#"><i class="fa-regular fa-calendar-days"></i> 09 Feb 2025</a></li>
-                                <li><a href="#"><i class="fa-solid fa-tag"></i> Solar Panel</a></li>
+                                <li><a href="#"><i class="fa-solid fa-tag"></i> Energy Management</a></li>
                             </ul>
                         </div>
                         <div class="btn-readmore">
@@ -988,7 +988,7 @@
                         <div class="post-meta">
                             <ul>
                                 <li><a href=" #"><i class="fa-regular fa-calendar-days"></i> 09 Feb 2025</a></li>
-                                <li><a href="#"><i class="fa-solid fa-tag"></i> Solar Panel</a></li>
+                                <li><a href="#"><i class="fa-solid fa-tag"></i> Energy Management</a></li>
                             </ul>
                         </div>
 

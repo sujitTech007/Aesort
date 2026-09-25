@@ -155,6 +155,17 @@
           practical energy-efficiency decisions.
         </div>
       </div>
+      <div class="faq-item">
+        <button class="faq-question">
+         How can I reset my password?
+        </button>
+
+        <div class="faq-answer">
+         Select <strong>Forgot Password</strong> on the Login page and enter the phone number associated with your account. A verification OTP will be sent to your registered phone number. Enter the OTP and follow the instructions to create a new password.
+        </div>
+      </div>
+
+
 
     </section>
   </div>

@@ -233,7 +233,7 @@
 
 										<li><a href="{{ route('privacy.policy') }}">Privacy Policy</a></li>
 										
-										<li><a href="{{ route('cookies.policy') }}">Cookies Policy</a></li>
+										<li><a href="{{ route('cookies.policy') }}">Cookie Policy</a></li>
 
 										<li><a href="{{ route('terms.conditions') }}">Term & Conditions</a></li>
 

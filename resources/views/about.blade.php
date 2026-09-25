@@ -57,29 +57,37 @@
                 <!-- Section Title Start -->
                 <div class="section-title">
                     <h3 class="wow fadeInUp">About Us</h3>
-                    <h2 class="text-anime"> Empowering Smart Sustainability</h2>
+                    <h2 class="text-anime"> Building a Smarter Approach to Energy Management</h2>
                 </div>
                 <!-- Section Title End -->
 
                 <!-- About us Content Start -->
                 <div class="about-content wow fadeInUp" data-wow-delay="0.25s">
-                    At Aesort Smart Energy Inc., we are revolutionizing energy management for
-                    commercial spaces. With cutting-edge IoT technology and predictive analytics, we
-                    empower businesses to optimize energy usage, cut costs, and reduce their carbon
-                    footprint.</p>
 
-                    <p>We provide a user-friendly, data-driven platform that enable our customers to monitor, analyze,
-                        and optimize their energy usage, ultimately driving cost savings, reducing environmental impact,
-                        and fostering a more sustainable future for generations to come.</p>
+    <p>
+        Aesort Smart Energy Inc. provides energy-management solutions for
+        commercial and institutional buildings. Our approach brings together
+        building data, energy monitoring, analytics, and energy-management
+        expertise to help organizations better understand their energy
+        performance.
+    </p>
 
-                    <ul>
-                        <li>Real-time Monitoring</li>
-                        <li>Dashboard Control</li>
-                        <li>Utility Monitoring</li>
-                        <li>Customized Solutions</li>
-                    </ul>
+    <p>
+        We support organizations through energy monitoring, data analysis,
+        assessments, consulting, and applicable technology integrations.
+        Depending on the engagement, our services help customers understand
+        consumption patterns, evaluate operational performance, and identify
+        opportunities for greater energy efficiency.
+    </p>
 
-                </div>
+    <ul>
+        <li>Energy Intelligence</li>
+        <li>Building Performance Insights</li>
+        <li>Data-Driven Analysis</li>
+        <li>Energy Management Support</li>
+    </ul>
+
+</div>
                 <!-- About us Content End -->
             </div>
         </div>

@@ -20,6 +20,7 @@
             </ol>
         </div>
     </div>
+    
     <div class="page-container">
         <div class="row row-cols-xxl-4 row-cols-md-2 row-cols-1">
             <div class="col">
@@ -84,6 +85,30 @@
                             <div>
                                 <h5 class="text-muted fs-13 fw-bold text-uppercase" title="Revenue">
                                     Total Sites</h5>
+                                <h3 class="mt-2 mb-1 fw-bold">{{ $totalSites }}</h3>
+                            </div>
+                            <div class="avatar-sm bg-light rounded">
+                                <span class="avatar-title rounded fs-3 text-primary">
+                                    <i class="ri-building-line"></i>
+                                </span>
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+
+                        <div class="d-flex align-items-start gap-2 justify-content-between">
+                            <div>
+                                <h5 class="text-muted fs-13 fw-bold text-uppercase" title="Revenue">
+                                    Verified Customer Energy Value</h5>
                                 <h3 class="mt-2 mb-1 fw-bold">{{ $totalSites }}</h3>
                             </div>
                             <div class="avatar-sm bg-light rounded">
