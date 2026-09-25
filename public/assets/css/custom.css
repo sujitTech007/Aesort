@@ -832,6 +832,7 @@ header.main-header{
 	border-bottom: 1px solid transparent;
 
 	z-index: 100;
+	box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
 
 }
 
@@ -8269,12 +8270,6 @@ footer.main-footer{
 .bottom-servce {
     padding: 0 !important;
 }
-.page-service-single{
-
-	padding: 100px 0 50px;
-
-}
-
 
 
 .service-sidebar{
@@ -8570,33 +8565,6 @@ height: 500px;
 
 
 
-.benefits-item{
-
-	margin-bottom: 40px;
-
-	padding-right: 20px;
-
-}
-
-
-
-.benefits-item .icon-box{
-
-	margin-bottom: 20px;
-
-}
-
-
-
-.benefits-item h3{
-
-	font-size: 22px;
-
-	color: var(--primary-color);
-
-	margin-bottom: 15px;
-
-}
 
 
 
@@ -13970,3 +13938,248 @@ header h2 {
         font-size: 26px;
     }
 }
+
+
+
+
+.service_detail_page .service-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 9px 17px;
+    border-radius: 50px;
+    background: #e7f8ef;
+    color: #087f52;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+
+
+.service_detail_page .service-hero-image figure {
+    height: 480px;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 28px;
+}
+
+.service_detail_page .service-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service_detail_page .service-whyus {
+    padding: 35px;
+    background: #f3fbf7;
+    border-radius: 24px;
+}
+
+.service_detail_page .service-whyus h2 {
+    color: #173b63;
+    font-size: 32px;
+}
+
+.service_detail_page .service-whyus h2 span {
+    display: block;
+}
+
+.service_detail_page .service-section-icon {
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #e3f8ed;
+    color: #0ca763;
+}
+
+.service_detail_page .service-section-line {
+    width: 35px;
+    height: 2px;
+    background: #0ca763;
+}
+
+.service_detail_page .service-stats {
+    padding: 25px 10px;
+    background: #fff;
+    border-radius: 18px;
+}
+
+.service_detail_page .service-stats > div {
+    flex: 1;
+    padding: 0 12px;
+    border-right: 1px solid #e5eee9;
+}
+
+.service_detail_page .service-stats > div:last-child {
+    border-right: 0;
+}
+
+.service_detail_page .service-stats h4 {
+    color: #173b63;
+}
+
+.service_detail_page .service-stats small {
+    color: #718096;
+}
+
+.service_detail_page .benefits-item {
+    position: relative;
+    background: #fff;
+    border-color: #e1ece8 !important;
+    transition: all .25s ease;
+	    flex-wrap: balance;
+    
+    align-items: center;
+	display:flex;
+}
+
+.service_detail_page .benefits-item:hover {
+    transform: translateY(-5px);
+    border-color: #b9e6d0 !important;
+    box-shadow: 0 12px 30px rgba(20, 80, 55, .08);
+}
+
+.service_detail_page .benefits-item .icon-box {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #e5f8ee;
+    color: #079455;
+    font-size: 25px;
+}
+
+.service_detail_page .benefits-item h3 {
+    color: #173b63;
+	margin:0 0 0px 10px
+}
+
+.service_detail_page .benefits-item p {
+    color: #718096;
+    line-height: 1.7;
+    font-size: 14px;
+	min-height:70px;
+	margin-top:20px
+}
+
+.service_detail_page .benefit-arrow {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #e5f8ee;
+    color: #079455;
+    font-size: 12px;
+}
+
+@media (max-width: 767.98px) {
+
+    .service_detail_page .service-whyus {
+        padding: 25px 20px;
+    }
+
+    .service_detail_page .service-whyus h2 {
+        font-size: 26px;
+    }
+
+    .service_detail_page .service-stats {
+        gap: 10px;
+    }
+
+    .service_detail_page .service-stats > div {
+        padding: 0 5px;
+    }
+}
+
+
+.faq-box {
+    padding: 50px 0;
+}
+
+.faq-box h2 {
+    font-size: 38px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.faq-box > .text-center > p {
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.faq-accordion {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-accordion .accordion-item {
+    border: 1px solid #e9ecef;
+    border-radius: 12px !important;
+    overflow: hidden;
+    margin-bottom: 14px;
+    background: #fff;
+}
+
+.faq-accordion .accordion-button {
+    padding: 20px 22px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #222;
+    background: #fff;
+    box-shadow: none;
+}
+
+.faq-accordion .accordion-button:not(.collapsed) {
+    color: #198754;
+    background: #f8fffb;
+    box-shadow: none;
+}
+
+.faq-accordion .accordion-button::after {
+    width: 18px;
+    height: 18px;
+    background-size: 18px;
+}
+
+.faq-number {
+    min-width: 38px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    border-radius: 50%;
+    background: #f1f3f5;
+    color: #198754;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.faq-accordion .accordion-button:not(.collapsed) .faq-number {
+    background: #198754;
+    color: #fff;
+}
+
+.faq-accordion .accordion-body {
+    padding: 0 65px 22px 75px;
+    color: #6c757d;
+    font-size: 15px;
+    line-height: 1.8;
+    background: #f8fffb;
+}
+
+
+
