@@ -18,23 +18,31 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-7">
-                <!-- Hero Left Content Start -->
                 <div class="hero-content">
                     <div class="section-title">
-                        <h3 class="wow fadeInUp" style="color:white">Welcome to Aesort</h3>
-                        <h1 class="text-anime"> Your Partner in Smart Sustainability</h1>
+                        <h3 class="wow fadeInUp" style="color:white">
+                            Welcome to Aesort
+                        </h3>
+
+                        <h1 class="text-anime">
+                            Make Smarter Decisions With Better Energy Data
+                        </h1>
                     </div>
+
                     <div class="hero-content-body wow fadeInUp" data-wow-delay="0.5s">
-                        <p>AESORT helps commercial businesses understand energy use, identify inefficiencies, and make
-                            informed decisions to
-                            improve efficiency and support sustainability.</p>
+                        <p>
+                            AESORT analyzes available energy data to identify usage patterns,
+                            highlight inefficiencies, and provide actionable insights that help
+                            commercial businesses improve energy performance and manage costs.
+                        </p>
                     </div>
 
                     <div class="hero-content-footer wow fadeInUp" data-wow-delay="0.75s">
-                        <a href="{{ route('about') }}" class="btn-default btn-border">Know More</a>
+                        <a href="{{ route('about') }}" class="btn-default btn-border">
+                            Know More
+                        </a>
                     </div>
                 </div>
-                <!-- Hero Left Content End -->
             </div>
         </div>
     </div>
@@ -66,39 +74,41 @@
             </div>
 
             <div class="col-lg-6">
-                <!-- Section Title Start -->
                 <div class="section-title">
                     <h3 class="wow fadeInUp">About Us</h3>
-                    <h2 class="text-anime">Empowering Smart Sustainability</h2>
-                </div>
-                <!-- Section Title End -->
 
-                <!-- About us Content Start -->
+                    <h2 class="text-anime">
+                        Transforming the Way Businesses Manage Energy
+                    </h2>
+                </div>
+
                 <div class="about-content wow fadeInUp" data-wow-delay="0.25s">
 
                     <p>
-                        At Aesort Smart Energy Inc., we are revolutionizing energy management
-                        for commercial spaces. With cutting-edge IoT technology and predictive
-                        analytics, we empower businesses to optimize energy usage, cut costs,
-                        and reduce their carbon footprint.
+                        At Aesort Smart Energy Inc., we help building owners, property and
+                        facility managers, sustainability leads, and finance teams understand
+                        energy usage, identify inefficiencies, and make informed decisions to
+                        improve energy performance.
                     </p>
 
                     <p>
-                        We provide a user-friendly, data-driven platform that enables our customers
-                        to monitor, analyze, and optimize their energy usage, helping drive cost
-                        savings, reduce environmental impact, and support a more sustainable future.
+                        Our data-driven platform helps businesses monitor, analyze, and
+                        optimize energy usage while supporting cost management and
+                        sustainability goals.
                     </p>
 
                     <ul>
                         <li>Energy Monitoring</li>
                         <li>Dashboard Control</li>
                         <li>Utility Monitoring</li>
-                        <li>Customized Solutions</li>
+                        <li>Verified Savings Reports</li>
                     </ul>
 
-                    <a href="{{ route('about') }}" class="btn-default">More About</a>
+                    <a href="{{ route('about') }}" class="btn-default">
+                        More About
+                    </a>
+
                 </div>
-                <!-- About us Content End -->
             </div>
         </div>
     </div>
@@ -205,9 +215,9 @@
 
                                     <div class="service-content">
                                         <h3>Effective Management</h3>
-                                        <p>Make informed energy decisions with data-driven insights.</p>
+                                        <p>Catch issues like after-hours HVAC, equipment cycling, and baseload drift.
+                                        </p>
                                     </div>
-
                                 </div>
                             </div>
                             <!-- Service Slide End -->
@@ -226,18 +236,28 @@
 <!-- Our Process Section Start -->
 <div class="our-process">
     <div class="container">
+
         <div class="row">
             <div class="col-md-12">
+
                 <!-- Section Title Start -->
                 <div class="section-title">
-                    <h3 class="wow fadeInUp">Our Process</h3>
-                    <h2 class="text-anime">How Aesort Works</h2>
+                    <h3 class="wow fadeInUp">
+                        Our Approach
+                    </h3>
+
+                    <h2 class="text-anime">
+                        How AESORT Works
+                    </h2>
                 </div>
                 <!-- Section Title End -->
+
             </div>
         </div>
 
         <div class="row">
+
+            <!-- Step 01 -->
             <div class="col-md-3">
                 <div class="step-item step-1 wow fadeInUp" data-wow-delay="0.25s">
                     <div class="step-header">
@@ -248,13 +268,17 @@
                             <span class="step-no">01</span>
                         </div>
                     </div>
+
                     <div class="step-content">
-                        <h3>Analyze</h3>
-                        <p>Collect and assess energy data to identify usage patterns and inefficiencies.</p>
+                        <h3>Monitor</h3>
+                        <p>
+                            Understand your energy usage through available data and metrics.
+                        </p>
                     </div>
                 </div>
             </div>
 
+            <!-- Step 02 -->
             <div class="col-md-3">
                 <div class="step-item step-2 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="step-header">
@@ -265,13 +289,17 @@
                             <span class="step-no">02</span>
                         </div>
                     </div>
+
                     <div class="step-content">
-                        <h3>Diagnose</h3>
-                        <p>Identify the causes of energy waste and areas for improvement.</p>
+                        <h3>Identify</h3>
+                        <p>
+                            Compare performance to identify inefficiencies and opportunities.
+                        </p>
                     </div>
                 </div>
             </div>
 
+            <!-- Step 03 -->
             <div class="col-md-3">
                 <div class="step-item step-3 wow fadeInUp" data-wow-delay="0.75s">
                     <div class="step-header">
@@ -282,15 +310,19 @@
                             <span class="step-no">03</span>
                         </div>
                     </div>
+
                     <div class="step-content">
                         <h3>Optimize</h3>
-                        <p>Implement actionable recommendations to improve energy efficiency.</p>
+                        <p>
+                            Apply actionable insights and recommendations to improve efficiency.
+                        </p>
                     </div>
                 </div>
             </div>
 
+            <!-- Step 04 -->
             <div class="col-md-3">
-                <div class="step-item step-4 wow fadeInUp" data-wow-delay="0.75s">
+                <div class="step-item step-4 wow fadeInUp" data-wow-delay="1s">
                     <div class="step-header">
                         <div class="step-icon">
                             <figure>
@@ -299,14 +331,17 @@
                             <span class="step-no">04</span>
                         </div>
                     </div>
+
                     <div class="step-content">
-                        <h3>Maintain</h3>
-                        <p>Monitor performance and refine strategies for continued efficiency.</p>
+                        <h3>Measure</h3>
+                        <p>
+                            Track results through reporting to verify progress and value.
+                        </p>
                     </div>
                 </div>
             </div>
-        </div>
 
+        </div>
     </div>
 </div>
 <!-- Our Process Section End -->
@@ -432,8 +467,8 @@
                     <h3 class="wow fadeInUp">Energy Performance</h3>
                     <h2 class="text-anime">Understand and Improve Your Energy Performance</h2>
                     <p class="wow fadeInUp" data-wow-delay="0.25s">
-                        Gain clearer insight into energy performance and identify opportunities
-                        to improve efficiency across your operations.
+                        Gain clearer insight into energy performance, benchmarked against Canadian
+                        standards and adjusted for your province's rates and climate.
                     </p>
                 </div>
                 <!-- Section Title End -->
@@ -561,6 +596,84 @@
     </div>
 </div>
 <!-- Infobar Section End -->
+
+
+<!-- Assessment / POC Layout Start -->
+<div class="assessment" style="padding-bottom: 80px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title mb-4">
+                    <h3 class="wow fadeInUp">Get Started</h3>
+                    <h2 class="text-anime">Start With an Energy Opportunity Assessment</h2>
+
+                    {{-- <p class="wow fadeInUp" data-wow-delay="0.25s">
+                        No permanent hardware required upfront. Start with an assessment, validate
+                        results through a controlled pilot, then decide on a full rollout.
+                    </p> --}}
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="step-item step-1 wow fadeInUp" data-wow-delay="0.25s">
+                    <div class="step-header">
+                        <div class="step-icon">
+                            <figure><img src="assets/images/icon-step-1.svg" alt=""></figure>
+                            <span class="step-no">01</span>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Assess</h3>
+                        <p>We review your available energy data and facility needs to identify opportunities.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="step-item step-2 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="step-header">
+                        <div class="step-icon">
+                            <figure><img src="assets/images/icon-step-2.svg" alt=""></figure>
+                            <span class="step-no">02</span>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Pilot</h3>
+                        <p>A scoped pilot proves value — no permanent hardware installed.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="step-item step-3 wow fadeInUp" data-wow-delay="0.75s">
+                    <div class="step-header">
+                        <div class="step-icon">
+                            <figure><img src="assets/images/icon-step-3.svg" alt=""></figure>
+                            <span class="step-no">03</span>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Measure</h3>
+                        <p>Results are reviewed against agreed success metrics before you decide on next steps.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12" style="text-align: center; margin-top: 30px;">
+                <a href="{{ route('contact') }}" class="btn-default">Request Your Assessment</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Assessment / POC Layout End -->
+
+
+
 <!-- Why Choose us Section Start -->
 <div class="why-choose-us">
     <div class="container">
@@ -612,10 +725,11 @@
                             <img src="assets/images/tailred-icon.png" alt="">
                         </div>
 
-                        <h3> Tailored Solutions</h3>
-                        <p> We offer customized strategies for
-                            diverse sectors, including hospitality,
-                            retail, and education.</p>
+                        <h3>Portfolio Visibility</h3>
+                        <p>Monitor and compare performance across
+                            multiple sites from a single view —
+                            built for businesses managing more than
+                            one building.</p>
                     </div>
                 </div>
                 <!-- Why Choose Item End -->
@@ -717,7 +831,7 @@
 
                                         <div class="form-group col-md-6 mb-3">
                                             <input type="number" name="capacity" class="form-control"
-                                                placeholder="Estimated Solar System Size (kW)" min="0" step="0.1"
+                                                placeholder="Estimated System Capacity (kW)" min="0" step="0.1"
                                                 required>
                                         </div>
 
@@ -731,6 +845,10 @@
                                             <div id="calculatorResult" class="alert alert-success d-none"></div>
                                         </div>
 
+                                        <div class="col-md-12">
+                                            <small class="text-muted">This is an initial estimate — actual savings are
+                                                verified during your pilot.</small>
+                                        </div>
                                     </div>
                                 </form>
                             </div>
@@ -776,7 +894,7 @@
             <strong>Estimated Energy Savings</strong><br>
             Estimated Monthly Savings: ${formatCAD(monthlySaving)}<br>
             Estimated Annual Savings: ${formatCAD(yearlySaving)}<br>
-            Estimated Solar System Cost: ${formatCAD(estimatedSystemCost)}<br>
+            Estimated System Cost: ${formatCAD(estimatedSystemCost)}<br>
             Estimated Payback Period: ${paybackYears.toFixed(1)} years
         `;
 
