@@ -181,6 +181,26 @@ class PagesController extends Controller
         'currentPage' => 'request-demo'
     ]);
 }
+       public function howItWork()
+    {
+        return $this->view('how-it-work', [
+            'currentPage' => 'how-it-work'
+        ]);
+    }
+
+    public function trustAndMethodology()
+    {
+        return $this->view('trust-and-methodology', [
+            'currentPage' => 'trust-and-methodology'
+        ]);
+    }
+
+    public function useCases()
+    {
+        return $this->view('use-cases', [
+            'currentPage' => 'use-cases'
+        ]);
+    }
 
     public function termsConditions()
 

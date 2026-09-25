@@ -239,8 +239,23 @@
                                     href="{{ route('services') }}">Services</a>
 
                             </li>
+                             <li class="nav-item">
 
-                                                 <li class="nav-item">
+                                <a class="nav-link {{ ($currentPage ?? '') == 'services' ? 'active' : '' }}"
+
+                                    href="{{ route('how.it.work') }}">How it Work</a>
+
+                            </li>
+                            
+                            <li class="nav-item">
+
+                                <a class="nav-link {{ ($currentPage ?? '') == 'services' ? 'active' : '' }}"
+
+                                    href="{{ route('use.cases') }}">Use Cases</a>
+
+                            </li>
+
+                                                 <!-- <li class="nav-item">
 
                                                                 <a class="nav-link {{ ($currentPage ?? '') == 'subscription' ? 'active' : '' }}"
 
@@ -250,19 +265,45 @@
 
                                                                  </a>
 
-                                                </li>
+                                                </li> -->
+
+
+
+                                                    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle 
+            {{ in_array(($currentPage ?? ''), ['service1', 'service2', 'service3']) ? 'active' : '' }}"
+            href="#" 
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Services
+        </a>
+
+        <ul class="dropdown-menu">
+            <li>
+                <a class="dropdown-item {{ ($currentPage ?? '') == 'service1' ? 'active' : '' }}"
+                    href="{{ route('trust.and.methodology') }}">
+                    Trust &amp; Methodology
+                </a>
+            </li>
+
+            <li>
+                <a class="dropdown-item {{ ($currentPage ?? '') == 'blog' ? 'active' : '' }}"
+                    href="{{ route('blog') }}">
+                    Blog
+                </a>
+                 
+            </li>
+
+           
+        </ul>
+    </li>
 
 
 
 
 
-                            <li class="nav-item">
 
-                                <a class="nav-link {{ ($currentPage ?? '') == 'blog' ? 'active' : '' }}"
-
-                                    href="{{ route('blog') }}">Blog</a>
-
-                            </li>
 
                             <li class="nav-item">
 

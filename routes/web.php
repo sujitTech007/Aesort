@@ -51,6 +51,10 @@ Route::get('/support-policy', [PagesController::class, 'supportPage'])->name('su
 
 Route::get('/request-a-demo', [PagesController::class, 'requestDemo'])->name('request.demo');
 
+Route::get('/how-it-work', [PagesController::class, 'howItWork'])->name('how.it.work');
+Route::get('/trust-and-methodology', [PagesController::class, 'trustAndMethodology'])->name('trust.and.methodology');
+Route::get('/use-cases', [PagesController::class, 'useCases'])->name('use.cases');
+
 // Auth action routes
 Route::post('/register', [AuthController::class, 'register'])->name('register.perform');
 Route::post('/login', [AuthController::class, 'login'])->name('login.perform');
