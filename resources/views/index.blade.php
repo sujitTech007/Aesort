@@ -52,28 +52,20 @@
 <!-- About Section Start -->
 <div class="about-us">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6">
+        <div class="row align-items-start">
+            <div class="col-lg-5">
                 <!-- About us Image Start -->
                 <div class="about-image">
-                    <div class="about-img-1">
-                        <figure class="reveal image-anime"
+                    <figure class="reveal image-anime"
                             style="transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
-                            <img src="assets/images/about-1.jpg" alt="" style="transform: translate(0px, 0px);">
+                            <img src="assets/images/about.webp" alt="" style="transform: translate(0px, 0px);">
                         </figure>
-                    </div>
-
-                    <div class="about-img-2">
-                        <figure class="reveal image-anime"
-                            style="transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
-                            <img src="assets/images/about-2.jpg" alt="" style="transform: translate(0px, 0px);">
-                        </figure>
-                    </div>
+                    
                 </div>
                 <!-- About us Image End -->
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-lg-7">
                 <div class="section-title">
                     <h3 class="wow fadeInUp">About Us</h3>
 
