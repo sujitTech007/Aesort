@@ -7350,7 +7350,7 @@ header.main-header .header-sticky.active {
 
 footer.main-footer {
 
-	padding: 0 0 20px;
+	padding:0;
 
 	background: var(--primary-color) url(../images/footer-bg.svg) no-repeat bottom center;
 
@@ -7392,9 +7392,8 @@ footer.main-footer {
 
 	border-bottom: 1px solid #ffffff20;
 
-	margin-bottom: 26px;
 
-	padding: 0px 0px 52px;
+	padding: 0px 0px 40px;
 
 }
 
@@ -7604,17 +7603,9 @@ footer.main-footer {
 
 .footer-copyright-text p {
 
-	margin-bottom: 0;
-
-	font-size: 15px;
-
-	color: #ffffff;
-
-	background: #7BAE2B;
-
-	padding: 10px;
-
-	border-radius: 25px;
+font-size: 14px;
+    color: #ffffff;
+    margin: 0 auto;
 
 }
 
