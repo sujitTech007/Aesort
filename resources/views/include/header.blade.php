@@ -141,7 +141,7 @@
 
                             <li><a href="mailto:info@aesort.ca"><i class="fa-solid fa-envelope"></i>info@aesort.ca</a></li>
 
-                            <li><a href="tel:+14373831136"><i class="fa-solid fa-phone"></i>  +1 (437) 383-1136</a></li>
+                            <!-- <li><a href="tel:+14373831136"><i class="fa-solid fa-phone"></i>  +1 (437) 383-1136</a></li> -->
                             <li><a href="tel:+16475123975"><i class="fa-solid fa-phone"></i> +1 (647) 512-3975</a></li>
 
                         </ul>
