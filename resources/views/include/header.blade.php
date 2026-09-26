@@ -241,7 +241,7 @@
                             </li>
                              <li class="nav-item">
 
-                                <a class="nav-link {{ ($currentPage ?? '') == 'services' ? 'active' : '' }}"
+                                <a class="nav-link {{ ($currentPage ?? '') == 'how-it-work' ? 'active' : '' }}"
 
                                     href="{{ route('how.it.work') }}">How it Work</a>
 
@@ -249,7 +249,7 @@
                             
                             <li class="nav-item">
 
-                                <a class="nav-link {{ ($currentPage ?? '') == 'services' ? 'active' : '' }}"
+                                <a class="nav-link {{ ($currentPage ?? '') == 'use-cases' ? 'active' : '' }}"
 
                                     href="{{ route('use.cases') }}">Use Cases</a>
 
@@ -271,17 +271,17 @@
 
                                                     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle 
-            {{ in_array(($currentPage ?? ''), ['service1', 'service2', 'service3']) ? 'active' : '' }}"
+            {{ in_array(($currentPage ?? ''), ['trust-and-methodology', 'blog']) ? 'active' : '' }}"
             href="#" 
             role="button"
             data-bs-toggle="dropdown"
             aria-expanded="false">
-            Services
+            Resource
         </a>
 
         <ul class="dropdown-menu">
             <li>
-                <a class="dropdown-item {{ ($currentPage ?? '') == 'service1' ? 'active' : '' }}"
+                <a class="dropdown-item {{ ($currentPage ?? '') == 'trust-and-methodology' ? 'active' : '' }}"
                     href="{{ route('trust.and.methodology') }}">
                     Trust &amp; Methodology
                 </a>
