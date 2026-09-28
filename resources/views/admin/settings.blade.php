@@ -6,7 +6,7 @@
         </div>
     </div>
 
-<div class="container mt-4">
+    <div class="container mt-4">
         <div class="row">
             <!-- Update Profile -->
             <div class="col-md-6 mb-4">
@@ -34,7 +34,7 @@
                                 <input type="text" name="phone" class="form-control" value="{{ Auth::user()->phone ?? '' }}">
                             </div>
 
-                            
+
 
                             <div class="text-end">
                                 <button type="submit" class="btn btn-primary">Update Profile</button>
@@ -73,7 +73,47 @@
                 </div>
             </div>
         </div>
+        <div class="row g-4 mt-1">
+
+    <!-- Security Settings -->
+    <div class="col-lg-6">
+        <div class="card shadow-sm border-0">
+
+            <div class="card-header bg-success text-white">
+                <h6 class="mb-0">Security</h6>
+            </div>
+
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div>
+                        <h6 class="mb-1">Two-Factor Authentication</h6>
+                        <p class="text-muted small mb-0">
+                            Add an extra layer of security to your admin account.
+                        </p>
+                    </div>
+
+                    <span class="badge bg-secondary">Disabled</span>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center border-top pt-3">
+                    <div>
+                        <span class="small">2FA Protection</span>
+                    </div>
+
+                    <button type="button" class="btn btn-success btn-sm">
+                        <i class="fas fa-shield-alt me-1"></i>
+                        Enable 2FA
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
     </div>
 </div>
+
 
 @include('admin.include.footer')
