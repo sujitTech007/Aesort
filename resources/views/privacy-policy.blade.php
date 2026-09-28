@@ -335,7 +335,7 @@ $currentPage = $currentPage ?? 'privacy.policy';
 
           <p>
     Updates will be posted on aesort.ca with the revised effective date.
-    Where required, Aesort will provide additional notice or obtain consent
+    Where required, aesort.ca will provide additional notice or obtain consent
     for material changes in accordance with applicable requirements.
 </p>
 
