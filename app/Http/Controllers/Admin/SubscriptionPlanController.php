@@ -10,7 +10,7 @@ class SubscriptionPlanController extends Controller
 {
     public function index()
     {
-        $plans = SubscriptionPlan::where('status', '1')->orderBy('id', 'desc')->paginate(10);
+        $plans = SubscriptionPlan::orderBy('id', 'desc')->paginate(10);
         return view('admin.subscription.index', compact('plans'));
     }
 

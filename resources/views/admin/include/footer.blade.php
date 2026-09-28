@@ -30,9 +30,7 @@
 
 
 
-    <!-- Projects Analytics Dashboard App js -->
-
-    <script src="{{ asset('assets/admin/js/dashboard.js.download') }}"></script>
+    @stack('scripts')
 
 
 

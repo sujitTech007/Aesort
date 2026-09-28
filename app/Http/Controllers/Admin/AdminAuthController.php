@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Site;
 use App\Models\Device;
+use App\Models\Subscription;
+use App\Models\SubscriptionPlan;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -49,8 +52,66 @@ class AdminAuthController extends Controller
         $totalTechnicians = User::where('role', 2)->count();
         $totalSites = Site::count();
         $totalDevices = Device::count();
+        $activeClients = User::where('role', 1)->where('status', 1)->count();
+        $activeSites = Site::where('status', 1)->count();
+        $totalSubscriptionPlans = SubscriptionPlan::count();
+        $totalSubscriptions = Subscription::count();
+        $subscriptionValue = (float) Subscription::sum('amount');
 
-        return view('admin.index', compact('totalClients', 'totalTechnicians', 'totalSites', 'totalDevices'));
+        $siteTypes = Site::query()
+            ->selectRaw("COALESCE(NULLIF(type, ''), 'Unspecified') as label, COUNT(*) as total")
+            ->groupBy('label')
+            ->orderBy('label')
+            ->get();
+
+        $deviceStatuses = Device::query()
+            ->selectRaw("COALESCE(NULLIF(status, ''), 'Unspecified') as label, COUNT(*) as total")
+            ->groupBy('label')
+            ->orderBy('label')
+            ->get();
+
+        $periodStart = now()->startOfMonth()->subMonths(5);
+        $periodEnd = now()->endOfMonth();
+        $monthKeys = collect(range(0, 5))->map(function ($offset) {
+            return now()->startOfMonth()->subMonths(5 - $offset)->format('Y-m');
+        });
+
+        $countByMonth = function ($model, $role = null) use ($periodStart, $periodEnd) {
+            $query = $model::query()->whereBetween('created_at', [$periodStart, $periodEnd]);
+            if ($role !== null) {
+                $query->where('role', $role);
+            }
+
+            return $query->pluck('created_at')
+                ->map(fn ($date) => Carbon::parse($date)->format('Y-m'))
+                ->countBy();
+        };
+
+        $clientTrend = $countByMonth(User::class, 1);
+        $siteTrend = $countByMonth(Site::class);
+        $deviceTrend = $countByMonth(Device::class);
+        $trendLabels = $monthKeys->map(fn ($month) => Carbon::createFromFormat('Y-m', $month)->format('M Y'));
+        $trendSeries = [
+            ['name' => 'Customers', 'data' => $monthKeys->map(fn ($month) => $clientTrend->get($month, 0))->values()],
+            ['name' => 'Sites', 'data' => $monthKeys->map(fn ($month) => $siteTrend->get($month, 0))->values()],
+            ['name' => 'Devices', 'data' => $monthKeys->map(fn ($month) => $deviceTrend->get($month, 0))->values()],
+        ];
+
+        return view('admin.kpi-dashboard', compact(
+            'totalClients',
+            'totalTechnicians',
+            'totalSites',
+            'totalDevices',
+            'activeClients',
+            'activeSites',
+            'totalSubscriptionPlans',
+            'totalSubscriptions',
+            'subscriptionValue',
+            'siteTypes',
+            'deviceStatuses',
+            'trendLabels',
+            'trendSeries'
+        ));
     }
 
 
