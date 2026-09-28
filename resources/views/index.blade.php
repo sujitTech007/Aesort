@@ -57,10 +57,10 @@
                 <!-- About us Image Start -->
                 <div class="about-image">
                     <figure class="reveal image-anime"
-                            style="transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
-                            <img src="assets/images/about.webp" alt="" style="transform: translate(0px, 0px);">
-                        </figure>
-                    
+                        style="transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
+                        <img src="assets/images/about.webp" alt="" style="transform: translate(0px, 0px);">
+                    </figure>
+
                 </div>
                 <!-- About us Image End -->
             </div>
@@ -76,31 +76,31 @@
 
                 <div class="about-content wow fadeInUp" data-wow-delay="0.25s">
 
-    <p>
-        At Aesort Smart Energy Inc., we help building owners, property and
-        facility managers, sustainability leads, and finance teams understand
-        energy usage, identify inefficiencies, and make informed decisions to
-        improve energy performance.
-    </p>
+                    <p>
+                        At Aesort Smart Energy Inc., we help building owners, property and
+                        facility managers, sustainability leads, and finance teams understand
+                        energy usage, identify inefficiencies, and make informed decisions to
+                        improve energy performance.
+                    </p>
 
-    <p>
-        Our data-driven platform helps businesses monitor, analyze, and
-        optimize energy usage while supporting cost management and
-        sustainability goals.
-    </p>
+                    <p>
+                        Our data-driven platform helps businesses monitor, analyze, and
+                        optimize energy usage while supporting cost management and
+                        sustainability goals.
+                    </p>
 
-    <ul>
-        <li>Energy Monitoring</li>
-        <li>Dashboard Control</li>
-        <li>Utility Monitoring</li>
-        <li>Energy Performance Reports</li>
-    </ul>
+                    <ul>
+                        <li>Energy Monitoring</li>
+                        <li>Dashboard Control</li>
+                        <li>Utility Monitoring</li>
+                        <li>Energy Performance Reports</li>
+                    </ul>
 
-    <a href="{{ route('about') }}" class="btn-default">
-        More About
-    </a>
+                    <a href="{{ route('about') }}" class="btn-default">
+                        More About
+                    </a>
 
-</div>
+                </div>
             </div>
         </div>
     </div>
@@ -346,103 +346,71 @@
                 <!-- Section Title Start -->
                 <div class="section-title">
                     <h3 class="wow fadeInUp">Our Pricing</h3>
-                    <h2 class="text-anime">Choose Your Best Offer</h2>
+                    <h2 class="text-anime">AESORT Service Plans</h2>
                 </div>
                 <!-- Section Title End -->
             </div>
         </div>
 
         <div class="row">
-            <div class="col-lg-4">
-                <!-- Pricing Item Box Start -->
-                <div class="pricing-item2 wow fadeInUp" data-wow-delay="0.25s">
-                    <div class="package-icon-box">
-                        <img src="assets/images/icon-pricing-1.svg" alt="">
-                    </div>
+           <div class="col-lg-4"> <!-- Pricing Item Box Start -->
+    <div class="pricing-item2 wow fadeInUp" data-wow-delay="0.25s">
+        <div class="package-icon-box"> <img src="assets/images/icon-pricing-1.svg" alt=""> </div>
+        <div class="price-header">
+            <h2>Basic</h2>
+        </div>
+        <div class="price-body">
+            <ul>
+              <li>Pricing is based on building size, service scope, and applicable requirements.</li>
+<li>Contact AESORT for a tailored commercial pricing proposal.</li>
+                <li>Includes essential energy monitoring, standard dashboard access, and utility monitoring. Custom quote for spaces over 5,000 sq. ft.</li>
+            </ul>
+        </div> <!-- <div class="price-buy-button"> <a href="{{ route('contact') }}" class="btn-default">Subscribe</a> </div> -->
+    </div> <!-- Pricing Item Box End -->
+</div>
 
-                    <div class="price-header">
-                        <h2>Basic</h2>
+<div class="col-lg-4"> <!-- Pricing Item Box Start -->
+    <div class="pricing-item2 wow fadeInUp" data-wow-delay="0.5s">
+        <div class="package-icon-box"> <img src="assets/images/icon-pricing-2.svg" alt=""> </div>
+        <div class="price-header">
+            <h2>Standard</h2>
+        </div>
+        <div class="price-body">
+            <ul>
+                <li>Pricing is based on building size, service scope, and applicable requirements.</li>
+<li>Contact AESORT for a tailored commercial pricing proposal.</li>
+                <li>Includes enhanced energy analytics, performance insights, and detailed reporting. Custom quote for spaces over 5,000 sq. ft.</li>
+            </ul>
+        </div> <!-- <div class="price-buy-button"> <a href="{{ route('contact') }}" class="btn-default">Subscribe</a> </div> -->
+    </div> <!-- Pricing Item Box End -->
+</div>
 
-                    </div>
+<div class="col-lg-4">
+    <!-- Pricing Item Box Start -->
+    <div class="pricing-item2 wow fadeInUp" data-wow-delay="0.75s">
+        <div class="package-icon-box">
+            <img src="assets/images/icon-pricing-3.svg" alt="">
+        </div>
 
-                    <div class="price-body">
-                        <ul>
-                            <li>$2,499 per month for users with up to 2,000 sq ft of commercial space</li>
-                            <li>$5,999 per month for users with more than 2,000 sq. ft. up to 5,000 of sq. ft.
-                                commercial space.</li>
-                            <li>Custom Quote for users with more than 5,000 of sq ft commercial space.</li>
+        <div class="price-header">
+            <h2>Premium</h2>
 
+        </div>
 
-                        </ul>
-                    </div>
+        <div class="price-body">
+            <ul>
+                <li>Pricing is based on the scope of analysis and reporting requirements.</li>
+                <li>Detailed energy data insights and analytics covering energy consumption patterns, potential cost-saving opportunities, and environmental performance.</li>
+                <li>Report-based service for customers requiring detailed analysis and decision-support insights.</li>
+            </ul>
+        </div>
 
-                    <!-- <div class="price-buy-button">
-                            <a href="{{ route('contact') }}" class="btn-default">Subscribe</a>
-						</div>						 -->
-                </div>
-                <!-- Pricing Item Box End -->
-            </div>
-
-            <div class="col-lg-4">
-                <!-- Pricing Item Box Start -->
-                <div class="pricing-item2 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="package-icon-box">
-                        <img src="assets/images/icon-pricing-2.svg" alt="">
-                    </div>
-
-                    <div class="price-header">
-                        <h2>Standard</h2>
-
-                    </div>
-
-                    <div class="price-body">
-                        <ul>
-                            <li>$399 per month for users with up to 2,000 sq. ft. of commercial space.</li>
-                            <li>$599 per month for users with more than 2,000 sq. ft. up to 5,000 of sq. ft. commercial
-                                space.</li>
-                            <li>Custom Quote for users with more than 5,000 of sq. ft. commercial space.</li>
-
-
-                        </ul>
-                    </div>
-
-                    <!-- <div class="price-buy-button">
-                            <a href="{{ route('contact') }}" class="btn-default">Subscribe</a>
-						</div>						 -->
-                </div>
-                <!-- Pricing Item Box End -->
-            </div>
-
-            <div class="col-lg-4">
-                <!-- Pricing Item Box Start -->
-                <div class="pricing-item2 wow fadeInUp" data-wow-delay="0.75s">
-                    <div class="package-icon-box">
-                        <img src="assets/images/icon-pricing-3.svg" alt="">
-                    </div>
-
-                    <div class="price-header">
-                        <h2>Premium</h2>
-
-                    </div>
-
-                    <div class="price-body">
-                        <ul>
-                            <li>Data Insights and Analytics ($699/ report)</li>
-                            <li>This model includes data insights and analytics generated by the system for details into
-                                energy consumption patterns, cost-saving opportunities, and environmental impact
-                                assessments.</li>
-
-
-
-                        </ul>
-                    </div>
-
-                    <!-- <div class="price-buy-button">
-                            <a href="{{ route('contact') }}" class="btn-default">Subscribe</a>
-						</div>						 -->
-                </div>
-                <!-- Pricing Item Box End -->
-            </div>
+        <!-- <div class="price-buy-button">
+                <a href="{{ route('contact') }}" class="btn-default">Subscribe</a>
+            </div>						 -->
+    </div>
+    <!-- Pricing Item Box End -->
+</div>
         </div>
     </div>
 </div>
@@ -471,7 +439,7 @@
                     <!-- Skill Item Start -->
                     <div class="skillbar" data-percent="95%">
                         <div class="skill-data">
-                            <div class="title">Solar Panels</div>
+                            <div class="title">Energy Monitoring</div>
                             <div class="count">95%</div>
                         </div>
                         <div class="skill-progress">
@@ -822,7 +790,7 @@
 </div>
 
 <script>
-    document.getElementById('solarForm').addEventListener('submit', function (e) {
+    document.getElementById('solarForm').addEventListener('submit', function(e) {
         e.preventDefault();
 
         const bill = parseFloat(document.querySelector('[name="bill"]').value);
@@ -1129,7 +1097,7 @@
 <script>
     const phoneInput = document.querySelector('[name="phone"]');
 
-    phoneInput.addEventListener('input', function () {
+    phoneInput.addEventListener('input', function() {
 
         this.value = this.value.replace(/\D/g, '');
 

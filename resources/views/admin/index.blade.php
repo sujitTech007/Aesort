@@ -14,7 +14,7 @@
 
         <div class="text-end">
             <ol class="breadcrumb m-0 py-0 fs-13">
-                <li class="breadcrumb-item"><a href="javascript: void(0);">Aeshort</a></li>
+                <li class="breadcrumb-item"><a href="javascript: void(0);">Aesort</a></li>
 
                 <li class="breadcrumb-item active">Dashboard</li>
             </ol>
@@ -47,7 +47,7 @@
                         <div class="d-flex align-items-start gap-2 justify-content-between">
                             <div>
                                 <h5 class="text-muted fs-13 fw-bold text-uppercase" title="Revenue">
-                                    Total Client</h5>
+                                    Total Clients</h5>
                                 <h3 class="mt-2 mb-1 fw-bold">{{ $totalClients }}</h3>
                             </div>
                             <div class="avatar-sm bg-light rounded">
@@ -65,7 +65,7 @@
                         <div class="d-flex align-items-start gap-2 justify-content-between">
                             <div>
                                 <h5 class="text-muted fs-13 fw-bold text-uppercase" title="Revenue">
-                                    Total Technician</h5>
+                                    Total Technicians</h5>
                                 <h3 class="mt-2 mb-1 fw-bold">{{ $totalTechnicians }}</h3>
                             </div>
                             <div class="avatar-sm bg-light rounded">
