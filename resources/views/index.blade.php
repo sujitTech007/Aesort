@@ -225,6 +225,117 @@
 </div>
 <!-- Our Services Section End -->
 
+
+<!-- Canadian Building Energy Statistics Start -->
+<section class="py-5">
+    <div class="container">
+
+        <!-- Section Heading -->
+        <div class="text-center mb-4">
+            <small class="text-success">Canada's Building Energy Context</small>
+
+            <h2 class="mt-2 mb-3">
+                Canadian Building Energy at a Glance
+            </h2>
+
+            <p class="text-muted mx-auto" style="max-width: 750px;">
+                Canada's commercial and institutional buildings represent a significant
+                energy-use sector. In 2024, 583,634 commercial and institutional buildings
+                across Canada's provinces occupied approximately 1.1 billion m² and
+                consumed 953.8 million GJ of energy.
+            </p>
+        </div>
+
+        <!-- Statistics -->
+        <div class="row g-4 justify-content-center">
+
+            <!-- Stat 1 -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm rounded-4 text-center p-4">
+                    <div class="mb-3">
+                        <i class="fas fa-building text-success fs-2"></i>
+                    </div>
+
+                    <h3 class="text-success mb-2">
+                        583,634
+                    </h3>
+
+                    <p class="text-muted mb-0">
+                        Commercial & Institutional Buildings
+                    </p>
+                </div>
+            </div>
+
+            <!-- Stat 2 -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm rounded-4 text-center p-4">
+                    <div class="mb-3">
+                        <i class="fas fa-vector-square text-success fs-2"></i>
+                    </div>
+
+                    <h3 class="text-success mb-2">
+                        1.1B m²
+                    </h3>
+
+                    <p class="text-muted mb-0">
+                        Total Floor Area
+                    </p>
+                </div>
+            </div>
+
+            <!-- Stat 3 -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm rounded-4 text-center p-4">
+                    <div class="mb-3">
+                        <i class="fas fa-bolt text-success fs-2"></i>
+                    </div>
+
+                    <h3 class="text-success mb-2">
+                        953.8M GJ
+                    </h3>
+
+                    <p class="text-muted mb-0">
+                        Total Energy Consumption
+                    </p>
+                </div>
+            </div>
+
+            <!-- Stat 4 -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm rounded-4 text-center p-4">
+                    <div class="mb-3">
+                        <i class="fas fa-chart-line text-success fs-2"></i>
+                    </div>
+
+                    <h3 class="text-success mb-2">
+                        1.02 GJ/m²
+                    </h3>
+
+                    <p class="text-muted mb-0">
+                        Average Energy-Use Intensity
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Source -->
+        <div class="text-center mt-4">
+            <p class="small text-muted mb-0">
+                Source:
+                <a href="https://www150.statcan.gc.ca/n1/daily-quotidien/260813/dq260813a-eng.htm"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="text-success text-decoration-none">
+                    Statistics Canada — Survey of Commercial and Institutional Energy Use, 2024
+                </a>
+            </p>
+        </div>
+
+    </div>
+</section>
+<!-- Canadian Building Energy Statistics End -->
+
 <!-- Our Process Section Start -->
 <div class="our-process">
     <div class="container">
