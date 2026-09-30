@@ -8,27 +8,31 @@
         </div>
     </div>
 
-    <form method="POST" action="{{ route('admin.services.update', $service->id) }}" enctype="multipart/form-data">
+    <form id="editServiceForm" method="POST" action="{{ route('admin.services.update', $service->id) }}" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
         <div class="mb-3">
-            <label>Image</label>
-            <input type="file" name="image" class="form-control">
+            <label for="serviceBannerImage">Banner image</label>
+            <input type="file" id="serviceBannerImage" name="banner_image" class="form-control" accept="image/jpeg,image/png,image/gif,image/svg+xml">
+            <div id="serviceBannerFilename" class="form-text">Select an image to replace the current banner.</div>
+            <div id="serviceBannerPreview" class="mt-2">
             @if($service->banner_image)
-                <div class="mt-2">
-                    <img src="{{ asset('uploads/service-images/' . $service->banner_image) }}" alt="Blog Image" width="120" height="80" style="object-fit: cover; border-radius: 5px;">
-                </div>
+                <img src="{{ asset('uploads/service-images/' . $service->banner_image) }}" alt="Current service banner" style="max-width: 240px; max-height: 160px; object-fit: contain; border-radius: 5px;">
             @endif
+            </div>
         </div>
         
          <div class="mb-3">
-            <label>Icon</label>
-            <input type="file" name="icon" class="form-control">
+            <label for="serviceIcon">Service icon</label>
+            <input type="file" id="serviceIcon" name="icon" class="form-control" accept="image/jpeg,image/png,image/gif,image/svg+xml">
+            <div id="serviceIconFilename" class="form-text">Select an icon to replace the current icon.</div>
+            <div id="serviceIconPreview" class="mt-2">
 
             @if($service->icon)
-                <img src="{{ asset('uploads/service-icons/'.$service->icon) }}" width="80" class="mt-2">
+                <img src="{{ asset('uploads/service-icons/'.$service->icon) }}" alt="Current service icon" style="max-width: 80px; max-height: 80px; object-fit: contain;">
             @endif
+            </div>
         </div>
 
         <div class="mb-3">
@@ -63,20 +67,38 @@
 <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    let editorInstance;
+    const bindImagePreview = (inputId, previewId, filenameId) => {
+        const input = document.getElementById(inputId);
+        const preview = document.getElementById(previewId);
+        const filename = document.getElementById(filenameId);
+
+        input.addEventListener('change', function() {
+            const file = this.files && this.files[0];
+            if (!file) return;
+
+            filename.textContent = file.name;
+            const imageUrl = URL.createObjectURL(file);
+            preview.replaceChildren();
+            const image = document.createElement('img');
+            image.src = imageUrl;
+            image.alt = 'Selected image preview: ' + file.name;
+            image.style.cssText = 'max-width: 240px; max-height: 160px; object-fit: contain; border-radius: 5px;';
+            image.addEventListener('load', () => URL.revokeObjectURL(imageUrl), { once: true });
+            preview.appendChild(image);
+        });
+    };
+
+    bindImagePreview('serviceBannerImage', 'serviceBannerPreview', 'serviceBannerFilename');
+    bindImagePreview('serviceIcon', 'serviceIconPreview', 'serviceIconFilename');
 
     ClassicEditor
         .create(document.querySelector('#contentEditor'))
         .then(editor => {
-            editorInstance = editor;
+            document.getElementById('editServiceForm').addEventListener('submit', function() {
+                document.querySelector('#contentEditor').value = editor.getData();
+            });
         })
         .catch(error => console.error(error));
-
-    // Sync CKEditor data before form submit
-    document.querySelector('#blogForm').addEventListener('submit', function(e){
-        const contentTextarea = document.querySelector('#contentEditor');
-        contentTextarea.value = editorInstance.getData(); // set textarea value from editor
-    });
 });
 </script>
 

@@ -1,5 +1,9 @@
 @include('admin.include.header')
 
+@php
+    $kpiVersionPeriod = 'Current month / ' . now()->format('F Y');
+@endphp
+
 <style>
     .kpi-dashboard .kpi-card { height: 100%; border: 1px solid var(--bs-border-color); box-shadow: none; }
     .kpi-dashboard .kpi-icon { display: grid; width: 44px; height: 44px; place-items: center; border-radius: 6px; font-size: 22px; }
@@ -8,13 +12,15 @@
     .kpi-dashboard .section-links { display: flex; flex-wrap: wrap; gap: .5rem; }
     .kpi-dashboard .section-links a { text-decoration: none; }
     .kpi-dashboard .empty-chart { min-height: 270px; display: grid; place-items: center; color: var(--bs-secondary-color); }
+    .kpi-dashboard .kpi-context { font-size: .72rem; line-height: 1.45; }
+    .kpi-dashboard .kpi-context span { display: block; }
 </style>
 
 <div class="page-content kpi-dashboard">
     <div class="page-title-head d-flex flex-wrap align-items-center gap-3">
         <div class="flex-grow-1">
             <h4 class="fs-18 fw-bold mb-1">AESORT KPI Dashboard</h4>
-            <p class="text-muted mb-0">Portfolio overview as of {{ now()->format('M d, Y') }}</p>
+            <p class="text-muted mb-0">Portfolio overview · {{ $kpiVersionPeriod }}</p>
         </div>
         <div class="d-flex flex-wrap gap-2">
             <a href="{{ route('admin.reports') }}" class="btn btn-outline-secondary"><i class="ri-file-chart-line me-1"></i>Reports</a>
@@ -41,19 +47,19 @@
                 <div class="col"><div class="card kpi-card"><div class="card-body d-flex align-items-start justify-content-between gap-3">
                     <div><p class="text-muted small text-uppercase fw-bold mb-2">Customers</p><h3 class="fw-bold mb-0">{{ number_format($totalClients) }}</h3><a class="small" href="{{ route('admin.clients.index') }}">Manage customers</a></div>
                     <span class="kpi-icon bg-primary-subtle text-primary"><i class="ri-user-3-line"></i></span>
-                </div></div></div>
+                </div><div class="card-footer bg-transparent kpi-context"><span><strong>Data updated:</strong> {{ $usersUpdatedAt?->format('M d, Y, h:i A') ?? 'Timestamp unavailable' }}</span><span><strong>Version/period:</strong> {{ $kpiVersionPeriod }}</span></div></div></div>
                 <div class="col"><div class="card kpi-card"><div class="card-body d-flex align-items-start justify-content-between gap-3">
                     <div><p class="text-muted small text-uppercase fw-bold mb-2">Sites</p><h3 class="fw-bold mb-0">{{ number_format($totalSites) }}</h3><a class="small" href="{{ route('admin.sites.index') }}">Manage sites</a></div>
                     <span class="kpi-icon bg-success-subtle text-success"><i class="ri-building-2-line"></i></span>
-                </div></div></div>
+                </div><div class="card-footer bg-transparent kpi-context"><span><strong>Data updated:</strong> {{ $sitesUpdatedAt?->format('M d, Y, h:i A') ?? 'Timestamp unavailable' }}</span><span><strong>Version/period:</strong> {{ $kpiVersionPeriod }}</span></div></div></div>
                 <div class="col"><div class="card kpi-card"><div class="card-body d-flex align-items-start justify-content-between gap-3">
                     <div><p class="text-muted small text-uppercase fw-bold mb-2">Devices</p><h3 class="fw-bold mb-0">{{ number_format($totalDevices) }}</h3><a class="small" href="{{ route('admin.devices.index') }}">Manage devices</a></div>
                     <span class="kpi-icon bg-info-subtle text-info"><i class="ri-cpu-line"></i></span>
-                </div></div></div>
+                </div><div class="card-footer bg-transparent kpi-context"><span><strong>Data updated:</strong> {{ $devicesUpdatedAt?->format('M d, Y, h:i A') ?? 'Timestamp unavailable' }}</span><span><strong>Version/period:</strong> {{ $kpiVersionPeriod }}</span></div></div></div>
                 <div class="col"><div class="card kpi-card"><div class="card-body d-flex align-items-start justify-content-between gap-3">
                     <div><p class="text-muted small text-uppercase fw-bold mb-2">Technicians</p><h3 class="fw-bold mb-0">{{ number_format($totalTechnicians) }}</h3><a class="small" href="{{ route('admin.technicians.index') }}">Manage technicians</a></div>
                     <span class="kpi-icon bg-warning-subtle text-warning"><i class="ri-tools-line"></i></span>
-                </div></div></div>
+                </div><div class="card-footer bg-transparent kpi-context"><span><strong>Data updated:</strong> {{ $usersUpdatedAt?->format('M d, Y, h:i A') ?? 'Timestamp unavailable' }}</span><span><strong>Version/period:</strong> {{ $kpiVersionPeriod }}</span></div></div></div>
             </div>
         </section>
 
@@ -120,13 +126,13 @@
             <div class="row row-cols-1 row-cols-md-3 g-3">
                 <div class="col"><div class="card kpi-card"><div class="card-body">
                     <p class="text-muted small text-uppercase fw-bold mb-2">Active customers</p><h3 class="fw-bold mb-0">{{ number_format($activeClients) }} <span class="text-muted fs-6">/ {{ number_format($totalClients) }}</span></h3>
-                </div></div></div>
+                </div><div class="card-footer bg-transparent kpi-context"><span><strong>Data updated:</strong> {{ $usersUpdatedAt?->format('M d, Y, h:i A') ?? 'Timestamp unavailable' }}</span><span><strong>Version/period:</strong> {{ $kpiVersionPeriod }}</span></div></div></div>
                 <div class="col"><div class="card kpi-card"><div class="card-body">
                     <p class="text-muted small text-uppercase fw-bold mb-2">Active sites</p><h3 class="fw-bold mb-0">{{ number_format($activeSites) }} <span class="text-muted fs-6">/ {{ number_format($totalSites) }}</span></h3>
-                </div></div></div>
+                </div><div class="card-footer bg-transparent kpi-context"><span><strong>Data updated:</strong> {{ $sitesUpdatedAt?->format('M d, Y, h:i A') ?? 'Timestamp unavailable' }}</span><span><strong>Version/period:</strong> {{ $kpiVersionPeriod }}</span></div></div></div>
                 <div class="col"><div class="card kpi-card"><div class="card-body">
                     <p class="text-muted small text-uppercase fw-bold mb-2">Technician coverage</p><h3 class="fw-bold mb-0">{{ number_format($totalTechnicians) }}</h3><a class="small" href="{{ route('admin.technicians.index') }}">View technicians</a>
-                </div></div></div>
+                </div><div class="card-footer bg-transparent kpi-context"><span><strong>Data updated:</strong> {{ $plansUpdatedAt?->format('M d, Y, h:i A') ?? 'Timestamp unavailable' }}</span><span><strong>Version/period:</strong> {{ $kpiVersionPeriod }}</span></div></div></div>
             </div>
         </section>
 
@@ -139,15 +145,15 @@
                 <div class="col"><div class="card kpi-card"><div class="card-body d-flex align-items-start justify-content-between gap-3">
                     <div><p class="text-muted small text-uppercase fw-bold mb-2">Subscription plans</p><h3 class="fw-bold mb-0">{{ number_format($totalSubscriptionPlans) }}</h3><a class="small" href="{{ route('admin.subscription_plans.index') }}">Manage plans</a></div>
                     <span class="kpi-icon bg-primary-subtle text-primary"><i class="ri-price-tag-3-line"></i></span>
-                </div></div></div>
+                </div><div class="card-footer bg-transparent kpi-context"><span><strong>Data updated:</strong> {{ $subscriptionsUpdatedAt?->format('M d, Y, h:i A') ?? 'Timestamp unavailable' }}</span><span><strong>Version/period:</strong> {{ $kpiVersionPeriod }}</span></div></div></div>
                 <div class="col"><div class="card kpi-card"><div class="card-body d-flex align-items-start justify-content-between gap-3">
                     <div><p class="text-muted small text-uppercase fw-bold mb-2">Subscriptions</p><h3 class="fw-bold mb-0">{{ number_format($totalSubscriptions) }}</h3><a class="small" href="{{ route('admin.subscription.index') }}">View subscriptions</a></div>
                     <span class="kpi-icon bg-success-subtle text-success"><i class="ri-file-list-3-line"></i></span>
-                </div></div></div>
+                </div><div class="card-footer bg-transparent kpi-context"><span><strong>Data updated:</strong> {{ $subscriptionsUpdatedAt?->format('M d, Y, h:i A') ?? 'Timestamp unavailable' }}</span><span><strong>Version/period:</strong> {{ $kpiVersionPeriod }}</span></div></div></div>
                 <div class="col"><div class="card kpi-card"><div class="card-body d-flex align-items-start justify-content-between gap-3">
                     <div><p class="text-muted small text-uppercase fw-bold mb-2">Recorded subscription amount</p><h3 class="fw-bold mb-0">{{ number_format($subscriptionValue, 2) }}</h3><span class="text-muted small">Amount field total; not verified revenue</span></div>
                     <span class="kpi-icon bg-info-subtle text-info"><i class="ri-money-dollar-circle-line"></i></span>
-                </div></div></div>
+                </div><div class="card-footer bg-transparent kpi-context"><span><strong>Data updated:</strong> {{ $subscriptionsUpdatedAt?->format('M d, Y, h:i A') ?? 'Timestamp unavailable' }}</span><span><strong>Version/period:</strong> {{ $kpiVersionPeriod }}</span></div></div></div>
             </div>
         </section>
 

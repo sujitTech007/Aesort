@@ -97,6 +97,18 @@ class AdminAuthController extends Controller
             ['name' => 'Devices', 'data' => $monthKeys->map(fn ($month) => $deviceTrend->get($month, 0))->values()],
         ];
 
+        $latestTableUpdate = function ($model) {
+            $timestamp = $model::max('updated_at') ?: $model::max('created_at');
+
+            return $timestamp ? Carbon::parse($timestamp) : null;
+        };
+
+        $usersUpdatedAt = $latestTableUpdate(User::class);
+        $sitesUpdatedAt = $latestTableUpdate(Site::class);
+        $devicesUpdatedAt = $latestTableUpdate(Device::class);
+        $plansUpdatedAt = $latestTableUpdate(SubscriptionPlan::class);
+        $subscriptionsUpdatedAt = $latestTableUpdate(Subscription::class);
+
         return view('admin.kpi-dashboard', compact(
             'totalClients',
             'totalTechnicians',
@@ -110,7 +122,12 @@ class AdminAuthController extends Controller
             'siteTypes',
             'deviceStatuses',
             'trendLabels',
-            'trendSeries'
+            'trendSeries',
+            'usersUpdatedAt',
+            'sitesUpdatedAt',
+            'devicesUpdatedAt',
+            'plansUpdatedAt',
+            'subscriptionsUpdatedAt'
         ));
     }
 

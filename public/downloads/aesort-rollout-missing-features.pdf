@@ -1,0 +1,152 @@
+%PDF-1.4
+%AESORT
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R 9 0 R] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 3937>>
+stream
+BT /F2 18 Tf 46 794 Td (AESORT Rollout Readiness) Tj ET
+BT /F1 8 Tf 46 778 Td (Missing features and pilot risks | September 30, 2026 | Page 1 of 3) Tj ET
+BT /F2 20 Tf 46 750 Td (AESORT Rollout Readiness) Tj ET
+BT /F1 9 Tf 46 725 Td (Missing Features and Pilot Risks | Codebase review | September 30, 2026) Tj ET
+BT /F1 9 Tf 46 711 Td (Scope: current Laravel routes, controllers, models, migrations, and admin/client views. No) Tj ET
+BT /F1 9 Tf 46 697 Td (separate rollout-plan document was present in the workspace; findings are compared against the) Tj ET
+BT /F1 9 Tf 46 683 Td (rollout requirements shared in chat.) Tj ET
+BT /F2 12 Tf 46 665 Td (Executive Summary) Tj ET
+BT /F1 9 Tf 46 639 Td (The project has Laravel account, site, device, and subscription CRUD plus a basic KPI dashboard.) Tj ET
+BT /F1 9 Tf 46 625 Td (It is not yet an evidence-backed energy monitoring and savings verification platform. Meter) Tj ET
+BT /F1 9 Tf 46 611 Td (readings, approved baselines, savings evidence, and several operational governance workflows are) Tj ET
+BT /F1 9 Tf 46 597 Td (absent.) Tj ET
+BT /F1 9 Tf 46 583 Td (Do not present the current sample meter readings or sample report rows as live customer data.) Tj ET
+BT /F1 9 Tf 46 569 Td (Validate Stripe payment server-side before granting a subscription.) Tj ET
+BT /F2 12 Tf 46 551 Td (Highest-Priority Gaps) Tj ET
+BT /F1 9 Tf 46 525 Td (- P0 - Real energy data: the client meter screen displays fixed sample values \(230 V, 5.2,) Tj ET
+BT /F1 9 Tf 46 511 Td (- 1.5 kW, 12.5 kWh, 12 devices, 8 active, 85% load, $1,240 bill\). ClientController::meters) Tj ET
+BT /F1 9 Tf 46 497 Td (- passes only the user; there is no Meter model or meters/readings table.) Tj ET
+BT /F1 9 Tf 46 483 Td (- P0 - Payment integrity: Stripe checkout trusts posted amount, plan ID, and site ID. The) Tj ET
+BT /F1 9 Tf 46 469 Td (- success route records status=succeeded from session data without retrieving/verifying) Tj ET
+BT /F1 9 Tf 46 455 Td (- the Stripe Checkout Session. Checkout is one-time payment while the public plans say per) Tj ET
+BT /F1 9 Tf 46 441 Td (- month.) Tj ET
+BT /F1 9 Tf 46 427 Td (- P0 - Admin password security: current password is not requested or checked. Form sends) Tj ET
+BT /F1 9 Tf 46 413 Td (- confirm_password while Laravel confirmed validation expects new_password_confirmation.) Tj ET
+BT /F1 9 Tf 46 399 Td (- P1 - Device integrity: device create/update accepts status, last_active, and) Tj ET
+BT /F1 9 Tf 46 385 Td (- installed_at from the browser; update mass-assigns the full request. Telemetry freshness) Tj ET
+BT /F1 9 Tf 46 371 Td (- can be manually overwritten, with no required reason or audit log.) Tj ET
+BT /F1 9 Tf 46 357 Td (- P1 - Savings governance: no baseline, baseline approval,) Tj ET
+BT /F1 9 Tf 46 343 Td (- identified/estimated/implemented/verified savings records, measurement evidence, or) Tj ET
+BT /F1 9 Tf 46 329 Td (- verification workflow.) Tj ET
+BT /F2 12 Tf 46 311 Td (Feature Coverage) Tj ET
+BT /F1 9 Tf 46 285 Td (- Executive KPI dashboard - PARTIAL. It has aggregate counts and charts, but no verified) Tj ET
+BT /F1 9 Tf 46 271 Td (- energy KPIs. Current totals are lifetime counts; trend covers six months; cards say) Tj ET
+BT /F1 9 Tf 46 257 Td (- Current month. Card period can therefore be misread as the metric calculation period.) Tj ET
+BT /F1 9 Tf 46 243 Td (- KPI timestamps - PARTIAL. Latest updated_at/created_at from source tables is shown, not) Tj ET
+BT /F1 9 Tf 46 229 Td (- the timestamp of the latest energy ingestion or data pipeline refresh.) Tj ET
+BT /F1 9 Tf 46 215 Td (- Customer Energy Value - MISSING. No energy usage, cost, carbon, savings, or verified) Tj ET
+BT /F1 9 Tf 46 201 Td (- value model.) Tj ET
+BT /F1 9 Tf 46 187 Td (- Portfolio Benchmarking - MISSING/PARTIAL. Existing site type/area fields are not a) Tj ET
+BT /F1 8 Tf 46 28 Td (AESORT rollout gap review - generated from current repository evidence) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 4022>>
+stream
+BT /F2 18 Tf 46 794 Td (AESORT Rollout Readiness) Tj ET
+BT /F1 8 Tf 46 778 Td (Missing features and pilot risks | September 30, 2026 | Page 2 of 3) Tj ET
+BT /F1 9 Tf 46 750 Td (- versioned benchmark library or normalized performance comparison.) Tj ET
+BT /F1 9 Tf 46 736 Td (- Analytics & Data - PARTIAL. Registration trends and stored device-status grouping exist;) Tj ET
+BT /F1 9 Tf 46 722 Td (- actual meter analytics, completeness rules, alerts, and data lineage do not.) Tj ET
+BT /F1 9 Tf 46 708 Td (- POC/onboarding funnel and customer success - MISSING. No POC stages, milestone owners,) Tj ET
+BT /F1 9 Tf 46 694 Td (- activation criteria, or recommendation/action tracking.) Tj ET
+BT /F1 9 Tf 46 680 Td (- Trust, incidents, integration health - MISSING. No severity/response/closure workflow,) Tj ET
+BT /F1 9 Tf 46 666 Td (- integration registry, ingestion health, or operational run history.) Tj ET
+BT /F1 9 Tf 46 652 Td (- Audit history - MISSING. audit-logs view is empty; there is no audit model/table or) Tj ET
+BT /F1 9 Tf 46 638 Td (- active audit route.) Tj ET
+BT /F1 9 Tf 46 624 Td (- Customer reports - MISSING. Reports & Insights contains a hard-coded example row. No) Tj ET
+BT /F1 9 Tf 46 610 Td (- customer report export/version/delivery history is implemented.) Tj ET
+BT /F1 9 Tf 46 596 Td (- Access roles - MISSING. User accounts rely on numeric role 1/2. No granular AESORT) Tj ET
+BT /F1 9 Tf 46 582 Td (- roles/permissions or admin-role management. User Management view is sample content.) Tj ET
+BT /F2 12 Tf 46 564 Td (Records and Data Quality) Tj ET
+BT /F1 9 Tf 46 538 Td (- Sites - PARTIAL. Current fields include customer, address, city/country, area, type,) Tj ET
+BT /F1 9 Tf 46 524 Td (- timezone, and status. Portfolio, province/state, heating fuel, operating hours,) Tj ET
+BT /F1 9 Tf 46 510 Td (- data-quality readiness, and baseline status are absent.) Tj ET
+BT /F1 9 Tf 46 496 Td (- Devices - PARTIAL. Current fields include site, serial, name/type, firmware,) Tj ET
+BT /F1 9 Tf 46 482 Td (- last_active, status, and installed_at. Asset/equipment link, source unit, expected) Tj ET
+BT /F1 9 Tf 46 468 Td (- interval, ingestion provenance, and reliable freshness are absent.) Tj ET
+BT /F1 9 Tf 46 454 Td (- The live database has no meters, readings, baselines, or admin_audit_logs tables.) Tj ET
+BT /F1 9 Tf 46 440 Td (- Current Site/Device schemas do not include the proposed rollout context fields.) Tj ET
+BT /F2 12 Tf 46 422 Td (Commercial and Billing) Tj ET
+BT /F1 9 Tf 46 396 Td (- Admin plan pricing - RISK. Amount and from/to square-foot bands are directly editable;) Tj ET
+BT /F1 9 Tf 46 382 Td (- validation does not enforce nonnegative prices or valid bands. There is no independent) Tj ET
+BT /F1 9 Tf 46 368 Td (- approval, plan version/history, or archive safeguard; plans can be hard-deleted.) Tj ET
+BT /F1 9 Tf 46 354 Td (- Currency and status - PARTIAL. Stripe hardcodes USD, but subscription records do not) Tj ET
+BT /F1 9 Tf 46 340 Td (- retain an explicit currency code. Payment outcome and subscription term are represented) Tj ET
+BT /F1 9 Tf 46 326 Td (- by one status field, so Paid and Active/Expired are not independently modeled.) Tj ET
+BT /F1 9 Tf 46 312 Td (- Public prices are hard-coded separately in subscription.blade.php and do not derive from) Tj ET
+BT /F1 9 Tf 46 298 Td (- admin plan records. Admin billing route also renders a view that expects subscriptions) Tj ET
+BT /F1 9 Tf 46 284 Td (- without passing that variable.) Tj ET
+BT /F2 12 Tf 46 266 Td (Rollout Sequence) Tj ET
+BT /F1 9 Tf 46 240 Td (1. Replace demo meter values with authenticated, timestamped readings and source/units; build data) Tj ET
+BT /F1 9 Tf 46 226 Td (ingestion and freshness checks.) Tj ET
+BT /F1 9 Tf 46 212 Td (2. Add site/asset context and data completeness controls; define baseline period, method, version,) Tj ET
+BT /F1 9 Tf 46 198 Td (and independent approval.) Tj ET
+BT /F1 8 Tf 46 28 Td (AESORT rollout gap review - generated from current repository evidence) Tj ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 10 0 R >>
+endobj
+10 0 obj
+<< /Length 1656>>
+stream
+BT /F2 18 Tf 46 794 Td (AESORT Rollout Readiness) Tj ET
+BT /F1 8 Tf 46 778 Td (Missing features and pilot risks | September 30, 2026 | Page 3 of 3) Tj ET
+BT /F1 9 Tf 46 750 Td (3. Implement savings states and evidence: identified -> estimated -> implemented -> verified, with) Tj ET
+BT /F1 9 Tf 46 736 Td (owner, dates, assumptions, and audit history.) Tj ET
+BT /F1 9 Tf 46 722 Td (4. Add reasoned audit logs, onboarding/POC stages, recommendations/actions, critical incidents,) Tj ET
+BT /F1 9 Tf 46 708 Td (and integration health workflows.) Tj ET
+BT /F1 9 Tf 46 694 Td (5. Secure checkout using server-side approved plan pricing and verified Stripe webhooks/session) Tj ET
+BT /F1 9 Tf 46 680 Td (status; separate payment status, subscription term, renewal, and currency.) Tj ET
+BT /F1 9 Tf 46 666 Td (6. Add role/permission administration, customer report/export management, versioned benchmark) Tj ET
+BT /F1 9 Tf 46 652 Td (library, and acceptance tests for pilot claims.) Tj ET
+BT /F2 12 Tf 46 634 Td (Verification Notes) Tj ET
+BT /F1 9 Tf 46 608 Td (The route list currently exposes CRUD and basic pages only; no workbench, audit-log,) Tj ET
+BT /F1 9 Tf 46 594 Td (customer-export, or pricing-approval routes were found. Only the subscription-plan migration and) Tj ET
+BT /F1 9 Tf 46 580 Td (an empty pending operational-context migration are present.) Tj ET
+BT /F1 9 Tf 46 566 Td (This is a source-code readiness review, not a penetration test, energy-methodology validation, or) Tj ET
+BT /F1 9 Tf 46 552 Td (production deployment assessment.) Tj ET
+BT /F1 8 Tf 46 28 Td (AESORT rollout gap review - generated from current repository evidence) Tj ET
+endstream
+endobj
+xref
+0 11
+0000000000 65535 f 
+0000000017 00000 n 
+0000000066 00000 n 
+0000000135 00000 n 
+0000000205 00000 n 
+0000000280 00000 n 
+0000000416 00000 n 
+0000004403 00000 n 
+0000004539 00000 n 
+0000008611 00000 n 
+0000008748 00000 n 
+trailer << /Size 11 /Root 1 0 R >>
+startxref
+10455
+%%EOF
