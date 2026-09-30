@@ -14,7 +14,7 @@
 
         <div class="mb-3">
             <label for="serviceBannerImage">Banner image</label>
-            <input type="file" id="serviceBannerImage" name="banner_image" class="form-control" accept="image/jpeg,image/png,image/gif,image,webp/svg+xml">
+            <input type="file" id="serviceBannerImage" name="banner_image" class="form-control" accept="image/jpeg,image/png,image/webp,image/gif,image,svg+xml">
             <div id="serviceBannerFilename" class="form-text">Select an image to replace the current banner.</div>
             <div id="serviceBannerPreview" class="mt-2">
             @if($service->banner_image)
@@ -25,7 +25,7 @@
         
          <div class="mb-3">
             <label for="serviceIcon">Service icon</label>
-            <input type="file" id="serviceIcon" name="icon" class="form-control" accept="image/jpeg,image/png,image/gif,image,webp/svg+xml">
+            <input type="file" id="serviceIcon" name="icon" class="form-control" accept="image/jpeg,image/png,image/webp,image/gif,image/svg+xml">
             <div id="serviceIconFilename" class="form-text">Select an icon to replace the current icon.</div>
             <div id="serviceIconPreview" class="mt-2">
 

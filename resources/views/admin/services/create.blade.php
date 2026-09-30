@@ -13,14 +13,14 @@
 
         <div class="mb-3">
             <label for="serviceBannerImage">Banner image</label>
-            <input type="file" id="serviceBannerImage" name="banner_image" class="form-control" accept="image/jpeg,image/png,image/gif,image/svg+xml,image/webp" required>
+            <input type="file" id="serviceBannerImage" name="banner_image" class="form-control" accept="image/jpeg,image/png,image/webp,image/gif,image/svg+xml,image/" required>
             <div id="serviceBannerFilename" class="form-text">No image selected.</div>
             <div id="serviceBannerPreview" class="mt-2"></div>
         </div>
         
         <div class="mb-3">
             <label for="serviceIcon">Service icon</label>
-            <input type="file" id="serviceIcon" name="icon" class="form-control" accept="image/jpeg,image/png,image/gif,image/svg+xml,image/webp">
+            <input type="file" id="serviceIcon" name="icon" class="form-control" accept="image/jpeg,image/png,image/gif,image/svg+xml,image/webp,image/" required>
             <div id="serviceIconFilename" class="form-text">No icon selected.</div>
             <div id="serviceIconPreview" class="mt-2"></div>
         </div>
