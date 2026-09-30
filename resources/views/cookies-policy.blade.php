@@ -97,18 +97,24 @@ $currentPage = $currentPage ?? 'privacy.policy';
 
   <h4>Types of Cookies We Use</h4>
 
-  <ul class="ms-4">
+<ul class="ms-4">
 
-    <li><strong>Necessary Cookies:</strong> Required for the website to function properly.</li>
+    <li>
+        <strong>Necessary Cookies:</strong>
+        These cookies are required for essential website functionality, security, session management, and other features necessary for the website to operate properly.
+    </li>
 
-    <li><strong>Performance Cookies:</strong> Help us understand how visitors use our website.</li>
+    <li>
+        <strong>Analytics / Performance Cookies:</strong>
+        Where analytics services are enabled, these cookies help us understand how visitors use the website and measure website performance.
+    </li>
 
-    <li><strong>Functional Cookies:</strong> Remember your preferences and settings.</li>
+    <li>
+        <strong>Functional Cookies:</strong>
+        These cookies support optional website functionality and may remember user preferences or settings.
+    </li>
 
-    <!-- <li><strong>Targeting/Advertising Cookies:</strong> Provide relevant advertisements based on your interests.</li> -->
-
-  </ul>
-
+</ul>
 
 
   <h4>Managing Cookies</h4>

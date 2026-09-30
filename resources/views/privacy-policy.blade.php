@@ -79,54 +79,54 @@ $currentPage = $currentPage ?? 'privacy.policy';
             </p>
 
 
-<h4>Information We Collect</h4>
+            <h4>Information We Collect</h4>
 
-<p>We collect the following categories of information:</p>
+            <p>We collect the following categories of information:</p>
 
-<h6>Website Visitor & Technical Information</h6>
+            <h6>Website Visitor & Technical Information</h6>
 
-<ul class="ms-4">
-    <li>IP address, browser type, device type</li>
-    <li>Log data</li>
-    <li>Web analytics</li>
-</ul>
+            <ul class="ms-4">
+                <li>IP address, browser type, device type</li>
+                <li>Log data</li>
+                <li>Web analytics</li>
+            </ul>
 
-<h6>Account & Business Information</h6>
+            <h6>Account & Business Information</h6>
 
-<ul class="ms-4">
-    <li>Name, email address, phone number</li>
-    <li>Company name, role, and business contact details</li>
-    <li>Account identifiers and authentication-related information, such as login email address, account ID, and authentication metadata</li>
-</ul>
+            <ul class="ms-4">
+                <li>Name, email address, phone number</li>
+                <li>Company name, role, and business contact details</li>
+                <li>Account identifiers and authentication-related information, such as login email address, account ID, and authentication metadata</li>
+            </ul>
 
-<h6>Building, Energy & Operational Data</h6>
+            <h6>Building, Energy & Operational Data</h6>
 
-<p class="mb-2">
-    Collected through connected devices, available systems, or manual input:
-</p>
+            <p class="mb-2">
+                Collected through connected devices, available systems, or manual input:
+            </p>
 
-<ul class="ms-4">
-    <li>Energy consumption and utility usage</li>
-    <li>Device and equipment performance</li>
-    <li>Environmental factors such as temperature and humidity</li>
-    <li>Operational information related to energy management</li>
-</ul>
+            <ul class="ms-4">
+                <li>Energy consumption and utility usage</li>
+                <li>Device and equipment performance</li>
+                <li>Environmental factors such as temperature and humidity</li>
+                <li>Operational information related to energy management</li>
+            </ul>
 
-<h6>IoT & Device Data</h6>
+            <h6>IoT & Device Data</h6>
 
-<ul class="ms-4">
-    <li>Data collected from IoT sensors, clamps, smart switches, and other connected devices</li>
-    <li>Device status and performance information</li>
-</ul>
+            <ul class="ms-4">
+                <li>Data collected from IoT sensors, clamps, smart switches, and other connected devices</li>
+                <li>Device status and performance information</li>
+            </ul>
 
-<h6>Billing Information</h6>
+            <h6>Billing Information</h6>
 
-<p>
-    If billing or payment services are enabled, Aesort may collect or
-    receive billing-related information necessary to process subscriptions,
-    invoices, or payments. Payment details may be processed directly by
-    authorized third-party payment providers rather than stored by Aesort.
-</p>
+            <p>
+                If billing or payment services are enabled, Aesort may collect or
+                receive billing-related information necessary to process subscriptions,
+                invoices, or payments. Payment details may be processed directly by
+                authorized third-party payment providers rather than stored by Aesort.
+            </p>
 
 
             <h4>Data Sharing</h4>
@@ -180,41 +180,41 @@ $currentPage = $currentPage ?? 'privacy.policy';
                 where appropriate.
             </p>
 
-           <h4>Data Retention</h4>
+            <h4>Data Retention</h4>
 
-<p>
-    Aesort retains personal information and service-related data only for
-    as long as reasonably necessary to provide the Services, maintain
-    business and operational records, meet contractual requirements,
-    resolve disputes, maintain security, and comply with applicable legal
-    and regulatory obligations.
-</p>
+            <p>
+                Aesort retains personal information and service-related data only for
+                as long as reasonably necessary to provide the Services, maintain
+                business and operational records, meet contractual requirements,
+                resolve disputes, maintain security, and comply with applicable legal
+                and regulatory obligations.
+            </p>
 
-<ul class="ms-4">
-    <li>
-        Account information is retained while the account or customer
-        relationship remains active and for a reasonable period afterward
-        where required for legitimate business or legal purposes.
-    </li>
+            <ul class="ms-4">
+                <li>
+                    Account information is retained while the account or customer
+                    relationship remains active and for a reasonable period afterward
+                    where required for legitimate business or legal purposes.
+                </li>
 
-    <li>
-        Energy and operational data may be retained to support historical
-        reporting, analytics, benchmarking, and ongoing service requirements,
-        subject to applicable agreements and legal obligations.
-    </li>
+                <li>
+                    Energy and operational data may be retained to support historical
+                    reporting, analytics, benchmarking, and ongoing service requirements,
+                    subject to applicable agreements and legal obligations.
+                </li>
 
-    <li>
-        Billing and transaction records are retained for the period required
-        by applicable tax, accounting, and other legal requirements.
-    </li>
-</ul>
+                <li>
+                    Billing and transaction records are retained for the period required
+                    by applicable tax, accounting, and other legal requirements.
+                </li>
+            </ul>
 
-<p>
-    When information is no longer required for these purposes, Aesort will
-    take reasonable steps to securely delete, destroy, or de-identify it,
-    subject to applicable legal, contractual, backup, and technical
-    requirements.
-</p>
+            <p>
+                When information is no longer required for these purposes, Aesort will
+                take reasonable steps to securely delete, destroy, or de-identify it,
+                subject to applicable legal, contractual, backup, and technical
+                requirements.
+            </p>
             <h4>Data Security</h4>
 
             <p class="mb-2">We use industry-standard security measures to protect your data, including:</p>
@@ -304,40 +304,40 @@ $currentPage = $currentPage ?? 'privacy.policy';
 
             <h4>International Data Transfers</h4>
 
-            <p>
-                Aesort may use third-party service providers and cloud infrastructure
-                located in Canada, the United States, or other jurisdictions to host,
-                process, store, or support the Services. As a result, information may
-                be transferred to or accessed from jurisdictions outside the location
-                where it was originally collected.
-            </p>
+<p>
+    Aesort may use third-party service providers and cloud infrastructure
+    located in Canada, the United States, or other jurisdictions to host,
+    process, store, or support the Services. As a result, personal information
+    may be transferred to, stored in, or accessed from jurisdictions outside
+    the location where it was originally collected.
+</p>
 
-            <p>
-                These providers may support services such as cloud hosting, payment
-                processing, analytics, platform infrastructure, and other functions
-                required to operate the Aesort platform.
-            </p>
+<p>
+    These providers may support services such as cloud hosting, payment
+    processing, analytics, platform infrastructure, communications, and other
+    functions required to operate and support the Aesort platform.
+</p>
 
-            <p>
-                Aesort takes reasonable measures to protect information during
-                cross-border processing and requires applicable service providers to
-                handle information in accordance with their contractual obligations
-                and applicable privacy requirements.
-            </p>
+<p>
+    Aesort takes reasonable measures to protect personal information during
+    cross-border processing and requires applicable service providers to
+    handle information in accordance with their contractual obligations,
+    confidentiality requirements, and applicable privacy requirements.
+</p>
 
-            <p>
-                Where required by applicable law, Aesort will use appropriate safeguards
-                for the transfer, storage, and processing of personal information across
-                jurisdictions.
-            </p>
+<p>
+    Where required by applicable law, Aesort will use appropriate safeguards
+    for the transfer, storage, and processing of personal information across
+    jurisdictions.
+</p>
 
             <h4>Changes to this Privacy Policy</h4>
 
-          <p>
-    Updates will be posted on aesort.ca with the revised effective date.
-    Where required, aesort.ca will provide additional notice or obtain consent
-    for material changes in accordance with applicable requirements.
-</p>
+            <p>
+                Updates will be posted on aesort.ca with the revised effective date.
+                Where required, aesort.ca will provide additional notice or obtain consent
+                for material changes in accordance with applicable requirements.
+            </p>
 
 
 
