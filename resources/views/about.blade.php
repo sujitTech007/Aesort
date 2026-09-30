@@ -438,7 +438,7 @@
                             <!-- CTA Image Start -->
                             <div class="cta-image">
                                 <figure class="image-anime">
-                                    <img src="assets/images/cta-image.jpg" alt="">
+                                    <img src="assets/images/img-05.jpg" alt="">
                                 </figure>
                             </div>
                             <!-- CTA Image End -->
