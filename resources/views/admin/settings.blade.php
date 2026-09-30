@@ -11,7 +11,7 @@
             <!-- Update Profile -->
             <div class="col-md-6 mb-4">
                 <div class="card shadow-sm border-0">
-                    <div class="card-header bg-primary text-white">
+                    <div class="card-header text-white" style="background-color: #163300;">
                         <h5 class="mb-0">Update Profile</h5>
                     </div>
                     <div class="card-body">
@@ -47,7 +47,7 @@
             <!-- Update Password -->
             <div class="col-md-6 mb-4">
                 <div class="card shadow-sm border-0">
-                    <div class="card-header bg-secondary text-white">
+                    <div class="card-header text-white" style="background-color: #163300;">
                         <h5 class="mb-0">Change Password</h5>
                     </div>
                     <div class="card-body">
@@ -79,7 +79,7 @@
     <div class="col-lg-6">
         <div class="card shadow-sm border-0">
 
-            <div class="card-header bg-success text-white">
+            <div class="card-header text-white" style="background-color: #163300;">
                 <h6 class="mb-0">Security</h6>
             </div>
 

@@ -244,6 +244,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 </script>
+
 @endpush
 
 @include('admin.include.footer')
