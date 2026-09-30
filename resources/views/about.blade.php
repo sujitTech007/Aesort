@@ -46,7 +46,7 @@
                     <div class="about-img-2">
                         <figure class="reveal image-anime"
                             style="transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
-                            <img src="assets/images/about-2.jpg" alt="" style="transform: translate(0px, 0px);">
+                            <img src="assets/images/img-02.jpg" alt="" style="transform: translate(0px, 0px);">
                         </figure>
                     </div>
                 </div>

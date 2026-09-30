@@ -31,13 +31,15 @@ class PagesController extends Controller
 
 
 
-    public function home()
+   public function home()
+{
+    $services = Service::get();
 
-    {
-
-        return $this->view('index', ['currentPage' => 'home']);
-
-    }
+    return $this->view('index', [
+        'currentPage' => 'home',
+        'services' => $services
+    ]);
+}
 
 
 

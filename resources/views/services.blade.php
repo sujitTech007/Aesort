@@ -39,12 +39,12 @@
 
                         <div class="service-image">
                             <figure>
-                                <img src="{{ asset('uploads/service-images/' . $service->banner_image) }}" alt="">
+                                <img src="{{ asset('uploads/service-images/' . $service->banner_image) }}" alt="{{ $service->title }}">
                             </figure>
 
-                            <div class="service-icon">
+                            <!-- <div class="service-icon">
                                 <img src="{{ asset('uploads/service-icons/' . $service->icon) }}" alt="">
-                            </div>
+                            </div> -->
                         </div>
 
                         <div class="service-content">

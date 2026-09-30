@@ -1355,7 +1355,7 @@ header.main-header .header-sticky.active {
 
 	position: relative;
 
-	background: url(../images/hero-banner.webp) no-repeat top center;
+	background: url(../images/hero-banner.png) no-repeat top center;
 
 	background-size: cover;
 
@@ -2759,7 +2759,7 @@ header.main-header .header-sticky.active {
 
 .service-item .service-content h3 {
 
-	font-size: 22px;
+	font-size: 20px;
 
 }
 

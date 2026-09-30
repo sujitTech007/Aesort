@@ -129,90 +129,26 @@
                     <div class="swiper">
                         <div class="swiper-wrapper">
                             <!-- Service Slide Start -->
+                             @foreach($services as $service)
                             <div class="swiper-slide">
                                 <div class="service-item">
+                                    <a href="{{ route('service.detail', $service->slug) }}" class="service-box-link"></a>
                                     <div class="service-image">
                                         <figure>
-                                            <img src="assets/images/service-1.jpg" alt="">
-                                        </figure>
-
-                                        <div class="service-icon">
-                                            <img src="assets/images/icon-service-1.svg" alt="">
-                                        </div>
+                                            <img src="{{ asset('uploads/service-images/' . $service->banner_image) }}" alt="{{ $service->title }}">
+                                        </figure>                                       
                                     </div>
 
                                     <div class="service-content">
-                                        <h3>Streamlined Oversight</h3>
-                                        <p>Our platform enables commercial users to streamline oversight.</p>
+                                        <h3>{{ $service->title }}</h3>
+                                        <p>{{ Str::limit($service->short_description, 80) }}</p>
                                     </div>
                                 </div>
                             </div>
                             <!-- Service Slide End -->
+                              @endforeach
 
-                            <!-- Service Slide Start -->
-                            <div class="swiper-slide">
-                                <div class="service-item">
-                                    <div class="service-image">
-                                        <figure>
-                                            <img src="assets/images/service-2.jpg" alt="">
-                                        </figure>
-
-                                        <div class="service-icon">
-                                            <img src="assets/images/icon-service-2.svg" alt="">
-                                        </div>
-                                    </div>
-
-                                    <div class="service-content">
-                                        <h3>Cost Mitigation</h3>
-                                        <p>Identify opportunities to reduce energy costs and improve efficiency.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Service Slide End -->
-
-                            <!-- Service Slide Start -->
-                            <div class="swiper-slide">
-                                <div class="service-item">
-                                    <div class="service-image">
-                                        <figure>
-                                            <img src="assets/images/service-3.jpg" alt="">
-                                        </figure>
-
-                                        <div class="service-icon">
-                                            <img src="assets/images/icon-service-3.svg" alt="">
-                                        </div>
-                                    </div>
-
-                                    <div class="service-content">
-                                        <h3>Energy Efficiency Improvement</h3>
-                                        <p>Our platform provides customized solutions tailored to different sectors
-                                            .</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Service Slide End -->
-
-                            <!-- Service Slide Start -->
-                            <div class="swiper-slide">
-                                <div class="service-item">
-                                    <div class="service-image">
-                                        <figure>
-                                            <img src="assets/images/service-2.jpg" alt="">
-                                        </figure>
-
-                                        <div class="service-icon">
-                                            <img src="assets/images/icon-service-2.svg" alt="">
-                                        </div>
-                                    </div>
-
-                                    <div class="service-content">
-                                        <h3>Effective Management</h3>
-                                        <p>Catch issues like after-hours HVAC, equipment cycling, and baseload drift.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Service Slide End -->
+                            
                         </div>
 
                         <div class="swiper-pagination"></div>
