@@ -3,20 +3,14 @@
 
 
 <div class="page-content">
+ <div class="container">
 
-
-    <div class="page-title-head d-flex align-items-center gap-2">
-        <div class="flex-grow-1">
-            <h4 class="fs-18 fw-bold mb-0 py-2">Sites Management</h4>
-        </div>
-
-
-    </div>
-
-    <div class="page-container">
-
-        <div class="row">
-            <div class="col-12">
+        <!-- Main Row -->
+        <div class="row d-flex justify-content-between">
+            <div class="col-md-3">
+                @include('client/include.sidebar-nav') 
+            </div>
+            <div class="col-9">
                 <div class="card">
                     <div class="card-body">
                         <h4 class="header-title">Basic Data Table</h4>
