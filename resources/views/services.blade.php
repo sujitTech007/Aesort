@@ -39,12 +39,12 @@
 
                         <div class="service-image">
                             <figure>
-                                <img src="{{ asset('uploads/service-images/' . $service->banner_image) }}" alt="">
+                                <img src="{{ asset('uploads/service-images/' . $service->banner_image) }}" alt="{{ $service->title }}">
                             </figure>
 
-                            <div class="service-icon">
+                            <!-- <div class="service-icon">
                                 <img src="{{ asset('uploads/service-icons/' . $service->icon) }}" alt="">
-                            </div>
+                            </div> -->
                         </div>
 
                         <div class="service-content">
@@ -147,7 +147,7 @@
                             <!-- CTA Image Start -->
                             <div class="cta-image">
                                 <figure class="image-anime">
-                                    <img src="assets/images/cta-image.jpg" alt="AESORT energy solutions">
+                                    <img src="assets/images/img-05.jpg" alt="AESORT energy solutions">
                                 </figure>
                             </div>
                             <!-- CTA Image End -->

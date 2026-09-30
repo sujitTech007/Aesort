@@ -115,41 +115,105 @@
 				</div>
 			</div>
 		</div> <!-- FAQ -->
-		<div class="faq-box">
-			<div class="text-center mb-4 mb-lg-5">
-				<div class="service-hero-badge mb-3"> <i class="fa-solid fa-circle-question me-2"></i> FAQs </div>
-				<h2 class="text-anime mb-2"> Frequently Asked Questions </h2>
-				<p class="text-muted mb-0"> Learn more about how AESORT approaches energy monitoring, analysis, and energy-management decisions. </p>
-			</div> <!-- FAQ Accordion Start -->
-			<div class="faq-accordion">
-				<div class="accordion" id="faq_accordion"> <!-- FAQ 1 -->
-					<div class="accordion-item">
-						<h2 class="accordion-header" id="heading1"> <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1"> <span class="faq-number">01</span> What information does AESORT use? </button> </h2>
-						<div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#faq_accordion">
-							<div class="accordion-body"> Depending on the engagement, AESORT may use energy consumption, utility, equipment, operational, environmental, and other relevant site data that is available. </div>
-						</div>
-					</div> <!-- FAQ 2 -->
-					<div class="accordion-item">
-						<h2 class="accordion-header" id="heading2"> <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2"> <span class="faq-number">02</span> Does AESORT require IoT devices? </button> </h2>
-						<div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#faq_accordion">
-							<div class="accordion-body"> Not necessarily. The available approach depends on the customer's site, systems, objectives, and data sources. Data may come from connected devices, existing systems, utility information, or manual inputs where applicable. </div>
-						</div>
-					</div> <!-- FAQ 3 -->
-					<div class="accordion-item">
-						<h2 class="accordion-header" id="heading3"> <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3"> <span class="faq-number">03</span> What does AESORT provide after analysis? </button> </h2>
-						<div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#faq_accordion">
-							<div class="accordion-body"> Depending on the applicable service, AESORT may provide dashboards, energy performance information, reports, analytics, recommendations, and other agreed deliverables. </div>
-						</div>
-					</div> <!-- FAQ 4 -->
-					<div class="accordion-item">
-						<h2 class="accordion-header" id="heading4"> <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4"> <span class="faq-number">04</span> Can AESORT support a Proof of Concept? </button> </h2>
-						<div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#faq_accordion">
-							<div class="accordion-body"> Yes. AESORT may provide a limited Proof of Concept where appropriate. The scope, duration, equipment, site access, data requirements, and success criteria can be defined in the applicable POC arrangement. </div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		<!-- FAQs Section -->
+
+<div class="latest-news">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Section Title Start -->
+                <div class="section-title">
+                    <h3 class="wow fadeInUp">FAQs</h3>
+                    <h2 class="text-anime">Frequently Asked Questions</h2>
+                </div>
+                <!-- Section Title End -->
+            </div>
+        </div>
+
+        <section class="faq-container">
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    What does AESORT’s energy management platform do?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    AESORT helps businesses monitor, analyze, and optimize their energy
+                    consumption using available energy data, advanced analytics, and
+                    actionable insights. The platform helps identify inefficiencies and
+                    opportunities to improve energy performance.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    How does AESORT identify energy-saving opportunities?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    AESORT analyzes available and historical energy data to identify
+                    consumption patterns, inefficiencies, and unusual usage. The platform
+                    then provides insights and recommendations to help businesses make
+                    informed energy-management decisions.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    What utilities can AESORT monitor?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    AESORT provides a holistic view of resource consumption, including
+                    electricity, gas, and water. This gives businesses greater visibility
+                    into their overall resource usage and efficiency.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Is AESORT suitable for different types of commercial businesses?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    Yes. AESORT is designed to support a range of commercial sectors,
+                    including hospitality, retail, offices, educational institutions,
+                    recreational facilities, and warehouses. Solutions can be adapted to
+                    the specific requirements of each business.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Can AESORT integrate with existing building systems?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    Yes. AESORT is designed to integrate with existing infrastructure,
+                    including building management systems, energy management systems,
+                    IoT devices, and other compatible technologies.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    What insights can businesses access through AESORT?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    Businesses can access energy usage data, historical usage patterns,
+                    reporting and analytics, and actionable recommendations. These insights
+                    help teams understand performance, identify areas for improvement, and
+                    make more informed energy decisions.
+                </div>
+            </div>
+
+        </section>
+
+
+    </div>
+</div>
+
 	</div>
 </div> <!-- How It Works Page End --> <!-- Footer Ticker -->
 <div class="footer-ticker">
@@ -159,4 +223,32 @@
 			<div class="scrolling-content"> <span>Understand Your Energy</span> <span>Monitor Building Performance</span> <span>Turn Data Into Insights</span> <span>Identify Energy Opportunities</span> <span>Make Smarter Energy Decisions</span> </div>
 		</div>
 	</div>
-</div> @include('include.footer')
+</div> 
+<script>
+    const faqs = document.querySelectorAll(".faq-item");
+
+    faqs.forEach((faq) => {
+        faq.querySelector(".faq-question").addEventListener("click", () => {
+            faqs.forEach((item) => {
+                if (item !== faq) item.classList.remove("active");
+            });
+            faq.classList.toggle("active");
+        });
+    });
+</script>
+
+<script>
+    const phoneInput = document.querySelector('[name="phone"]');
+
+    phoneInput.addEventListener('input', function() {
+
+        this.value = this.value.replace(/\D/g, '');
+
+        if (this.value.length > 12) {
+            this.value = this.value.slice(0, 12);
+        }
+    });
+</script>
+
+
+@include('include.footer')
