@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Service;
 use Illuminate\Http\Request;
-use Str;
+use Illuminate\Support\Str;
 
 
 class AdminServiceController extends Controller
@@ -51,7 +51,7 @@ class AdminServiceController extends Controller
             'short_description' => 'required|string',
             'description' => 'required|string',
             'banner_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'icon' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
+            'icon' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'status' => 'required',
         ]);
 
@@ -61,22 +61,37 @@ class AdminServiceController extends Controller
         $service->short_description = $request->short_description;
         $service->description = $request->description;
         $service->status = $request->status;
+
+        $previousBannerImage = $service->banner_image;
+        $previousIcon = $service->icon;
+
         if ($request->hasFile('banner_image')) {
-            $imageName = time().'.'.$request->banner_image->extension();
-            $request->banner_image->move(public_path('uploads/service-images'), $imageName);
+            $imageName = Str::uuid() . '.' . $request->file('banner_image')->extension();
+            $request->file('banner_image')->move(public_path('uploads/service-images'), $imageName);
             $service->banner_image = $imageName;
         }
-        
-            if ($request->hasFile('icon')) {
-        if ($service->icon && file_exists(public_path('uploads/service-icons/'.$service->icon))) {
-            unlink(public_path('uploads/service-icons/'.$service->icon));
+
+        if ($request->hasFile('icon')) {
+            $iconName = Str::uuid() . '_icon.' . $request->file('icon')->extension();
+            $request->file('icon')->move(public_path('uploads/service-icons'), $iconName);
+            $service->icon = $iconName;
         }
 
-        $iconName = time().'_icon.'.$request->icon->extension();
-        $request->icon->move(public_path('uploads/service-icons'), $iconName);
-        $service->icon = $iconName;
-        }
         $service->save();
+
+        if ($request->hasFile('banner_image') && $previousBannerImage) {
+            $oldBannerPath = public_path('uploads/service-images/' . $previousBannerImage);
+            if (is_file($oldBannerPath)) {
+                unlink($oldBannerPath);
+            }
+        }
+
+        if ($request->hasFile('icon') && $previousIcon) {
+            $oldIconPath = public_path('uploads/service-icons/' . $previousIcon);
+            if (is_file($oldIconPath)) {
+                unlink($oldIconPath);
+            }
+        }
 
         return redirect()->route('admin.services.index')->with('success', 'Service updated successfully.');
     }
@@ -100,8 +115,8 @@ class AdminServiceController extends Controller
             'title' => 'required|string|max:255',
             'short_description' => 'required|string',
             'description' => 'required|string',
-            'banner_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
-            'icon' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
+            'banner_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'icon' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'status' => 'required',
         ]);
 
@@ -113,13 +128,13 @@ class AdminServiceController extends Controller
         $service->status = $request->status;
 
         if ($request->hasFile('banner_image')) {
-            $imageName = time().'.'.$request->banner_image->extension();
-            $request->banner_image->move(public_path('uploads/service-images'), $imageName);
+            $imageName = Str::uuid() . '.' . $request->file('banner_image')->extension();
+            $request->file('banner_image')->move(public_path('uploads/service-images'), $imageName);
             $service->banner_image = $imageName;
         }
         if ($request->hasFile('icon')) {
-            $iconName = time().'_icon.'.$request->icon->extension();
-            $request->icon->move(public_path('uploads/service-icons'), $iconName);
+            $iconName = Str::uuid() . '_icon.' . $request->file('icon')->extension();
+            $request->file('icon')->move(public_path('uploads/service-icons'), $iconName);
             $service->icon = $iconName;
         }
 

@@ -12,13 +12,17 @@
         @csrf
 
         <div class="mb-3">
-            <label>Image</label>
-            <input type="file" name="banner_image" class="form-control" required>
+            <label for="serviceBannerImage">Banner image</label>
+            <input type="file" id="serviceBannerImage" name="banner_image" class="form-control" accept="image/jpeg,image/png,image/gif,image/svg+xml" required>
+            <div id="serviceBannerFilename" class="form-text">No image selected.</div>
+            <div id="serviceBannerPreview" class="mt-2"></div>
         </div>
         
         <div class="mb-3">
-            <label>Icon</label>
-            <input type="file" name="icon" class="form-control">
+            <label for="serviceIcon">Service icon</label>
+            <input type="file" id="serviceIcon" name="icon" class="form-control" accept="image/jpeg,image/png,image/gif,image/svg+xml">
+            <div id="serviceIconFilename" class="form-text">No icon selected.</div>
+            <div id="serviceIconPreview" class="mt-2"></div>
         </div>
 
         <div class="mb-3">
@@ -54,6 +58,30 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     let editorInstance;
+
+    const bindImagePreview = (inputId, previewId, filenameId, maxWidth, maxHeight) => {
+        const input = document.getElementById(inputId);
+        const preview = document.getElementById(previewId);
+        const filename = document.getElementById(filenameId);
+
+        input.addEventListener('change', function() {
+            const file = this.files && this.files[0];
+            if (!file) return;
+
+            filename.textContent = file.name;
+            const imageUrl = URL.createObjectURL(file);
+            preview.replaceChildren();
+            const image = document.createElement('img');
+            image.src = imageUrl;
+            image.alt = 'Selected image preview: ' + file.name;
+            image.style.cssText = `max-width: ${maxWidth}px; max-height: ${maxHeight}px; object-fit: contain; border-radius: 5px;`;
+            image.addEventListener('load', () => URL.revokeObjectURL(imageUrl), { once: true });
+            preview.appendChild(image);
+        });
+    };
+
+    bindImagePreview('serviceBannerImage', 'serviceBannerPreview', 'serviceBannerFilename', 240, 160);
+    bindImagePreview('serviceIcon', 'serviceIconPreview', 'serviceIconFilename', 80, 80);
 
     ClassicEditor
         .create(document.querySelector('#contentEditor'))
