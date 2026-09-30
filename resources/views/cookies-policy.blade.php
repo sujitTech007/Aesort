@@ -117,10 +117,21 @@ $currentPage = $currentPage ?? 'privacy.policy';
 </ul>
 
 
-  <h4>Managing Cookies</h4>
+ <h4>Managing Cookies</h4>
 
-  <p>You can choose to accept or decline cookies via our cookie consent popup. You can also manage or delete cookies through your browser settings. Please note that blocking some cookies may affect website functionality.</p>
+<p>
+    Necessary cookies may be used when required for the website to function
+    properly. Non-essential cookies, including analytics, performance, or
+    functional cookies where applicable, will not be placed or activated
+    before you provide the required consent.
+</p>
 
+<p>
+    You may accept or decline non-essential cookies through the cookie
+    consent mechanism provided on the website. You can also change or
+    withdraw your cookie preferences where the applicable controls are
+    available.
+</p>
 
 
   <h4>Third-Party Cookies</h4>
