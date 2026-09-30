@@ -29,6 +29,7 @@ use App\Http\Controllers\Admin\SubscriptionPlanController;
 use App\Http\Controllers\Admin\AdminSiteController;
 use App\Http\Controllers\Client\ClientController;
 use App\Http\Controllers\Client\ClientSiteController;
+use App\Http\Controllers\SupportTicketController;
 
 
 Route::get('/', [PagesController::class, 'home'])->name('home');
@@ -122,10 +123,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
 		// Route::get('/devices', [AdminPagesController::class, 'devices'])->name('devices');
 		Route::get('/subscription/index', [AdminPagesController::class, 'subscriptionPurchase'])->name('subscription.index');
 		Route::get('/reports', [AdminPagesController::class, 'reports'])->name('reports');
+		Route::get('/energy-savings', [AdminPagesController::class, 'energySavingsEvidence'])->name('energy.savings');
 		Route::get('/notifications', [AdminPagesController::class, 'notifications'])->name('notifications');
 		Route::get('/billing', [AdminPagesController::class, 'billing'])->name('billing');
 		Route::get('/users', [AdminPagesController::class, 'users'])->name('users');
-		Route::get('/support', [AdminPagesController::class, 'support'])->name('support');
+		Route::get('/support', [SupportTicketController::class, 'index'])->name('support');
+		Route::post('/support', [SupportTicketController::class, 'store'])->name('support.store');
 		Route::get('/settings', [AdminPagesController::class, 'settings'])->name('settings');
 		Route::get('/profile', [AdminPagesController::class, 'profile'])->name('profile');
 		Route::post('/profile', [AdminPagesController::class, 'updateProfile'])->name('profile.update');
@@ -150,6 +153,7 @@ Route::middleware('auth')->group(function () {
 
 
 	 Route::get('/meters', [ClientController::class, 'meters'])->name('client.meter');
+	 Route::get('/energy-readings', [ClientController::class, 'energyReadings'])->name('client.energy-readings');
 	 Route::get('/view-logs', [ClientController::class, 'viewLogs'])->name('client.view.logs');
 	 Route::get('/view-devices', [ClientController::class, 'viewDevices'])->name('client.view.devices');
 	 Route::get('/view-spaces', [ClientController::class, 'viewSpaces'])->name('client.view.spaces');
@@ -160,6 +164,8 @@ Route::middleware('auth')->group(function () {
 	Route::get('/subscriptions', [ClientController::class, 'subscriptions'])->name('client.subscription');
 	Route::get('/invoices', [ClientController::class, 'invoices'])->name('client.invoices');
 	Route::get('/invoices/{id}', [ClientController::class, 'invoiceDetail'])->name('client.invoices.detail');
+	Route::get('/notifications', [\App\Http\Controllers\Client\NotificationController::class, 'index'])->name('client.notifications');
+	Route::post('/notifications/{id}/read', [\App\Http\Controllers\Client\NotificationController::class, 'markAsRead'])->name('client.notifications.read');
 	Route::get('/support', [ClientController::class, 'support'])->name('client.support');
 	Route::post('/support', [ClientController::class, 'submitSupport'])->name('client.support.submit');
 

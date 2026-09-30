@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Device;
+use App\Models\DeviceReading;
+use App\Models\Site;
 use App\Models\Subscription;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -65,6 +68,28 @@ class PagesController extends Controller
     public function reports()
     {
         return view('admin.reports-and-insights');
+    }
+
+    public function energySavingsEvidence()
+    {
+        $totalSites = Site::count();
+        $totalDevices = Device::count();
+        $totalReadings = DeviceReading::count();
+        $latestReading = DeviceReading::query()->orderByDesc('reading_time')->first();
+
+        $avgVoltage = DeviceReading::query()->whereNotNull('voltage')->avg('voltage');
+        $avgPower = DeviceReading::query()->whereNotNull('power')->avg('power');
+        $avgEnergy = DeviceReading::query()->whereNotNull('energy')->avg('energy');
+
+        return view('admin.energy-savings-evidence', compact(
+            'totalSites',
+            'totalDevices',
+            'totalReadings',
+            'latestReading',
+            'avgVoltage',
+            'avgPower',
+            'avgEnergy'
+        ));
     }
 
     public function notifications()

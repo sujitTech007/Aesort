@@ -29,4 +29,9 @@ public function site()
     return $this->belongsTo(Site::class);
 }
 
+    public function readings()
+    {
+        return $this->hasMany(DeviceReading::class);
+    }
+
 }

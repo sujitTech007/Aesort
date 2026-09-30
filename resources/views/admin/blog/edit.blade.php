@@ -8,7 +8,7 @@
         </div>
     </div>
 
-    <form method="POST" action="{{ route('admin.blog.update', $blog->id) }}" enctype="multipart/form-data">
+    <form id="blogForm" method="POST" action="{{ route('admin.blog.update', $blog->id) }}" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 

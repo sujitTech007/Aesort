@@ -3,7 +3,8 @@
         <ul class="side-nav">
             <li class="side-nav-title">Navigation</li>
             <li class="side-nav-item"><a href="{{ route('client.profile') }}" class="side-nav-link"><span class="menu-icon"><i class="ri-settings-3-fill"></i></span><span class="menu-text"> Profile </span></a></li>
-            <li class="side-nav-item active"><a href="{{ route('client.meter') }}" class="side-nav-link active"><span class="menu-icon"><i class="ri-dashboard-3-line"></i></span><span class="menu-text"> Analytics Demo </span></a></li>
+            <li class="side-nav-item {{ request()->routeIs('client.meter') ? 'active' : '' }}"><a href="{{ route('client.meter') }}" class="side-nav-link {{ request()->routeIs('client.meter') ? 'active' : '' }}"><span class="menu-icon"><i class="ri-dashboard-3-line"></i></span><span class="menu-text"> Analytics Demo </span></a></li>
+            <li class="side-nav-item {{ request()->routeIs('client.energy-readings') ? 'active' : '' }}"><a href="{{ route('client.energy-readings') }}" class="side-nav-link {{ request()->routeIs('client.energy-readings') ? 'active' : '' }}"><span class="menu-icon"><i class="ri-flashlight-line"></i></span><span class="menu-text"> Energy Readings </span></a></li>
             <li class="side-nav-title">List</li>
             <li class="side-nav-item"><a href="{{ route('client.sites') }}" class="side-nav-link"><span class="menu-icon"><i class="ri-computer-fill"></i></span><span class="menu-text">Sites </span></a></li>
             <li class="side-nav-item"><a href="{{ route('client.devices') }}" class="side-nav-link"><span class="menu-icon"><i class="ri-git-merge-line"></i></span><span class="menu-text"> Devices & Sensors </span></a></li>

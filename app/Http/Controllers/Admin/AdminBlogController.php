@@ -48,7 +48,7 @@ class AdminBlogController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'required|string|max:500',
             'content' => 'required|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
             'status' => 'required',
         ]);
 
@@ -88,7 +88,7 @@ class AdminBlogController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'required|string|max:500',
             'content' => 'required|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp',
             'status' => 'required',
         ]);
 

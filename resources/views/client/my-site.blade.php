@@ -110,41 +110,58 @@
                                                         <!-- <button class="btn btn-delete" data-id="{{ $site->id }}"><i class="ri-delete-bin-line"></i></button> -->
                                                         <!-- <button class="btn bg-success" id="payButton" data-amount="500"><i class="ri-wallet-line" title="Pay"></i> Pay</button> -->
                                                         @php
-                                                      
-                                                        // Make sure area is numeric
                                                             $area = (int) $site->area_sqft;
-                                                        
-                                                            // Get subscription plan based on area
-                                                            $subscription = App\Models\SubscriptionPlan::where('from_sqft', '<=', $area)
-                                                                ->where(function ($q) use ($area) {
-                                                                    $q->where('to_sqft', '>=', $area)
-                                                                      ->orWhereNull('to_sqft'); // covers open-ended ranges
-                                                                })
-                                                                ->first();
-                                                            
-                                                         $subscriptionPayment = App\Models\Subscription::where('site_id', $site->id)->first();
+                                                            $subscription = null;
+                                                            $hasPlanBands = \Illuminate\Support\Facades\Schema::hasColumn('subscription_plans', 'from_sqft')
+                                                                && \Illuminate\Support\Facades\Schema::hasColumn('subscription_plans', 'to_sqft');
 
-                                                            @endphp
-                                                            @if($subscription)
-                                                            
+                                                            if ($hasPlanBands) {
+                                                                $subscription = \App\Models\SubscriptionPlan::query()
+                                                                    ->where('from_sqft', '<=', $area)
+                                                                    ->where(function ($q) use ($area) {
+                                                                        $q->where('to_sqft', '>=', $area)
+                                                                            ->orWhereNull('to_sqft');
+                                                                    })
+                                                                    ->first();
+                                                            }
+
+                                                            if (!$subscription) {
+                                                                if ($area <= 2000) {
+                                                                    $subscription = (object) [
+                                                                        'id' => 0,
+                                                                        'amount' => 399,
+                                                                        'name' => 'Default Standard',
+                                                                    ];
+                                                                } elseif ($area <= 5000) {
+                                                                    $subscription = (object) [
+                                                                        'id' => 0,
+                                                                        'amount' => 599,
+                                                                        'name' => 'Default Standard',
+                                                                    ];
+                                                                }
+                                                            }
+
+                                                            $subscriptionPayment = \App\Models\Subscription::where('site_id', $site->id)->first();
+                                                        @endphp
+                                                        @if($subscription)
                                                             <form method="POST" action="{{ route('stripe.checkout') }}">
                                                                 @csrf
                                                                 <input type="hidden" name="amount" value="{{ $subscription->amount }}">
                                                                 <input type="hidden" name="plan_id" value="{{ $subscription->id }}">
                                                                 <input type="hidden" name="site_id" value="{{ $site->id }}">
-                                                                    @if(@$subscriptionPayment->status == 'succeeded')
+                                                                @if(@$subscriptionPayment->status == 'succeeded')
                                                                     <button type="button" class="btn btn-success">
-                                                                         Payment Successful <i class="ri-checkbox-circle-line"></i>
+                                                                        Payment Successful <i class="ri-checkbox-circle-line"></i>
                                                                     </button>
                                                                 @else
-                                                                <button type="submit" class="btn bg-success">
-                                                                    <i class="ri-wallet-line"> </i> Pay ${{ $subscription->amount }}
-                                                                </button>
+                                                                    <button type="submit" class="btn bg-success">
+                                                                        <i class="ri-wallet-line"> </i> Pay ${{ $subscription->amount }}
+                                                                    </button>
                                                                 @endif
                                                             </form>
-
-                                                            @endif
-
+                                                        @else
+                                                            <span class="text-muted small">No pricing plan configured</span>
+                                                        @endif
                                                     </div>
                                                 </td>
                                             </tr>

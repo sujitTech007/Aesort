@@ -338,7 +338,19 @@
 
                     </li> 
 
-                    <!-- <li class="side-nav-item {{ request()->routeIs('admin.reports') ? 'active' : '' }}">
+                    <li class="side-nav-item {{ request()->routeIs('admin.energy.savings') ? 'active' : '' }}">
+
+                        <a href="{{ route('admin.energy.savings') }}" class="side-nav-link {{ request()->routeIs('admin.energy.savings') ? 'active' : '' }}">
+
+                            <span class="menu-icon"><i class="ri-flashlight-line"></i></span>
+
+                            <span class="menu-text"> Savings Evidence </span>
+
+                        </a>
+
+                    </li>
+
+                    <li class="side-nav-item {{ request()->routeIs('admin.reports') ? 'active' : '' }}">
 
                         <a href="{{ route('admin.reports') }}" class="side-nav-link {{ request()->routeIs('admin.reports') ? 'active' : '' }}">
 

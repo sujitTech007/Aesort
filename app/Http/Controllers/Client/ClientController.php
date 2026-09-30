@@ -8,6 +8,7 @@ use App\Models\Site;
 use App\Models\Subscription;
 use App\Models\Meter;
 use App\Models\Device;
+use App\Models\DeviceReading;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -138,6 +139,27 @@ class ClientController extends Controller
         $user = Auth::user();
 
         return view('client.meter', compact('user'));
+    }
+
+    public function energyReadings(Request $request)
+    {
+        $devices = Device::with('site')
+            ->whereHas('site', fn ($query) => $query->where('user_id', Auth::id()))
+            ->orderBy('name')
+            ->get();
+
+        $readingsQuery = DeviceReading::with('device.site')
+            ->whereIn('device_id', $devices->pluck('id'));
+
+        if ($request->filled('device_id') && $devices->contains('id', (int) $request->query('device_id'))) {
+            $readingsQuery->where('device_id', (int) $request->query('device_id'));
+        }
+
+        $latestReading = (clone $readingsQuery)->orderByDesc('reading_time')->first();
+        $totalReadings = (clone $readingsQuery)->count();
+        $readings = $readingsQuery->orderByDesc('reading_time')->paginate(50)->withQueryString();
+
+        return view('client.energy-readings', compact('devices', 'latestReading', 'totalReadings', 'readings'));
     }
     
     
