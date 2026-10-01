@@ -12,7 +12,7 @@
     <div class="page-container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-4 g-3 mb-4">
             @foreach(['All user accounts' => $totalUsers, 'Customer accounts (role 1)' => $customerCount, 'Service technician accounts (role 2)' => $technicianCount, 'Unmapped roles' => $unmappedRoleCount] as $label => $count)
-                <div class="col"><div class="card h-100"><div class="card-body"><div class="text-muted small">{{ $label }}</div><div class="fs-3 fw-bold mt-2">{{ number_format($count) }}</div></div></div></div>
+                <div class="col-md-3"><div class="card"><div class="card-body p-2"><div class="text-muted small">{{ $label }}</div><div class="fs-2 fw-bold mt-2">{{ number_format($count) }}</div></div></div></div>
             @endforeach
         </div>
 
