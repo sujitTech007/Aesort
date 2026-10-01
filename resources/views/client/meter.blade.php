@@ -10,10 +10,11 @@
 
         <!-- Main Row -->
         <div class="row d-flex justify-content-between">
-            <div class="col-md-3">
+            <div class="py-3"><a href="{{ route('client.profile') }}" class="btn btn-primary fw-bold"> <i class="fa-solid fa-arrow-left me-2"></i> Back to Profile </a></div>
+            {{-- <div class="col-md-3">
                 @include('client/include.sidebar-nav') 
-            </div>
-           <div class="col-md-9">
+            </div> --}}
+           <div class="col-md-12">
                  <div class="page-content-col">
 
                 <!-- Dashboard Header -->

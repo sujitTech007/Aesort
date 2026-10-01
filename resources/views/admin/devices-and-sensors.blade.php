@@ -95,7 +95,7 @@
 
                                     <th>Firmware Version</th>
 
-                                    <th>Last Report / Freshness</th>
+                                    <th width="130" class="text-center">Last Report / Freshness</th>
 
                                     <th>Status</th>
 
@@ -127,13 +127,13 @@
 
                                     <td>{{ $device->type }}</td>
 
-                                    <td>{{ $device->source_unit ?: 'Not set' }}</td>
+                                    <td style="white-space: nowrap;">{{ $device->source_unit ?: 'Not set' }}</td>
 
                                     <td>{{ $device->reading_interval_minutes ? $device->reading_interval_minutes . ' min' : 'Not set' }}</td>
 
                                     <td>{{ $device->firmware_version }}</td>
 
-                                   <td>
+                                   <td class="fs-12">
                                         @if($device->last_active)
                                             {{ $device->last_active->format('d M Y | H:i') }}
                                             @php($staleAfter = $device->reading_interval_minutes ? max($device->reading_interval_minutes * 2, 60) : 1440)
@@ -145,7 +145,7 @@
 
                                     <td>{{ $device->status }}</td>
 
-                                    <td>{{ \Carbon\Carbon::parse($device->installed_at)->format('d M Y | h:i A') }}</td>
+                                    <td class="fs-12" style="white-space: nowrap;">{{ \Carbon\Carbon::parse($device->installed_at)->format('d M Y | h:i A') }}</td>
 
                                     <td class="d-flex gap-1">
 

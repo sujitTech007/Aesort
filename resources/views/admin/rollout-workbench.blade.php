@@ -24,7 +24,7 @@
             <div class="alert alert-info">Freshness is derived from device last-report timestamps and expected intervals; anomaly counts are stored reading flags. Site completeness checks the context fields currently available. No energy values are synthesized.</div>
             <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-3">
                 @foreach($qualityMetrics as $label => $count)
-                    <div class="col"><div class="card h-100"><div class="card-body"><div class="text-muted small">{{ $label }}</div><div class="fs-3 fw-bold mt-2">{{ number_format($count) }}</div></div></div></div>
+                    <div class="col-md-3"><div class="card"><div class="card-body"><div class="text-muted small">{{ $label }}</div><div class="fs-3 fw-bold mt-2">{{ number_format($count) }}</div></div></div></div>
                 @endforeach
             </div>
         </section>

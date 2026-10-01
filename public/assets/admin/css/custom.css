@@ -159,3 +159,8 @@ border: 1px solid #000;
     .createBtn{
         padding: 9px 10px;
     }
+    table.table  tr th,
+    table.table  tr td{
+        padding: 10px 5px;
+        font-size: 13px;
+    }

@@ -13,7 +13,7 @@
     <div class="page-container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-4 g-3">
             @foreach($summary as $label => $count)
-                <div class="col"><div class="card h-100"><div class="card-body"><div class="text-muted small">{{ $label }}</div><div class="fs-3 fw-bold mt-2">{{ number_format($count) }}</div></div></div></div>
+                <div class="col-md-3"><div class="card"><div class="card-body p-2"><div class="text-muted small">{{ $label }}</div><div class="fs-3 fw-bold mt-2">{{ number_format($count) }}</div></div></div></div>
             @endforeach
         </div>
         <div class="alert alert-info mt-4 mb-0">Energy-value, cost-savings, and benchmark performance results are intentionally not calculated from device inventory counts. Use the rollout workbench to enter baselines, evidence and approved benchmark versions.</div>
