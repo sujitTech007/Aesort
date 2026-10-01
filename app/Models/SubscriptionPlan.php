@@ -15,10 +15,16 @@ class SubscriptionPlan extends Model
         'from_sqft',
         'to_sqft',
         'status',
+        'currency_code',
+        'pricing_status',
+        'created_by',
+        'pricing_approved_by',
+        'pricing_approved_at',
     ];
 
      protected $casts = [
         'features' => 'array',
+        'pricing_approved_at' => 'datetime',
     ];
     
 }

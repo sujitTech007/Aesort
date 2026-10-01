@@ -12,6 +12,8 @@
 
     </div>
 
+    <div class="alert alert-warning">This plan is a USD pricing proposal. It cannot be purchased until a different administrator approves it.</div>
+
     <form method="POST" action="{{ route('admin.subscription_plans.store') }}">
         @csrf
 
@@ -21,18 +23,18 @@
         </div>
 
         <div class="mb-3">
-            <label>Amount</label>
+            <label>Proposed amount (USD)</label>
             <input type="number" step="0.01" name="amount" class="form-control" value="{{ old('amount') }}" required>
         </div>
 
         <div class="mb-3">
-            <label>From SQFT</label>
-            <input type="number" name="from_sqft" class="form-control" value="{{ old('from_sqft') }}" required>
+            <label>Minimum eligibility area (sq ft)</label>
+            <input type="number" min="0" name="from_sqft" class="form-control" value="{{ old('from_sqft') }}" required>
         </div>
 
         <div class="mb-3">
-            <label>To SQFT</label>
-            <input type="number" name="to_sqft" class="form-control" value="{{ old('to_sqft') }}" required>
+            <label>Maximum eligibility area (sq ft)</label>
+            <input type="number" min="0" name="to_sqft" class="form-control" value="{{ old('to_sqft') }}" required>
         </div>
 
         <div class="mb-3">

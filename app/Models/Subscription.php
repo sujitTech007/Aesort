@@ -13,6 +13,7 @@ class Subscription extends Model
         'site_id',
         'plan_id',
         'amount',
+        'currency_code',
         'start_date',
         'end_date',
         'status',

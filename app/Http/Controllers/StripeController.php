@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Stripe\Stripe;
-use Stripe\Checkout\Session as StripeSession;
+use App\Models\Site;
 use App\Models\Subscription;
 use App\Models\SubscriptionPlan;
-use App\Models\Site;
-use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Stripe\Checkout\Session as StripeSession;
+use Stripe\Stripe;
+use Stripe\Subscription as StripeSubscription;
 
 class StripeController extends Controller
 {
@@ -18,107 +19,125 @@ class StripeController extends Controller
         return view('stripe');
     }
 
-   public function checkout(Request $request)
-{
-    $amount = $request->amount * 100; // Stripe expects amount in cents
-    $user = Auth::user();
+    public function checkout(Request $request)
+    {
+        $user = Auth::user();
+        abort_unless($user, 401);
 
-    Stripe::setApiKey(env('STRIPE_SECRET'));
-
-    // Store info in Laravel session
-    session([
-        'stripe_plan_id' => $request->plan_id,
-        'stripe_site_id' => $request->site_id,
-        'stripe_amount' => $request->amount,
-    ]);
-
-    $session = StripeSession::create([
-        'payment_method_types' => ['card'],
-        'line_items' => [[
-            'price_data' => [
-                'currency' => 'usd',
-                'product_data' => ['name' => 'Subscription Payment'],
-                'unit_amount' => $amount,
-            ],
-            'quantity' => 1,
-        ]],
-        'mode' => 'payment',
-        'success_url' => url('/stripe/success'),
-        'cancel_url' => url('/stripe/cancel'),
-    ]);
-
-    // Save Stripe session ID in Laravel session (not URL)
-    session(['stripe_session_id' => $session->id]);
-
-    return redirect($session->url);
-}
-
-
-
-   public function success()
-{
-    $user = Auth::user();
-
-    $plan_id = session('stripe_plan_id');
-    $site_id = session('stripe_site_id');
-    $amount = session('stripe_amount');
-    $stripe_session_id = session('stripe_session_id');
-
-    if (!$stripe_session_id) {
-        return redirect()->route('client.sites.index')->with('error','Payment session not found!');
-    }
-
-    $plan = null;
-    if (!empty($plan_id) && $plan_id != 0) {
-        $plan = SubscriptionPlan::find($plan_id);
-    }
-
-    if (!$plan) {
-        $site = Site::find($site_id);
-        $area = (int) ($site->area_sqft ?? 0);
-        $fallbackAmount = (float) ($amount ?: 399);
-
-        $plan = SubscriptionPlan::query()->firstOrCreate(
-            [
-                'name' => $area <= 2000 ? 'Default Up to 2,000 sq ft' : 'Default Up to 5,000 sq ft',
-            ],
-            [
-                'amount' => $fallbackAmount,
-                'features' => [$area <= 2000 ? 'Standard monitoring' : 'Enhanced monitoring'],
-                'from_sqft' => 0,
-                'to_sqft' => $area <= 2000 ? 2000 : 5000,
-            ]
-        );
-        $plan_id = $plan->id;
-        session(['stripe_plan_id' => $plan_id]);
-    }
-
-    $existing = Subscription::where('stripe_subscription_id', $stripe_session_id)->first();
-    if (!$existing) {
-        $now = Carbon::now();
-        Subscription::create([
-            'user_id' => $user->id,
-            'plan_id' => $plan_id,
-            'site_id' => $site_id,
-            'amount' => $amount,
-            'status' => 'succeeded',
-            'start_date' => $now,
-            'end_date' => $now->copy()->addMonth(),
-            'stripe_subscription_id' => $stripe_session_id,
+        $data = $request->validate([
+            'plan_id' => 'required|integer|exists:subscription_plans,id',
+            'site_id' => 'required|integer|exists:sites,id',
         ]);
+
+        $plan = SubscriptionPlan::where('status', 1)
+            ->where('pricing_status', 'approved')
+            ->findOrFail($data['plan_id']);
+        $site = Site::where('user_id', $user->id)->findOrFail($data['site_id']);
+        $area = (int) $site->area_sqft;
+
+        abort_unless(
+            $area >= (int) $plan->from_sqft && ($plan->to_sqft === null || $area <= (int) $plan->to_sqft),
+            422,
+            'This approved plan does not apply to the selected site area.'
+        );
+
+        Stripe::setApiKey(config('services.stripe.secret'));
+        $currency = strtolower($plan->currency_code ?: 'USD');
+        $amountInMinorUnits = (int) round((float) $plan->amount * 100);
+
+        $checkout = StripeSession::create([
+            'payment_method_types' => ['card'],
+            'line_items' => [[
+                'price_data' => [
+                    'currency' => $currency,
+                    'product_data' => ['name' => $plan->name],
+                    'unit_amount' => $amountInMinorUnits,
+                    'recurring' => ['interval' => 'month'],
+                ],
+                'quantity' => 1,
+            ]],
+            'mode' => 'subscription',
+            'metadata' => [
+                'user_id' => (string) $user->id,
+                'site_id' => (string) $site->id,
+                'plan_id' => (string) $plan->id,
+            ],
+            'success_url' => url('/stripe/success?session_id={CHECKOUT_SESSION_ID}'),
+            'cancel_url' => url('/stripe/cancel'),
+        ]);
+
+        session(['stripe_session_id' => $checkout->id]);
+
+        return redirect($checkout->url);
     }
 
-    session()->forget(['stripe_plan_id', 'stripe_site_id', 'stripe_amount', 'stripe_session_id']);
+    public function success(Request $request)
+    {
+        $user = Auth::user();
+        if (!$user) {
+            return redirect()->route('login')->with('error', 'Sign in to confirm your subscription.');
+        }
 
-    return redirect()->route('client.sites.index')->with('success','Payment Successful!');
-}
+        $checkoutId = $request->query('session_id');
+        abort_unless(
+            $checkoutId && hash_equals((string) session('stripe_session_id', ''), (string) $checkoutId),
+            403,
+            'Checkout session does not match this account session.'
+        );
 
-public function cancel()
-{
-    // Optional: clear session
-    session()->forget(['stripe_plan_id', 'stripe_site_id', 'stripe_amount', 'stripe_session_id']);
-    
-    return redirect()->route('client.sites.index')->with('error','Payment Cancelled!');
-}
+        Stripe::setApiKey(config('services.stripe.secret'));
+        $checkout = StripeSession::retrieve($checkoutId);
+        abort_unless(($checkout->payment_status ?? null) === 'paid', 402, 'Stripe has not confirmed payment for this checkout.');
 
+        $metadata = $checkout->metadata ?? null;
+        abort_unless($metadata, 400, 'Stripe checkout metadata is missing.');
+        abort_unless((string) ($metadata->user_id ?? '') === (string) $user->id, 403, 'This checkout does not belong to this user.');
+
+        $site = Site::where('user_id', $user->id)->find((int) ($metadata->site_id ?? 0));
+        abort_unless($site, 404, 'Selected site could not be found for this account.');
+
+        $plan = SubscriptionPlan::where('status', 1)->where('pricing_status', 'approved')->find((int) ($metadata->plan_id ?? 0));
+        abort_unless($plan, 404, 'The approved plan for this checkout is no longer available.');
+        abort_unless($site->area_sqft >= $plan->from_sqft && ($plan->to_sqft === null || $site->area_sqft <= $plan->to_sqft), 422, 'This approved plan does not apply to the selected site area.');
+
+        $amountTotal = (int) ($checkout->amount_total ?? 0);
+        $expectedAmount = (int) round((float) $plan->amount * 100);
+        abort_unless($amountTotal === $expectedAmount, 400, 'Stripe amount does not match the approved plan price.');
+
+        $stripeSubscriptionId = $checkout->subscription;
+        $periodEnd = now()->addMonth();
+
+        if ($stripeSubscriptionId) {
+            $stripeSubscription = StripeSubscription::retrieve($stripeSubscriptionId);
+            if (!empty($stripeSubscription->current_period_end)) {
+                $periodEnd = Carbon::createFromTimestamp($stripeSubscription->current_period_end);
+            }
+        }
+
+        $subscriptionReference = $stripeSubscriptionId ?: $checkoutId;
+        $subscription = Subscription::firstOrNew(['stripe_subscription_id' => $subscriptionReference]);
+        $subscription->fill([
+            'user_id' => $user->id,
+            'plan_id' => $plan->id,
+            'site_id' => $site->id,
+            'amount' => round((float) ($checkout->amount_total ?? 0) / 100, 2),
+            'currency_code' => strtoupper($checkout->currency ?: ($plan->currency_code ?: 'USD')),
+            'status' => 'succeeded',
+            'start_date' => $subscription->exists ? $subscription->start_date ?? now() : now(),
+            'end_date' => $periodEnd,
+            'stripe_subscription_id' => $subscriptionReference,
+        ]);
+        $subscription->save();
+
+        session()->forget('stripe_session_id');
+
+        return redirect()->route('client.sites')->with('success', 'Payment verified and subscription recorded.');
+    }
+
+    public function cancel()
+    {
+        session()->forget('stripe_session_id');
+
+        return redirect()->route('client.sites')->with('error', 'Payment cancelled.');
+    }
 }

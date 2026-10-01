@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Device;
 use App\Models\Site;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
 
@@ -46,13 +48,14 @@ class AdminDeviceController extends Controller
         {
 
             $validator = Validator::make($request->all(), [
-                'site_id' => 'required|integer',
+                'site_id' => 'required|integer|exists:sites,id',
                 'serial_number' => 'required|string|unique:devices',
                 'name' => 'required|string|max:255',
                 'type' => 'required|string|max:255',
+                'asset_name' => 'nullable|string|max:255',
+                'source_unit' => 'nullable|string|max:32',
+                'reading_interval_minutes' => 'nullable|integer|min:1|max:1440',
                 'firmware_version' => 'nullable|string',
-                'last_active' => 'nullable|date',
-                'status' => 'required',
                 'installed_at' => 'nullable|date',
             ]);
 
@@ -67,10 +70,23 @@ class AdminDeviceController extends Controller
                 'serial_number'    => $request->serial_number,
                 'name'             => $request->name,
                 'type'             => $request->type,
+                'asset_name'       => $request->asset_name,
+                'source_unit'      => $request->source_unit,
+                'reading_interval_minutes' => $request->reading_interval_minutes,
                 'firmware_version' => $request->firmware_version,
-                'last_active'      => $request->last_active,
                 'installed_at'     => $request->installed_at,
-                'status'           => $request->status,
+                'status'           => 'unknown',
+            ]);
+
+            DB::table('admin_audit_logs')->insert([
+                'admin_id' => Auth::guard('admin')->id(),
+                'entity_type' => 'device',
+                'entity_id' => $device->id,
+                'event' => 'commissioned',
+                'reason' => 'Device commissioned. Connectivity remains unknown until the device reports.',
+                'after_values' => json_encode($device->only(['site_id', 'serial_number', 'name', 'type', 'asset_name', 'source_unit', 'reading_interval_minutes', 'firmware_version', 'installed_at', 'status'])),
+                'created_at' => now(),
+                'updated_at' => now(),
             ]);
             
 
@@ -94,21 +110,37 @@ class AdminDeviceController extends Controller
         $device = Device::findOrFail($id);
 
         $validator = Validator::make($request->all(), [
-            'site_id' => 'required|integer',
+            'site_id' => 'required|integer|exists:sites,id',
             'serial_number' => 'required|string|unique:devices,serial_number,' . $id,
             'name' => 'required|string|max:255',
             'type' => 'required|string|max:255',
+            'asset_name' => 'nullable|string|max:255',
+            'source_unit' => 'nullable|string|max:32',
+            'reading_interval_minutes' => 'nullable|integer|min:1|max:1440',
             'firmware_version' => 'nullable|string',
-            'last_active' => 'nullable|date',
-            'status' => 'required|string',
-            'installed_at' => 'nullable|date',
+            'change_reason' => 'required|string|min:8|max:1000',
         ]);
 
         if ($validator->fails()) {
             return response()->json(['errors' => $validator->errors()], 422);
         }
 
-        $device->update($request->all());
+        $changes = $request->only(['site_id', 'serial_number', 'name', 'type', 'asset_name', 'source_unit', 'reading_interval_minutes', 'firmware_version']);
+        $before = $device->only(array_keys($changes));
+        $device->update($changes);
+        if ($device->wasChanged()) {
+            DB::table('admin_audit_logs')->insert([
+                'admin_id' => Auth::guard('admin')->id(),
+                'entity_type' => 'device',
+                'entity_id' => $device->id,
+                'event' => 'configuration_updated',
+                'reason' => $request->input('change_reason'),
+                'before_values' => json_encode($before),
+                'after_values' => json_encode($device->only(array_keys($changes))),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+        }
 
         if ($request->expectsJson()) {
             return response()->json(['message' => 'Device updated successfully.', 'device' => $device], 200);
@@ -128,7 +160,19 @@ class AdminDeviceController extends Controller
     public function destroy($id)
     {
         $device = Device::findOrFail($id);
-        $device->delete();
-        return response()->json(['message' => 'Device deleted successfully!']);
+        $before = $device->only(['status']);
+        $device->update(['status' => 'archived']);
+        DB::table('admin_audit_logs')->insert([
+            'admin_id' => Auth::guard('admin')->id(),
+            'entity_type' => 'device',
+            'entity_id' => $device->id,
+            'event' => 'archived',
+            'reason' => 'Device archived to preserve its readings and history.',
+            'before_values' => json_encode($before),
+            'after_values' => json_encode($device->only(['status'])),
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        return response()->json(['message' => 'Device archived successfully.']);
     }
 }

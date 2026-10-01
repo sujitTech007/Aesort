@@ -153,15 +153,11 @@ class AdminAuthController extends Controller
     public function updatePassword(Request $request)
     {
         $request->validate([
-            // 'current_password' => 'required',
+            'current_password' => 'required|current_password:admin',
             'new_password' => 'required|min:6|confirmed',
         ]);
 
         $admin = Auth::guard('admin')->user();
-
-        // if (!Hash::check($request->current_password, $user->password)) {
-        //     return back()->with('error', 'Current password is incorrect.');
-        // }
 
         $admin->password = Hash::make($request->new_password);
         $admin->save();

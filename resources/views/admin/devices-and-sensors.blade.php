@@ -81,15 +81,21 @@
 
                                     <th>Site Name</th>
 
+                                    <th>Asset / Equipment</th>
+
                                     <th>Serial Number</th>
 
                                     <th>Name</th>
 
                                     <th>Type</th>
 
+                                    <th>Source Unit</th>
+
+                                    <th>Reading Interval</th>
+
                                     <th>Firmware Version</th>
 
-                                    <th>Last Active</th>
+                                    <th>Last Report / Freshness</th>
 
                                     <th>Status</th>
 
@@ -111,13 +117,9 @@
 
                                     <td>
 
-                                        @php 
+                                        {{ $device->site->name ?? 'Unassigned site' }}</td>
 
-                                        $siteName = App\Models\Site::where('id', $device->site_id)->first();
-
-                                        @endphp
-
-                                        {{ $siteName->name }}</td>
+                                    <td>{{ $device->asset_name ?: 'Not linked' }}</td>
 
                                     <td>{{ $device->serial_number }}</td>
 
@@ -125,9 +127,21 @@
 
                                     <td>{{ $device->type }}</td>
 
+                                    <td>{{ $device->source_unit ?: 'Not set' }}</td>
+
+                                    <td>{{ $device->reading_interval_minutes ? $device->reading_interval_minutes . ' min' : 'Not set' }}</td>
+
                                     <td>{{ $device->firmware_version }}</td>
 
-                                   <td>{{ \Carbon\Carbon::parse($device->last_active)->format('d M Y | h:i A') }}</td>
+                                   <td>
+                                        @if($device->last_active)
+                                            {{ $device->last_active->format('d M Y | H:i') }}
+                                            @php($staleAfter = $device->reading_interval_minutes ? max($device->reading_interval_minutes * 2, 60) : 1440)
+                                            <span class="badge {{ $device->last_active->lt(now()->subMinutes($staleAfter)) ? 'bg-warning-subtle text-warning' : 'bg-success-subtle text-success' }}">{{ $device->last_active->lt(now()->subMinutes($staleAfter)) ? 'Late report' : 'Recent' }}</span>
+                                        @else
+                                            <span class="badge bg-danger-subtle text-danger">No report</span>
+                                        @endif
+                                    </td>
 
                                     <td>{{ $device->status }}</td>
 
@@ -335,33 +349,28 @@
 
                         <div class="col-md-6">
 
-                            <label for="last_active" class="form-label">Last Active</label>
+                            <label for="asset_name" class="form-label">Asset / Equipment</label>
+                            <input type="text" name="asset_name" class="form-control" placeholder="Equipment monitored">
+                        </div>
 
-                            <input type="datetime-local" name="last_active" class="form-control">
+                        <div class="col-md-6">
+                            <label for="source_unit" class="form-label">Source unit</label>
+                            <input type="text" name="source_unit" class="form-control" placeholder="kWh, V, A, etc.">
+                        </div>
 
-                            <div class="invalid-feedback d-block last_active-error"></div>
+                        <div class="col-md-6">
+                            <label for="reading_interval_minutes" class="form-label">Expected reading interval (minutes)</label>
+                            <input type="number" name="reading_interval_minutes" min="1" max="1440" class="form-control">
+                        </div>
 
+                        <div class="col-md-6">
+                            <label class="form-label">Connectivity status</label>
+                            <input type="text" class="form-control" value="Unknown until the first device report" readonly>
                         </div>
 
                         <div class="col-md-6">
 
-                            <label for="status" class="form-label">Status</label>
-
-                            <select name="status" class="form-select" required>
-
-                                <option value="online" selected>Online</option>
-
-                                <option value="offline">Offline</option>
-
-                            </select>
-
-                            <div class="invalid-feedback d-block status-error"></div>
-
-                        </div>
-
-                        <div class="col-md-6">
-
-                            <label for="installed_at" class="form-label">Installed At</label>
+                            <label for="installed_at" class="form-label">Commissioned At</label>
 
                             <input type="datetime-local" name="installed_at" class="form-control">
 

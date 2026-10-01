@@ -112,33 +112,23 @@
                                                         @php
                                                             $area = (int) $site->area_sqft;
                                                             $subscription = null;
+                                                            $pendingPricing = null;
                                                             $hasPlanBands = \Illuminate\Support\Facades\Schema::hasColumn('subscription_plans', 'from_sqft')
                                                                 && \Illuminate\Support\Facades\Schema::hasColumn('subscription_plans', 'to_sqft');
 
                                                             if ($hasPlanBands) {
-                                                                $subscription = \App\Models\SubscriptionPlan::query()
+                                                                $matchingPlans = \App\Models\SubscriptionPlan::query()
                                                                     ->where('from_sqft', '<=', $area)
                                                                     ->where(function ($q) use ($area) {
                                                                         $q->where('to_sqft', '>=', $area)
                                                                             ->orWhereNull('to_sqft');
                                                                     })
-                                                                    ->first();
-                                                            }
+                                                                    ->where('status', 1)
+                                                                    ->orderBy('amount')
+                                                                    ->get();
 
-                                                            if (!$subscription) {
-                                                                if ($area <= 2000) {
-                                                                    $subscription = (object) [
-                                                                        'id' => 0,
-                                                                        'amount' => 399,
-                                                                        'name' => 'Default Standard',
-                                                                    ];
-                                                                } elseif ($area <= 5000) {
-                                                                    $subscription = (object) [
-                                                                        'id' => 0,
-                                                                        'amount' => 599,
-                                                                        'name' => 'Default Standard',
-                                                                    ];
-                                                                }
+                                                                $subscription = $matchingPlans->firstWhere('pricing_status', 'approved');
+                                                                $pendingPricing = $matchingPlans->firstWhere('pricing_status', 'draft');
                                                             }
 
                                                             $subscriptionPayment = \App\Models\Subscription::where('site_id', $site->id)->first();
@@ -159,6 +149,8 @@
                                                                     </button>
                                                                 @endif
                                                             </form>
+                                                        @elseif($pendingPricing)
+                                                            <span class="text-warning small">Pricing awaiting approval</span>
                                                         @else
                                                             <span class="text-muted small">No pricing plan configured</span>
                                                         @endif
@@ -279,6 +271,16 @@
                             @error('city')<div class="text-danger small">{{ $message }}</div>@enderror
                         </div>
 
+                        <div class="col-md-6 mt-2">
+                            <label for="portfolio_name" class="form-label">Portfolio</label>
+                            <input type="text" name="portfolio_name" class="form-control" id="portfolio_name" value="{{ old('portfolio_name') }}">
+                        </div>
+
+                        <div class="col-md-6 mt-2">
+                            <label for="province" class="form-label">Province / State</label>
+                            <input type="text" name="province" class="form-control" id="province" value="{{ old('province') }}">
+                        </div>
+
                         <!-- Country -->
                         <div class="col-md-6 mt-2">
                             <label for="country" class="form-label">Country</label>
@@ -313,6 +315,16 @@
                             <label for="timezone" class="form-label">Timezone</label>
                             <input type="text" name="timezone" class="form-control" id="timezone" value="{{ old('timezone') }}" required>
                             @error('timezone')<div class="text-danger small">{{ $message }}</div>@enderror
+                        </div>
+
+                        <div class="col-md-6 mt-2">
+                            <label for="heating_fuel" class="form-label">Primary heating fuel</label>
+                            <input type="text" name="heating_fuel" class="form-control" id="heating_fuel" value="{{ old('heating_fuel') }}">
+                        </div>
+
+                        <div class="col-md-6 mt-2">
+                            <label for="operating_hours" class="form-label">Typical operating hours</label>
+                            <input type="text" name="operating_hours" class="form-control" id="operating_hours" value="{{ old('operating_hours') }}" placeholder="Mon-Fri 08:00-18:00">
                         </div>
 
                         <!-- Status -->

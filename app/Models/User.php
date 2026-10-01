@@ -58,6 +58,11 @@ class User extends Authenticatable
         return $this->role === 1 || $this->role === '1';
     }
 
+    public function sites()
+    {
+        return $this->hasMany(Site::class, 'user_id');
+    }
+
     /**
      * Determine if the user is a technician.
      */

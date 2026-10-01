@@ -1,7 +1,7 @@
 @include('admin.include.header')
 
 @php
-    $kpiVersionPeriod = 'Current month / ' . now()->format('F Y');
+    $kpiVersionPeriod = 'All-time snapshot / ' . now()->format('F Y');
 @endphp
 
 <style>
@@ -121,7 +121,6 @@
         <section id="operations-customer-success" class="kpi-section mb-4">
             <div class="d-flex align-items-center justify-content-between mb-3">
                 <h5 class="fw-bold mb-0">Operations &amp; Customer Success</h5>
-                <a href="{{ route('admin.support') }}" class="btn btn-sm btn-outline-secondary"><i class="ri-customer-service-2-line me-1"></i>Support</a>
             </div>
             <div class="row row-cols-1 row-cols-md-3 g-3">
                 <div class="col"><div class="card kpi-card"><div class="card-body">
