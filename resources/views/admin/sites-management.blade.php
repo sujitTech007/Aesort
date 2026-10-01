@@ -134,8 +134,8 @@ $i = ($sites->currentPage() - 1) * $sites->perPage() + 1;
                                                         </td>
                                                         <td>
                                                              <div class="d-flex align-items-center justify-content-center gap-1">
-                                                                <button data-bs-toggle="modal" data-bs-target="#viewSiteModal-{{ $site->id }}" class="btn btn-default btn-icon btn-sm btn-outline-dark btn-view" data-id="{{ $site->id }}"><i class="ri-eye-line"></i></button>
-                                                                <button data-bs-toggle="modal" data-bs-target="#editSiteModal-{{ $site->id }}" class="btn btn-default btn-icon btn-sm btn-outline-dark btn-edit" data-id="{{ $site->id }}"><i class="ri-pencil-line"></i></button>
+                                                                <button data-bs-toggle="modal" data-bs-target="#viewSiteModal-{{ $site->id }}" class="btn btn-default btn-icon  btn-primary btn-view" data-id="{{ $site->id }}">view</button>
+                                                                <button data-bs-toggle="modal" data-bs-target="#editSiteModal-{{ $site->id }}" class="btn btn-default btn-icon  btn-warning btn-edit" data-id="{{ $site->id }}">Edit</button>
                                                                 <!-- <button class="btn btn-default btn-icon btn-sm btn-outline-dark btn-delete" data-id="{{ $site->id }}"><i class="ri-delete-bin-line"></i></button> -->
                                                             </div>
                                                         </td>

@@ -149,9 +149,9 @@
 
                                     <td class="d-flex gap-1">
 
-                                        <button data-bs-toggle="modal" data-bs-target="#viewDeviceModal-{{ $device->id }}" class="btn btn-default btn-icon btn-sm btn-outline-dark btn-view" data-id="{{ $device->id }}"><i class="ri-eye-line"></i></button>
+                                        <button data-bs-toggle="modal" data-bs-target="#viewDeviceModal-{{ $device->id }}" class="btn btn-default btn-icon  btn-primary btn-view" data-id="{{ $device->id }}">view</button>
 
-                                        <button data-bs-toggle="modal" data-bs-target="#editDeviceModal-{{ $device->id }}" class="btn btn-default btn-icon btn-sm btn-outline-dark btn-edit" data-id="{{ $device->id }}"><i class="ri-pencil-line"></i></button>
+                                        <button data-bs-toggle="modal" data-bs-target="#editDeviceModal-{{ $device->id }}" class="btn btn-default btn-icon  btn-warning btn-edit" data-id="{{ $device->id }}">edit</button>
 
                                         <div class="modal fade" id="viewDeviceModal-{{ $device->id }}" tabindex="-1" aria-hidden="true">
                                             <div class="modal-dialog modal-xl">

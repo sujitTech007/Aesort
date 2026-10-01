@@ -1,16 +1,16 @@
 @include('admin.include.header')
 
 
-  <style>
+<style>
+    .modal-backdrop.fade.show {
+        display: none !important;
+    }
 
+    .modal.fade.show {
+        background: rgba(0, 0, 0, 0.4);
+    }
 
-.modal-backdrop.fade.show{
-    display:none !important;
-}
-.modal.fade.show {
-    background: rgba(0, 0, 0, 0.4);
-}
-         .toast-container {
+    .toast-container {
 
         position: fixed;
 
@@ -20,9 +20,8 @@
 
         z-index: 9999;
 
-      }
-
-    </style>
+    }
+</style>
 <div class="page-content">
 
     <div class="page-title-head d-flex align-items-center gap-2">
@@ -44,51 +43,49 @@
                 <div class="card">
 
                     <div class="card-body">
- 
+
 
                         <div id="basic-datatable_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
 
                             <div class="row py-2">
 
-                                
+
 
                                 <div class="col-sm-12 col-md-12 d-flex justify-content-end">
 
-                                            <div class="gridjs-head">
+                                    <div class="gridjs-head">
 
                                         <div class="gridjs-search d-flex align-items-end gap-1">
 
                                             <form action="{{ route('admin.clients.index') }}" method="GET" class="d-flex align-items-center gap-1">
 
-    <input 
+                                                <input
 
-        type="search" 
+                                                    type="search"
 
-        name="keyword" 
+                                                    name="keyword"
 
-        placeholder="Type a keyword..."
+                                                    placeholder="Type a keyword..."
 
-        value="{{ request('keyword') }}" 
+                                                    value="{{ request('keyword') }}"
 
-        aria-label="Type a keyword..."
+                                                    aria-label="Type a keyword..."
 
-        class="gridjs-input gridjs-search-input"
+                                                    class="gridjs-input gridjs-search-input">
 
-    >
+                                                <button type="submit" class="btn btn-primary">
 
-    <button type="submit" class="btn btn-primary">
+                                                    <i class="ri-search-line"></i> Search
 
-        <i class="ri-search-line"></i> Search
+                                                </button>
 
-    </button>
+                                                <a href="{{ route('admin.clients.index') }}" class="btn btn-secondary gap-1 ">
 
-      <a href="{{ route('admin.clients.index') }}" class="btn btn-secondary gap-1 ">
+                                                    <i class="ri-refresh-line"> </i> Reset
 
-        <i class="ri-refresh-line"> </i> Reset
+                                                </a>
 
-    </a>
-
-</form>
+                                            </form>
 
                                         </div>
 
@@ -98,17 +95,17 @@
 
                             </div>
 
-                            
+
 
                             @if(session('success'))
 
-                                <div class="mt-3 alert alert-success">{{ session('success') }}</div>
+                            <div class="mt-3 alert alert-success">{{ session('success') }}</div>
 
                             @endif
 
                             @if($errors->any())
 
-                                <div class="mt-3 alert alert-danger">Please fix the errors in the form below.</div>
+                            <div class="mt-3 alert alert-danger">Please fix the errors in the form below.</div>
 
                             @endif
 
@@ -124,7 +121,7 @@
 
                                         style="position: relative; width: 1186px;">
 
-                                        <thead >
+                                        <thead>
 
                                             <tr>
 
@@ -178,7 +175,7 @@
 
                                                     Role</th>
 
-                                               
+
 
                                                 <th class="sorting gridjs-th" tabindex="0"
 
@@ -208,9 +205,9 @@
 
                                         </thead>
 
-                                   @php
-$index = ($clients->currentPage() - 1) * $clients->perPage() + 1;
-@endphp
+                                        @php
+                                        $index = ($clients->currentPage() - 1) * $clients->perPage() + 1;
+                                        @endphp
 
                                         <tbody id="clients-tbody">
 
@@ -218,109 +215,109 @@ $index = ($clients->currentPage() - 1) * $clients->perPage() + 1;
 
                                             @if(isset($clients) && $clients->count())
 
-                                                @foreach($clients as $client)
+                                            @foreach($clients as $client)
 
-                                                    <tr data-client-id="{{ $client->id }}">
+                                            <tr data-client-id="{{ $client->id }}">
 
-                                                        <td>{{ $index++ }}</td>
+                                                <td>{{ $index++ }}</td>
 
-                                                        <td>{{ $client->name }}</td>
+                                                <td>{{ $client->name }}</td>
 
-                                                        <td>{{ $client->phone }}</td>
+                                                <td>{{ $client->phone }}</td>
 
-                                                        <td>{{ $client->company_name }}</td>
+                                                <td>{{ $client->company_name }}</td>
 
-                                                        <td>
-                                                        
-                                                         @if($client->role == 1)
-                                                            Client
-                                                            @else
-                                                            Techniciaan
-                                                            @endif
-                                                        </td>
+                                                <td>
 
-                                                        <td>{{ $client->email }}</td>
+                                                    @if($client->role == 1)
+                                                    Client
+                                                    @else
+                                                    Techniciaan
+                                                    @endif
+                                                </td>
 
-                                                        <td>
-                                                            @if($client->status == 1)
-                                                            Active
-                                                            @else
-                                                            Inactive
-                                                            @endif
-                                                        </td>
+                                                <td>{{ $client->email }}</td>
 
-                                                        <td>
-                                                            <div class="d-flex align-items-center justify-content-center gap-1">
-                                                                <button data-bs-toggle="modal" data-bs-target="#viewClientModal-{{ $client->id }}" class="btn btn-default btn-icon btn-sm btn-outline-dark btn-view" data-id="{{ $client->id }}"><i class="ri-eye-line"></i></button>
+                                                <td>
+                                                    @if($client->status == 1)
+                                                    Active
+                                                    @else
+                                                    Inactive
+                                                    @endif
+                                                </td>
 
-                                                                <button data-bs-toggle="modal" data-bs-target="#editClientModal-{{ $client->id }}" class="btn btn-default btn-icon btn-sm btn-outline-dark btn-edit" data-id="{{ $client->id }}"><i class="ri-pencil-line"></i></button>
+                                                <td>
+                                                    <div class="d-flex align-items-center justify-content-center gap-1">
+                                                        <button data-bs-toggle="modal" data-bs-target="#viewClientModal-{{ $client->id }}" class="btn btn-default btn-icon  btn-outline-dark btn-view" data-id="{{ $client->id }}"> View</button>
 
-                                                    <div class="modal fade" id="editClientModal-{{ $client->id }}" tabindex="-1" aria-hidden="true">
-                                                        <div class="modal-dialog modal-md">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <h3 class="modal-title">Edit Client</h3>
-                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    @include('admin.partials.client-edit', ['client' => $client])
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    
-                                                    <!-- {{-- View Modal per client --}} -->
-                                                    <div class="modal fade" id="viewClientModal-{{ $client->id }}" tabindex="-1" aria-hidden="true">
-                                                        <div class="modal-dialog modal-xl">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <h3 class="modal-title">Client #{{ $client->id }}</h3>
-                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    @include('admin.partials.client-view', ['client' => $client])
+                                                        <button data-bs-toggle="modal" data-bs-target="#editClientModal-{{ $client->id }}" class="btn btn-default btn-icon  btn-outline-dark btn-edit" data-id="{{ $client->id }}">Edit</button>
+
+                                                        <div class="modal fade" id="editClientModal-{{ $client->id }}" tabindex="-1" aria-hidden="true">
+                                                            <div class="modal-dialog modal-md">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h3 class="modal-title">Edit Client</h3>
+                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        @include('admin.partials.client-edit', ['client' => $client])
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
+
+                                                        <!-- {{-- View Modal per client --}} -->
+                                                        <div class="modal fade" id="viewClientModal-{{ $client->id }}" tabindex="-1" aria-hidden="true">
+                                                            <div class="modal-dialog modal-xl">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h3 class="modal-title">Client #{{ $client->id }}</h3>
+                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        @include('admin.partials.client-view', ['client' => $client])
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!--<button class="btn btn-default btn-icon  btn-outline-dark btn-delete" data-id="{{ $client->id }}"><i class="ri-delete-bin-line"></i></button>-->
+
+                                                        <button class="btn btn-default btn-icon  btn-outline-dark btn-delete btn-danger"
+
+                                                            data-id="{{ $client->id }}"
+
+                                                            data-route="{{ route('admin.clients.destroy', $client->id) }}">
+
+                                                            delete
+
+                                                        </button>
+                                                        <!-- {{-- Edit Modal per client --}} -->
+
+
                                                     </div>
 
-                                                                <!--<button class="btn btn-default btn-icon btn-sm btn-outline-dark btn-delete" data-id="{{ $client->id }}"><i class="ri-delete-bin-line"></i></button>-->
 
-                                                                <button class="btn btn-default btn-icon btn-sm btn-outline-dark btn-delete" 
 
-                                                                        data-id="{{ $client->id }}" 
+                                                </td>
 
-                                                                        data-route="{{ route('admin.clients.destroy', $client->id) }}">
-
-                                                                    <i class="ri-delete-bin-line"></i>
-
-                                                                </button>
-                                                                     <!-- {{-- Edit Modal per client --}} -->
-
-                                                    
-                                                            </div>
-
-                                                       
-
-                                                        </td>
-
-                                                    </tr>
+                                            </tr>
 
 
 
-                                                    
 
-                                                    
 
-                                                @endforeach
+
+
+                                            @endforeach
 
                                             @else
 
-                                                <tr>
+                                            <tr>
 
-                                                    <td colspan="7" class="text-center">No clients found.</td>
+                                                <td colspan="7" class="text-center">No clients found.</td>
 
-                                                </tr>
+                                            </tr>
 
                                             @endif
 
@@ -330,15 +327,15 @@ $index = ($clients->currentPage() - 1) * $clients->perPage() + 1;
 
                                     <div class="d-flex justify-content-center mt-3">
 
-    {{ $clients->links('pagination::bootstrap-5') }}
+                                        {{ $clients->links('pagination::bootstrap-5') }}
 
-</div>
+                                    </div>
 
                                 </div>
 
                             </div>
 
-                             
+
 
                         </div>
 
@@ -562,7 +559,7 @@ $index = ($clients->currentPage() - 1) * $clients->perPage() + 1;
 
                                 </select>
 
-                                </div>
+                            </div>
 
                     </form>
 
@@ -585,149 +582,157 @@ $index = ($clients->currentPage() - 1) * $clients->perPage() + 1;
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
 
-    /* ================= CREATE CLIENT ================= */
-    const createForm = document.getElementById('createClientForm');
+        /* ================= CREATE CLIENT ================= */
+        const createForm = document.getElementById('createClientForm');
 
-    if (createForm) {
-        createForm.addEventListener('submit', function (e) {
-            e.preventDefault();
+        if (createForm) {
+            createForm.addEventListener('submit', function(e) {
+                e.preventDefault();
 
-            clearErrors(createForm);
+                clearErrors(createForm);
 
-            fetch(createForm.action, {
-                method: 'POST',
-                headers: { 'Accept': 'application/json' },
-                body: new FormData(createForm)
-            })
-            .then(r => r.json().then(j => ({ status: r.status, body: j })))
-            .then(res => {
-                if (res.status === 201) {
-                    bootstrap.Modal.getInstance(
-                        document.getElementById('createClientModal')
-                    ).hide();
+                fetch(createForm.action, {
+                        method: 'POST',
+                        headers: {
+                            'Accept': 'application/json'
+                        },
+                        body: new FormData(createForm)
+                    })
+                    .then(r => r.json().then(j => ({
+                        status: r.status,
+                        body: j
+                    })))
+                    .then(res => {
+                        if (res.status === 201) {
+                            bootstrap.Modal.getInstance(
+                                document.getElementById('createClientModal')
+                            ).hide();
 
-                    Swal.fire('Success', 'Client created successfully!', 'success')
-                        .then(() => location.reload());
-                }
+                            Swal.fire('Success', 'Client created successfully!', 'success')
+                                .then(() => location.reload());
+                        }
 
-                if (res.status === 422) showValidationErrors(createForm, res.body.errors);
+                        if (res.status === 422) showValidationErrors(createForm, res.body.errors);
+                    });
             });
+        }
+
+        /* ================= TABLE BUTTON ACTIONS ================= */
+        document.getElementById('clients-tbody').addEventListener('click', function(e) {
+            const btn = e.target.closest('button');
+            if (!btn) return;
+
+            const id = btn.dataset.id;
+
+            /* DELETE */
+            if (btn.classList.contains('btn-delete')) {
+                confirmDelete(btn.dataset.route);
+            }
+
+            /* EDIT */
+            if (btn.classList.contains('btn-edit')) {
+                new bootstrap.Modal(
+                    document.getElementById('editClientModal-' + id)
+                ).show();
+            }
+
+            /* VIEW */
+            if (btn.classList.contains('btn-view')) {
+                new bootstrap.Modal(
+                    document.getElementById('viewClientModal-' + id)
+                ).show();
+            }
+        });
+
+        /* ================= EDIT CLIENT ================= */
+        document.getElementById('clients-tbody').addEventListener('submit', function(e) {
+            const form = e.target.closest('.client-edit-form');
+            if (!form) return;
+
+            e.preventDefault();
+            clearErrors(form);
+
+            fetch(form.action, {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+                    },
+                    body: new FormData(form)
+                })
+                .then(r => r.json().then(j => ({
+                    status: r.status,
+                    body: j
+                })))
+                .then(res => {
+                    if (res.status === 200) {
+                        bootstrap.Modal.getInstance(
+                            form.closest('.modal')
+                        ).hide();
+
+                        Swal.fire('Updated!', 'Client updated successfully', 'success')
+                            .then(() => location.reload());
+                    }
+
+                    if (res.status === 422) showValidationErrors(form, res.body.errors);
+                });
+        });
+
+    });
+
+    /* ================= HELPERS ================= */
+    function clearErrors(form) {
+        form.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
+        form.querySelectorAll('.invalid-feedback').forEach(el => el.innerHTML = '');
+    }
+
+    function showValidationErrors(form, errors) {
+        Object.keys(errors).forEach(field => {
+            const input = form.querySelector(`[name="${field}"]`);
+            const error = form.querySelector(`.${field}-error`);
+            if (input) input.classList.add('is-invalid');
+            if (error) error.innerHTML = errors[field][0];
         });
     }
 
-    /* ================= TABLE BUTTON ACTIONS ================= */
-    document.getElementById('clients-tbody').addEventListener('click', function (e) {
-        const btn = e.target.closest('button');
-        if (!btn) return;
-
-        const id = btn.dataset.id;
-
-        /* DELETE */
-        if (btn.classList.contains('btn-delete')) {
-            confirmDelete(btn.dataset.route);
-        }
-
-        /* EDIT */
-        if (btn.classList.contains('btn-edit')) {
-            new bootstrap.Modal(
-                document.getElementById('editClientModal-' + id)
-            ).show();
-        }
-
-        /* VIEW */
-        if (btn.classList.contains('btn-view')) {
-            new bootstrap.Modal(
-                document.getElementById('viewClientModal-' + id)
-            ).show();
-        }
-    });
-
-    /* ================= EDIT CLIENT ================= */
-    document.getElementById('clients-tbody').addEventListener('submit', function (e) {
-        const form = e.target.closest('.client-edit-form');
-        if (!form) return;
-
-        e.preventDefault();
-        clearErrors(form);
-
-        fetch(form.action, {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
-            },
-            body: new FormData(form)
-        })
-        .then(r => r.json().then(j => ({ status: r.status, body: j })))
-        .then(res => {
-            if (res.status === 200) {
-                bootstrap.Modal.getInstance(
-                    form.closest('.modal')
-                ).hide();
-
-                Swal.fire('Updated!', 'Client updated successfully', 'success')
-                    .then(() => location.reload());
+    function confirmDelete(route) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "This action cannot be undone!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then(result => {
+            if (result.isConfirmed) {
+                fetch(route, {
+                        method: 'DELETE',
+                        headers: {
+                            'Accept': 'application/json',
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+                        }
+                    })
+                    .then(() => {
+                        Swal.fire('Deleted!', 'Client removed', 'success')
+                            .then(() => location.reload());
+                    });
             }
-
-            if (res.status === 422) showValidationErrors(form, res.body.errors);
         });
-    });
-
-});
-
-/* ================= HELPERS ================= */
-function clearErrors(form) {
-    form.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
-    form.querySelectorAll('.invalid-feedback').forEach(el => el.innerHTML = '');
-}
-
-function showValidationErrors(form, errors) {
-    Object.keys(errors).forEach(field => {
-        const input = form.querySelector(`[name="${field}"]`);
-        const error = form.querySelector(`.${field}-error`);
-        if (input) input.classList.add('is-invalid');
-        if (error) error.innerHTML = errors[field][0];
-    });
-}
-
-function confirmDelete(route) {
-    Swal.fire({
-        title: 'Are you sure?',
-        text: "This action cannot be undone!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
-    }).then(result => {
-        if (result.isConfirmed) {
-            fetch(route, {
-                method: 'DELETE',
-                headers: {
-                    'Accept': 'application/json',
-                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
-                }
-            })
-            .then(() => {
-                Swal.fire('Deleted!', 'Client removed', 'success')
-                    .then(() => location.reload());
-            });
-        }
-    });
-}
+    }
 </script>
 <script>
-document.addEventListener('hidden.bs.modal', function () {
-    document.body.classList.remove('modal-open');
+    document.addEventListener('hidden.bs.modal', function() {
+        document.body.classList.remove('modal-open');
 
-    // Remove leftover backdrops
-    document.querySelectorAll('.modal-backdrop').forEach(function (el) {
-        el.remove();
+        // Remove leftover backdrops
+        document.querySelectorAll('.modal-backdrop').forEach(function(el) {
+            el.remove();
+        });
+
+        // Reset body scroll
+        document.body.style.overflow = '';
+        document.body.style.paddingRight = '';
     });
-
-    // Reset body scroll
-    document.body.style.overflow = '';
-    document.body.style.paddingRight = '';
-});
 </script>

@@ -109,15 +109,14 @@
                                                                 class="d-flex align-items-center justify-content-center gap-1">
                                                                 <button data-bs-toggle="modal"
                                                                     data-bs-target="#exampleModalView"
-                                                                    class="btn btn-default btn-icon btn-sm btn-outline-dark"><i
-                                                                        class="ri-eye-line"></i></button>
+                                                                    class="btn btn-default btn-icon btn-primary">view
+                                                                        </button>
                                                                 <button data-bs-toggle="modal"
                                                                     data-bs-target="#exampleModalEdit"
-                                                                    class="btn btn-default btn-icon btn-sm btn-outline-dark"><i
-                                                                        class="ri-pencil-line"></i></button>
+                                                                    class="btn btn-default btn-icon btn-warning">edit</button>
                                                                 <button
-                                                                    class="btn btn-default btn-icon btn-sm btn-outline-dark"><i
-                                                                        class="ri-delete-bin-line"></i></button>
+                                                                    class="btn btn-default btn-icon btn-danger">delete
+                                                                    </button>
                                                             </div>
                                                         </td>
                                                     </tr>

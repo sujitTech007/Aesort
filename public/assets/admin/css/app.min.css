@@ -17969,7 +17969,7 @@ html[data-sidenav-size=full] .sidenav-menu [data-simplebar] {
     -ms-flex-align: center;
     align-items: center;
     height: calc(1rem + 1.5em + 2px);
-    width: calc(1rem + 1.5em + 2px);
+    width: calc(2rem + 1.5em + 2px);
     padding: 0
 }
 

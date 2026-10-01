@@ -133,13 +133,13 @@
                                                        
                                                         <td>
                                                             <div class="d-flex align-items-center justify-content-center gap-1">
-                                                                <button data-bs-toggle="modal" data-bs-target="#viewtechnicianModal-{{ $technician->id }}" class="btn btn-default btn-icon btn-sm btn-outline-dark btn-view" data-id="{{ $technician->id }}"><i class="ri-eye-line"></i></button>
-                                                                <button data-bs-toggle="modal" data-bs-target="#edittechnicianModal-{{ $technician->id }}" class="btn btn-default btn-icon btn-sm btn-outline-dark btn-edit" data-id="{{ $technician->id }}"><i class="ri-pencil-line"></i></button>
+                                                                <button data-bs-toggle="modal" data-bs-target="#viewtechnicianModal-{{ $technician->id }}" class="btn btn-default btn-icon  btn-outline-dark btn-view" data-id="{{ $technician->id }}">view</button>
+                                                                <button data-bs-toggle="modal" data-bs-target="#edittechnicianModal-{{ $technician->id }}" class="btn btn-default btn-icon  btn-outline-dark btn-edit" data-id="{{ $technician->id }}">Edit</button>
                                                               
-                                                                <button class="btn btn-default btn-icon btn-sm btn-outline-dark btn-delete" 
+                                                                <button class="btn btn-default btn-icon  btn-outline-dark btn-delete" 
                                                                         data-id="{{ $technician->id }}" 
                                                                         data-route="{{ route('admin.technicians.destroy', $technician->id) }}">
-                                                                    <i class="ri-delete-bin-line"></i>
+                                                                    delete
                                                                 </button>
                                                             </div>
                                                         </td>
