@@ -32,6 +32,7 @@
     <link rel="shortcut icon" href="{{ asset('assets/admin/images/favicon.ico') }}">
 
     <link rel="stylesheet" href="{{ asset('assets/admin/css/dataTables.bootstrap5.min.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 
 
@@ -394,8 +395,7 @@
 
                     </li>
 
-                    -->
-
+                   
                        
 
 
@@ -518,7 +518,7 @@
 
                     <!-- Sidebar Menu Toggle Button -->
 
-                    <button class="sidenav-toggle-button px-2">
+                    <button class="sidenav-toggle-button px-2 text-dark">
 
                         <i class="ri-menu-2-line fs-24"></i>
 
@@ -1098,13 +1098,13 @@
 
                                     alt="user-image">
 
-                                <span class="d-lg-flex flex-column gap-1 d-none">
+                                <span class="d-lg-flex flex-column gap-1 d-none text-dark">
 
                                     <span class="fw-semibold">{{ $admin->name }}</span>
 
                                 </span>
 
-                                <i class="ri-arrow-down-s-line d-none d-lg-block align-middle ms-2"></i>
+                                <i class="ri-arrow-down-s-line d-none d-lg-block align-middle ms-2 text-dark"></i>
 
                             </a>
 

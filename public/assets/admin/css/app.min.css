@@ -3986,8 +3986,8 @@ fieldset:disabled .btn {
 
 .btn-primary {
     --Aeshort-btn-color: #fff;
-    --Aeshort-btn-bg: #163300;
-    --Aeshort-btn-border-color: #163300;
+    --Aeshort-btn-bg: #a4ad2a;
+    --Aeshort-btn-border-color: #a4ad2a;
     --Aeshort-btn-hover-color: #fff;
     --Aeshort-btn-hover-bg: #2f7fc0;
     --Aeshort-btn-hover-border-color: #3082c4;
@@ -3997,24 +3997,24 @@ fieldset:disabled .btn {
     --Aeshort-btn-active-border-color: #3082c4;
     --Aeshort-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
     --Aeshort-btn-disabled-color: #fff;
-    --Aeshort-btn-disabled-bg: #163300;
+    --Aeshort-btn-disabled-bg: #a4ad2a;
     --Aeshort-btn-disabled-border-color: #a4ad2a
 }
 
 .btn-secondary {
     --Aeshort-btn-color: #fff;
-    --Aeshort-btn-bg: #163300;
-    --Aeshort-btn-border-color: #163300;
+    --Aeshort-btn-bg: #9368f3;
+    --Aeshort-btn-border-color: #9368f3;
     --Aeshort-btn-hover-color: #fff;
-    --Aeshort-btn-hover-bg: #163300;
-    --Aeshort-btn-hover-border-color: #163300;
+    --Aeshort-btn-hover-bg: #9368f3;
+    --Aeshort-btn-hover-border-color: #9368f3;
     --Aeshort-btn-focus-shadow-rgb: 163, 127, 245;
     --Aeshort-btn-active-color: #fff;
-    --Aeshort-btn-active-bg: #163300;
-    --Aeshort-btn-active-border-color: #163300;
+    --Aeshort-btn-active-bg: #9368f3;
+    --Aeshort-btn-active-border-color: #9368f3;
     --Aeshort-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
     --Aeshort-btn-disabled-color: #fff;
-    --Aeshort-btn-disabled-bg: #163300;
+    --Aeshort-btn-disabled-bg: #9368f3;
     --Aeshort-btn-disabled-border-color: #9368f3
 }
 
@@ -16511,7 +16511,7 @@ fieldset:disabled .btn {
     position: sticky;
     top: 0;
     z-index: 1010;
-    background: #163300;
+    background: #f1f1f1;
     min-height: var(--Aeshort-topbar-height);
     margin-left: 0;
     border-bottom: 1px solid var(--Aeshort-topbar-user-border);
@@ -16636,7 +16636,7 @@ html[data-bs-theme=dark] #light-dark-mode .dark-mode-icon {
     width: 230px;
     padding: .5rem .77rem;
     line-height: 1.5;
-    background-color: var(--Aeshort-topbar-search-bg);
+    background-color: rgb(113 148 117);
     color: var(--Aeshort-topbar-item-color);
     border-radius: 30px
 }
@@ -17562,7 +17562,7 @@ html[data-topbar-color=dark] .app-topbar .logo .logo-dark {
 }
 
 .logo-lg img {
-    height: 50px
+    height: 40px
 }
 
 .logo-sm img {

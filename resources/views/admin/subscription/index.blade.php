@@ -33,6 +33,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-sm-12">
+                                    <div class="table-responsive">
                                     <table id="basic-datatable"
                                         class="table dt-responsive nowrap w-100 dataTable no-footer dtr-inline"
                                         aria-describedby="basic-datatable_info"
@@ -50,7 +51,7 @@
                                                     aria-label="Position: activate to sort column ascending">
                                                     Name
                                                 </th>
-                                                <th>Pricing approval</th>
+                                                <th class="gridjs-th">Pricing approval</th>
                                                 <th class="sorting gridjs-th" tabindex="0"
                                                     aria-controls="basic-datatable" rowspan="1" colspan="1"
                                                     aria-label="Office: activate to sort column ascending">
@@ -107,20 +108,21 @@
                                                 </td>
 
                                                 <td>
+                                                    <div class="d-flex justify-content-center align-items-center gap-2">
                                                     <a href="{{ route('admin.subscription_plans.edit', @$plan->id) }}" class="btn btn-sm btn-warning">Edit</a>
                                                     @if($plan->pricing_status !== 'approved')
                                                         @if((int) $plan->created_by !== (int) Auth::guard('admin')->id() || \App\Models\Admin::count() === 1)
-                                                            <form action="{{ route('admin.subscription_plans.approve-pricing', $plan->id) }}" method="POST" class="mt-2">
+                                                            <form action="{{ route('admin.subscription_plans.approve-pricing', $plan->id) }}" method="POST">
                                                                 @csrf
-                                                                <label class="form-label small" for="approval-reason-{{ $plan->id }}">{{ (int) $plan->created_by === (int) Auth::guard('admin')->id() ? 'Single-admin exception reason' : 'Approval reason' }}</label>
-                                                                <input id="approval-reason-{{ $plan->id }}" type="text" name="approval_reason" class="form-control form-control-sm mb-1" minlength="8" required>
+                                                                <!-- <label class="form-label small" for="approval-reason-{{ $plan->id }}">{{ (int) $plan->created_by === (int) Auth::guard('admin')->id() ? 'Single-admin exception reason' : 'Approval reason' }}</label> -->
+                                                                <!-- <input id="approval-reason-{{ $plan->id }}" type="text" name="approval_reason" class="form-control form-control-sm mb-1" minlength="8" required> -->
                                                                 <button type="submit" class="btn btn-sm btn-success">Approve</button>
                                                             </form>
                                                             @if((int) $plan->created_by === (int) Auth::guard('admin')->id())
-                                                                <div class="small text-warning mt-1">Only one admin exists; this approval is audited as a single-admin exception.</div>
+                                                                <!-- <div class="small text-warning mt-1">Only one admin exists; this approval is audited as a single-admin exception.</div> -->
                                                             @endif
                                                         @else
-                                                            <div class="small text-muted mt-2">Requires approval by another administrator.</div>
+                                                            <!-- <div class="small text-muted mt-2">Requires approval by another administrator.</div> -->
                                                         @endif
                                                     @endif
                                                     <form action="{{ route('admin.subscription_plans.destroy', @$plan->id) }}" method="POST" style="display:inline;">
@@ -128,7 +130,9 @@
                                                         @method('DELETE')
                                                         <button class="btn btn-sm btn-outline-danger" onclick="return confirm('Archive this plan? Existing subscription history will be retained.')">Archive</button>
                                                     </form>
+                                                    </div>
                                                 </td>
+
                                             </tr>
                                             @endforeach
                                             <tr>
@@ -139,6 +143,7 @@
 
                                         </tbody>
                                     </table>
+                                    </div>
 
 
                                 </div>

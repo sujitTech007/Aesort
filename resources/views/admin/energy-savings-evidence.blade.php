@@ -9,38 +9,70 @@
 
     <div class="page-container">
         <div class="row g-3 mb-4">
-            <div class="col-md-3">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <p class="text-muted small text-uppercase fw-bold mb-2">Sites</p>
-                        <h3 class="fw-bold mb-0">{{ number_format($totalSites) }}</h3>
-                    </div>
+           <div class="col-md-3">
+    <div class="card h-100">
+        <div class="card-body">
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <p class="text-muted small text-uppercase fw-bold mb-2">Sites</p>
+                    <h3 class="fw-bold mb-0">{{ number_format($totalSites) }}</h3>
+                </div>
+
+                <div class="text-primary fs-2">
+                    <i class="fas fa-building"></i>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <p class="text-muted small text-uppercase fw-bold mb-2">Devices</p>
-                        <h3 class="fw-bold mb-0">{{ number_format($totalDevices) }}</h3>
-                    </div>
+        </div>
+    </div>
+</div>
+          <div class="col-md-3">
+    <div class="card h-100">
+        <div class="card-body">
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <p class="text-muted small text-uppercase fw-bold mb-2">Devices</p>
+                    <h3 class="fw-bold mb-0">{{ number_format($totalDevices) }}</h3>
+                </div>
+
+                <div class="text-primary fs-2">
+                    <i class="fa-solid fa-microchip"></i>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <p class="text-muted small text-uppercase fw-bold mb-2">Readings</p>
-                        <h3 class="fw-bold mb-0">{{ number_format($totalReadings) }}</h3>
-                    </div>
+        </div>
+    </div>
+</div>
+           <div class="col-md-3">
+    <div class="card h-100">
+        <div class="card-body">
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <p class="text-muted small text-uppercase fw-bold mb-2">Readings</p>
+                    <h3 class="fw-bold mb-0">{{ number_format($totalReadings) }}</h3>
+                </div>
+
+                <div class="text-primary fs-2">
+                    <i class="fa-solid fa-chart-line"></i>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <p class="text-muted small text-uppercase fw-bold mb-2">Average power</p>
-                        <h3 class="fw-bold mb-0">{{ $avgPower !== null ? number_format($avgPower, 2) : '—' }} kW</h3>
-                    </div>
+        </div>
+    </div>
+</div>
+           <div class="col-md-3">
+    <div class="card h-100">
+        <div class="card-body">
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <p class="text-muted small text-uppercase fw-bold mb-2">Average power</p>
+                    <h3 class="fw-bold mb-0">{{ $avgPower !== null ? number_format($avgPower, 2) : '—' }} kW</h3>
+                </div>
+
+                <div class="text-primary fs-2">
+                    <i class="fa-solid fa-bolt"></i>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
         </div>
 
         <div class="card">

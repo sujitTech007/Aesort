@@ -48,7 +48,7 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-12">
+                                        <div class="table-responsive">
                                             <table id="deviceTable"
                                                 class="table dt-responsive nowrap w-100 dataTable no-footer dtr-inline"
                                                 aria-describedby="basic-datatable_info"
@@ -65,8 +65,8 @@
                                                             aria-controls="basic-datatable" rowspan="1" colspan="1"
                                                             aria-label="Position: activate to sort column ascending">
                                                                               Client</th>
-                                                                          <th>Portfolio</th>
-                                                                          <th>Province / State</th>
+                                                                          <th class="gridjs-th">Portfolio</th>
+                                                                          <th class="gridjs-th">Province / State</th>
                                                         <th class="sorting gridjs-th" tabindex="0"
                                                             aria-controls="basic-datatable" rowspan="1" colspan="1"
                                                             aria-label="Position: activate to sort column ascending">
@@ -84,10 +84,10 @@
                                                             aria-controls="basic-datatable" rowspan="1" colspan="1"
                                                             aria-label="Salary: activate to sort column ascending">
                                                          Type</th>
-                                                        <th>Heating fuel</th>
-                                                        <th>Timezone</th>
-                                                        <th>Operating hours</th>
-                                                        <th>Data readiness</th>
+                                                        <th class="gridjs-th">Heating fuel</th>
+                                                        <th class="gridjs-th">Timezone</th>
+                                                        <th class="gridjs-th">Operating hours</th>
+                                                        <th class="gridjs-th">Data readiness</th>
                                                         <th class="sorting gridjs-th" tabindex="0"
                                                             aria-controls="basic-datatable" rowspan="1" colspan="1"
                                                             aria-label="Salary: activate to sort column ascending">
