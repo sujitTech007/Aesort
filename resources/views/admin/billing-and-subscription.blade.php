@@ -113,7 +113,7 @@
                                                     </td>
                                                     <td>
                                                         @if($subscription->status == 'succeeded')
-                                                            <label class="badge bg-success px-2 py-2 fs-5">
+                                                            <label class="badge bg-success px-2 py-2 fs-12">
                                                                 
                                                                 <i class="ri-checkbox-circle-line"></i>
                                                                 Succeeded

@@ -178,11 +178,12 @@ $i = ($sites->currentPage() - 1) * $sites->perPage() + 1;
                                             @endif
                                                 </tbody>
                                             </table>
-<div class="d-flex justify-content-center mt-3">
-    {{ $sites->links('pagination::bootstrap-5') }}
-</div>
+
 
                                         </div>
+                                        <div class="d-flex justify-content-center mt-3">
+    {{ $sites->links('pagination::bootstrap-5') }}
+</div>
                                     </div>
                                      
                                 </div>
