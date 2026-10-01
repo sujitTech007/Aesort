@@ -280,56 +280,57 @@ $currentPage = $currentPage ?? 'privacy.policy';
                 <li>Request deletion of your personal information, subject to applicable requirements;</li>
                 <li>Withdraw consent where processing is based on consent; and</li>
                 <li>Request a copy or portability of your personal information where applicable.</li>
-            </ul>
-
-            <p>
+                  <li>
                 To submit a privacy request, contact Aesort using the email address
                 provided in the “Contact Us” section of this Privacy Policy. Please
                 provide sufficient information to identify your account and clearly
                 describe the request.
-            </p>
+</li>
 
-            <p>
+            <li>
                 Aesort may request additional information where reasonably necessary
                 to verify your identity and protect personal information from
                 unauthorized disclosure or access.
-            </p>
+</li>
 
-            <p>
+            <li>
                 After receiving a request, Aesort will review the request, verify the
                 requester's identity where required, and respond within the period
                 required by applicable law. Certain requests may be subject to legal,
                 contractual, security, or other applicable limitations.
-            </p>
+</li>
+            </ul>
 
-            <h4>International Data Transfers</h4>
+          
 
-<p>
-    Aesort may use third-party service providers and cloud infrastructure
-    located in Canada, the United States, or other jurisdictions to host,
-    process, store, or support the Services. As a result, personal information
-    may be transferred to, stored in, or accessed from jurisdictions outside
-    the location where it was originally collected.
-</p>
+          <h4>International Data Transfers</h4>
 
-<p>
-    These providers may support services such as cloud hosting, payment
-    processing, analytics, platform infrastructure, communications, and other
-    functions required to operate and support the Aesort platform.
-</p>
+<ul class="ps-4 small">
+    <li class="mb-2">
+        AESORT may use third-party service providers and cloud infrastructure
+        located in Canada, the United States, or other jurisdictions. Personal
+        information may therefore be transferred, stored, or accessed outside
+        the jurisdiction where it was collected.
+    </li>
 
-<p>
-    Aesort takes reasonable measures to protect personal information during
-    cross-border processing and requires applicable service providers to
-    handle information in accordance with their contractual obligations,
-    confidentiality requirements, and applicable privacy requirements.
-</p>
+    <li class="mb-2">
+        These providers may support cloud hosting, payment processing, analytics,
+        communications, platform infrastructure, and other services required to
+        operate and support the AESORT platform.
+    </li>
 
-<p>
-    Where required by applicable law, Aesort will use appropriate safeguards
-    for the transfer, storage, and processing of personal information across
-    jurisdictions.
-</p>
+    <li class="mb-2">
+        AESORT takes reasonable measures to protect personal information during
+        cross-border processing and requires applicable service providers to
+        follow contractual, confidentiality, and privacy obligations.
+    </li>
+
+    <li>
+        Where required by applicable law, AESORT will use appropriate safeguards
+        for the transfer, storage, and processing of personal information
+        across jurisdictions.
+    </li>
+</ul>
 
             <h4>Changes to this Privacy Policy</h4>
 
