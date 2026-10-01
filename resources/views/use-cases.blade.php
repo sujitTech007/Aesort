@@ -39,9 +39,9 @@
 
             <div class="col-lg-6">
 
-                <div class="section-title mb-4">
+                <div class="section-title text-start mb-4">
 
-                    <div class="d-inline-flex align-items-center gap-2 mb-2 wow fadeInUp">
+                    <div class="d-inline-flex  gap-2 mb-2 wow fadeInUp">
                         <i class="fa-solid fa-leaf text-success"></i>
 
                         <span class="text-success text-uppercase fw-semibold small">
@@ -49,7 +49,7 @@
                         </span>
                     </div>
 
-                    <h2 class="text-anime">
+                    <h2 class="text-anime fs-2">
                         Turn Energy Data Into Better Decisions
                     </h2>
 

@@ -59,7 +59,7 @@
 						<div class="benefits-item p-4 border rounded-4">
 							<div class="icon-box"> <i class="fa-solid fa-plug"></i> </div>
 							<h3 class="h5 fw-bold"> 02. Connect & Collect </h3>
-							<p class="mb-0"> Relevant energy and operational information can be collected through connected devices, available systems, utility information, or customer-provided data. </p>
+							<p class="mb-0"> Energy and operational data can be collected through connected devices, utility systems, or customer-provided information. </p>
 						</div>
 					</div> <!-- Step 3 -->
 					<div class="col-lg-4 col-md-6">
@@ -80,7 +80,7 @@
 						<div class="benefits-item p-4 border rounded-4">
 							<div class="icon-box"> <i class="fa-solid fa-lightbulb"></i> </div>
 							<h3 class="h5 fw-bold"> 05. Identify Opportunities </h3>
-							<p class="mb-0"> AESORT helps teams identify practical opportunities to improve energy performance, manage consumption, and support operational decision-making. </p>
+							<p class="mb-0"> AESORT helps teams improve energy performance, manage consumption, and make informed operational decisions. </p>
 						</div>
 					</div> <!-- Step 6 -->
 					<div class="col-lg-4 col-md-6">
@@ -114,106 +114,226 @@
 					</div>
 				</div>
 			</div>
-		</div> <!-- FAQ -->
-		<!-- FAQs Section -->
+			
+				</div> <!-- FAQ -->
+				<!-- FAQs Section -->
 
-<div class="latest-news">
+				<!-- FAQs Section -->
+
+<div class="faq-box">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <!-- Section Title Start -->
-                <div class="section-title">
-                    <h3 class="wow fadeInUp">FAQs</h3>
-                    <h2 class="text-anime">Frequently Asked Questions</h2>
-                </div>
-                <!-- Section Title End -->
+
+            <div class="text-center mb-4 mb-lg-5">
+                <div class="service-hero-badge mb-3">
+                    <i class="fa-solid fa-leaf me-2"></i>FAQs
+                </div>					
+
+                <h2 class="text-anime mb-2">
+                    Frequently Asked Questions
+                </h2>
+
+                <p class="text-muted mb-0">
+                    Find answers to common questions about renewable energy,
+                    energy efficiency, and sustainable solutions.
+                </p>
             </div>
+            
         </div>
 
-        <section class="faq-container">
+            <div class="faq-accordion">
+                <div class="accordion" id="faq_accordion">
 
-            <div class="faq-item">
-                <button class="faq-question">
-                    What does AESORT’s energy management platform do?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    AESORT helps businesses monitor, analyze, and optimize their energy
-                    consumption using available energy data, advanced analytics, and
-                    actionable insights. The platform helps identify inefficiencies and
-                    opportunities to improve energy performance.
+                    <!-- FAQ 1 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading1">
+                            <button
+                                class="accordion-button"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapse1"
+                                aria-expanded="true"
+                                aria-controls="collapse1">
+                                <span class="faq-number">01</span>
+                                What does AESORT’s energy management platform do?
+                            </button>
+                        </h2>
+
+                        <div id="collapse1"
+                            class="accordion-collapse collapse show"
+                            aria-labelledby="heading1"
+                            data-bs-parent="#faq_accordion">
+
+                            <div class="accordion-body">
+                                AESORT helps businesses monitor, analyze, and optimize their energy
+                                consumption using available energy data, advanced analytics, and
+                                actionable insights. The platform helps identify inefficiencies and
+                                opportunities to improve energy performance.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- FAQ 2 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading2">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapse2"
+                                aria-expanded="false"
+                                aria-controls="collapse2">
+                                <span class="faq-number">02</span>
+                                How does AESORT identify energy-saving opportunities?
+                            </button>
+                        </h2>
+
+                        <div id="collapse2"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="heading2"
+                            data-bs-parent="#faq_accordion">
+
+                            <div class="accordion-body">
+                                AESORT analyzes available and historical energy data to identify
+                                consumption patterns, inefficiencies, and unusual usage. The platform
+                                then provides insights and recommendations to help businesses make
+                                informed energy-management decisions.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- FAQ 3 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading3">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapse3"
+                                aria-expanded="false"
+                                aria-controls="collapse3">
+                                <span class="faq-number">03</span>
+                                What utilities can AESORT monitor?
+                            </button>
+                        </h2>
+
+                        <div id="collapse3"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="heading3"
+                            data-bs-parent="#faq_accordion">
+
+                            <div class="accordion-body">
+                                AESORT provides a holistic view of resource consumption, including
+                                electricity, gas, and water. This gives businesses greater visibility
+                                into their overall resource usage and efficiency.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- FAQ 4 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading4">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapse4"
+                                aria-expanded="false"
+                                aria-controls="collapse4">
+                                <span class="faq-number">04</span>
+                                Is AESORT suitable for different types of commercial businesses?
+                            </button>
+                        </h2>
+
+                        <div id="collapse4"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="heading4"
+                            data-bs-parent="#faq_accordion">
+
+                            <div class="accordion-body">
+                                Yes. AESORT is designed to support a range of commercial sectors,
+                                including hospitality, retail, offices, educational institutions,
+                                recreational facilities, and warehouses. Solutions can be adapted to
+                                the specific requirements of each business.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- FAQ 5 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading5">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapse5"
+                                aria-expanded="false"
+                                aria-controls="collapse5">
+                                <span class="faq-number">05</span>
+                                Can AESORT integrate with existing building systems?
+                            </button>
+                        </h2>
+
+                        <div id="collapse5"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="heading5"
+                            data-bs-parent="#faq_accordion">
+
+                            <div class="accordion-body">
+                                Yes. AESORT is designed to integrate with existing infrastructure,
+                                including building management systems, energy management systems,
+                                IoT devices, and other compatible technologies.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- FAQ 6 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading6">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapse6"
+                                aria-expanded="false"
+                                aria-controls="collapse6">
+                                <span class="faq-number">06</span>
+                                What insights can businesses access through AESORT?
+                            </button>
+                        </h2>
+
+                        <div id="collapse6"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="heading6"
+                            data-bs-parent="#faq_accordion">
+
+                            <div class="accordion-body">
+                                Businesses can access energy usage data, historical usage patterns,
+                                reporting and analytics, and actionable recommendations. These insights
+                                help teams understand performance, identify areas for improvement, and
+                                make more informed energy decisions.
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
-            <div class="faq-item">
-                <button class="faq-question">
-                    How does AESORT identify energy-saving opportunities?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    AESORT analyzes available and historical energy data to identify
-                    consumption patterns, inefficiencies, and unusual usage. The platform
-                    then provides insights and recommendations to help businesses make
-                    informed energy-management decisions.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    What utilities can AESORT monitor?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    AESORT provides a holistic view of resource consumption, including
-                    electricity, gas, and water. This gives businesses greater visibility
-                    into their overall resource usage and efficiency.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    Is AESORT suitable for different types of commercial businesses?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    Yes. AESORT is designed to support a range of commercial sectors,
-                    including hospitality, retail, offices, educational institutions,
-                    recreational facilities, and warehouses. Solutions can be adapted to
-                    the specific requirements of each business.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    Can AESORT integrate with existing building systems?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    Yes. AESORT is designed to integrate with existing infrastructure,
-                    including building management systems, energy management systems,
-                    IoT devices, and other compatible technologies.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    What insights can businesses access through AESORT?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    Businesses can access energy usage data, historical usage patterns,
-                    reporting and analytics, and actionable recommendations. These insights
-                    help teams understand performance, identify areas for improvement, and
-                    make more informed energy decisions.
-                </div>
-            </div>
-
-        </section>
 
 
     </div>
 </div>
 
+
+
+		</div>
+
+		<!-- >>>>>>> Stashed changes -->
 	</div>
 </div> <!-- How It Works Page End --> <!-- Footer Ticker -->
 <div class="footer-ticker">
@@ -223,31 +343,31 @@
 			<div class="scrolling-content"> <span>Understand Your Energy</span> <span>Monitor Building Performance</span> <span>Turn Data Into Insights</span> <span>Identify Energy Opportunities</span> <span>Make Smarter Energy Decisions</span> </div>
 		</div>
 	</div>
-</div> 
+</div>
 <script>
-    const faqs = document.querySelectorAll(".faq-item");
+	const faqs = document.querySelectorAll(".faq-item");
 
-    faqs.forEach((faq) => {
-        faq.querySelector(".faq-question").addEventListener("click", () => {
-            faqs.forEach((item) => {
-                if (item !== faq) item.classList.remove("active");
-            });
-            faq.classList.toggle("active");
-        });
-    });
+	faqs.forEach((faq) => {
+		faq.querySelector(".faq-question").addEventListener("click", () => {
+			faqs.forEach((item) => {
+				if (item !== faq) item.classList.remove("active");
+			});
+			faq.classList.toggle("active");
+		});
+	});
 </script>
 
 <script>
-    const phoneInput = document.querySelector('[name="phone"]');
+	const phoneInput = document.querySelector('[name="phone"]');
 
-    phoneInput.addEventListener('input', function() {
+	phoneInput.addEventListener('input', function() {
 
-        this.value = this.value.replace(/\D/g, '');
+		this.value = this.value.replace(/\D/g, '');
 
-        if (this.value.length > 12) {
-            this.value = this.value.slice(0, 12);
-        }
-    });
+		if (this.value.length > 12) {
+			this.value = this.value.slice(0, 12);
+		}
+	});
 </script>
 
 

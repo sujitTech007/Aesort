@@ -25,7 +25,7 @@
                 <div class="col-12 col-md-8 col-lg-6">
 
                     <img src="{{ asset('/assets/images/404-error.png') }}"
-                         alt="Wateryze water treatment illustration"
+                         alt="aesort.ca"
                          class="img-fluid" style="height: 360px;">
 
                 </div>

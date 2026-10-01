@@ -40,7 +40,7 @@
 
             <div class="col-lg-6">
 
-                <div class="section-title">
+                <div class="section-title text-start">
 
                     <h3 class="wow fadeInUp">
                         Our Method
@@ -279,7 +279,7 @@
 
             <div class="col-lg-5">
 
-                <div class="section-title">
+                <div class="section-title text-start">
 
                     <h3 class="wow fadeInUp">
                         Built Around Evidence
@@ -549,53 +549,6 @@
 <!-- Assessment & POC End -->
 
 
-<!-- Infobar Section Start -->
-<div class="infobar">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="cta-box">
-                    <div class="row align-items-center">
-
-                        <div class="col-lg-4">
-                            <!-- CTA Image Start -->
-                            <div class="cta-image">
-                                <figure class="image-anime">
-                                    <img src="assets/images/cta-image.jpg" alt="AESORT energy solutions">
-                                </figure>
-                            </div>
-                            <!-- CTA Image End -->
-                        </div>
-
-                        <div class="col-lg-8">
-                            <!-- CTA Content Start -->
-                            <div class="cta-content">
-
-                                <h3 class="text-anime">
-                                    Have Questions? <span>Contact Us Today</span>
-                                </h3>
-
-                                <p class="wow fadeInUp" data-wow-delay="0.25s">
-                                    Our team is here to help you explore the right energy solutions
-                                    for your business.
-                                </p>
-
-                                <a href="{{ route('contact') }}" class="btn-default fw-medium mt-4 px-4 py-2">
-                                    Contact Us
-                                </a>
-
-                            </div>
-                            <!-- CTA Content End -->
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Infobar Section End -->
 
 
 <!-- Footer Ticker Start -->

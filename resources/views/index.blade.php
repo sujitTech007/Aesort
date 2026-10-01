@@ -1,16 +1,6 @@
 @include('include.header')
 
-<div class="preloader">
 
-    <div class="loading-container">
-
-        <div class="loading"></div>
-
-        <div id="loading-icon"><img src="assets/images/loader-icon.png" alt=""></div>
-
-    </div>
-
-</div>
 
 
 <!-- Hero Layout 2 Section Start -->
@@ -447,7 +437,7 @@
         <div class="price-body">
             <ul>
                 <li>Pricing is based on the scope of analysis and reporting requirements.</li>
-                <li>Detailed energy data insights and analytics covering energy consumption patterns, potential cost-saving opportunities, and environmental performance.</li>
+                <li>Detailed energy insights covering consumption patterns, cost-saving opportunities, and environmental performance.</li>
                 <li>Report-based service for customers requiring detailed analysis and decision-support insights.</li>
             </ul>
         </div>
@@ -985,98 +975,210 @@
 
 <!-- FAQs Section -->
 
-<div class="latest-news">
+<div class="faq-box">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <!-- Section Title Start -->
-                <div class="section-title">
-                    <h3 class="wow fadeInUp">FAQs</h3>
-                    <h2 class="text-anime">Frequently Asked Questions</h2>
-                </div>
-                <!-- Section Title End -->
+
+            <div class="text-center mb-4 mb-lg-5">
+                <div class="service-hero-badge mb-3">
+                    <i class="fa-solid fa-leaf me-2"></i>FAQs
+                </div>					
+
+                <h2 class="text-anime mb-2">
+                    Frequently Asked Questions
+                </h2>
+
+                <p class="text-muted mb-0">
+                    Find answers to common questions about renewable energy,
+                    energy efficiency, and sustainable solutions.
+                </p>
             </div>
+            
         </div>
 
-        <section class="faq-container">
+            <div class="faq-accordion">
+                <div class="accordion" id="faq_accordion">
 
-            <div class="faq-item">
-                <button class="faq-question">
-                    What does AESORT’s energy management platform do?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    AESORT helps businesses monitor, analyze, and optimize their energy
-                    consumption using available energy data, advanced analytics, and
-                    actionable insights. The platform helps identify inefficiencies and
-                    opportunities to improve energy performance.
+                    <!-- FAQ 1 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading1">
+                            <button
+                                class="accordion-button"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapse1"
+                                aria-expanded="true"
+                                aria-controls="collapse1">
+                                <span class="faq-number">01</span>
+                                What does AESORT’s energy management platform do?
+                            </button>
+                        </h2>
+
+                        <div id="collapse1"
+                            class="accordion-collapse collapse show"
+                            aria-labelledby="heading1"
+                            data-bs-parent="#faq_accordion">
+
+                            <div class="accordion-body">
+                                AESORT helps businesses monitor, analyze, and optimize their energy
+                                consumption using available energy data, advanced analytics, and
+                                actionable insights. The platform helps identify inefficiencies and
+                                opportunities to improve energy performance.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- FAQ 2 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading2">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapse2"
+                                aria-expanded="false"
+                                aria-controls="collapse2">
+                                <span class="faq-number">02</span>
+                                How does AESORT identify energy-saving opportunities?
+                            </button>
+                        </h2>
+
+                        <div id="collapse2"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="heading2"
+                            data-bs-parent="#faq_accordion">
+
+                            <div class="accordion-body">
+                                AESORT analyzes available and historical energy data to identify
+                                consumption patterns, inefficiencies, and unusual usage. The platform
+                                then provides insights and recommendations to help businesses make
+                                informed energy-management decisions.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- FAQ 3 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading3">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapse3"
+                                aria-expanded="false"
+                                aria-controls="collapse3">
+                                <span class="faq-number">03</span>
+                                What utilities can AESORT monitor?
+                            </button>
+                        </h2>
+
+                        <div id="collapse3"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="heading3"
+                            data-bs-parent="#faq_accordion">
+
+                            <div class="accordion-body">
+                                AESORT provides a holistic view of resource consumption, including
+                                electricity, gas, and water. This gives businesses greater visibility
+                                into their overall resource usage and efficiency.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- FAQ 4 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading4">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapse4"
+                                aria-expanded="false"
+                                aria-controls="collapse4">
+                                <span class="faq-number">04</span>
+                                Is AESORT suitable for different types of commercial businesses?
+                            </button>
+                        </h2>
+
+                        <div id="collapse4"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="heading4"
+                            data-bs-parent="#faq_accordion">
+
+                            <div class="accordion-body">
+                                Yes. AESORT is designed to support a range of commercial sectors,
+                                including hospitality, retail, offices, educational institutions,
+                                recreational facilities, and warehouses. Solutions can be adapted to
+                                the specific requirements of each business.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- FAQ 5 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading5">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapse5"
+                                aria-expanded="false"
+                                aria-controls="collapse5">
+                                <span class="faq-number">05</span>
+                                Can AESORT integrate with existing building systems?
+                            </button>
+                        </h2>
+
+                        <div id="collapse5"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="heading5"
+                            data-bs-parent="#faq_accordion">
+
+                            <div class="accordion-body">
+                                Yes. AESORT is designed to integrate with existing infrastructure,
+                                including building management systems, energy management systems,
+                                IoT devices, and other compatible technologies.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- FAQ 6 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading6">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapse6"
+                                aria-expanded="false"
+                                aria-controls="collapse6">
+                                <span class="faq-number">06</span>
+                                What insights can businesses access through AESORT?
+                            </button>
+                        </h2>
+
+                        <div id="collapse6"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="heading6"
+                            data-bs-parent="#faq_accordion">
+
+                            <div class="accordion-body">
+                                Businesses can access energy usage data, historical usage patterns,
+                                reporting and analytics, and actionable recommendations. These insights
+                                help teams understand performance, identify areas for improvement, and
+                                make more informed energy decisions.
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
-            <div class="faq-item">
-                <button class="faq-question">
-                    How does AESORT identify energy-saving opportunities?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    AESORT analyzes available and historical energy data to identify
-                    consumption patterns, inefficiencies, and unusual usage. The platform
-                    then provides insights and recommendations to help businesses make
-                    informed energy-management decisions.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    What utilities can AESORT monitor?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    AESORT provides a holistic view of resource consumption, including
-                    electricity, gas, and water. This gives businesses greater visibility
-                    into their overall resource usage and efficiency.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    Is AESORT suitable for different types of commercial businesses?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    Yes. AESORT is designed to support a range of commercial sectors,
-                    including hospitality, retail, offices, educational institutions,
-                    recreational facilities, and warehouses. Solutions can be adapted to
-                    the specific requirements of each business.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    Can AESORT integrate with existing building systems?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    Yes. AESORT is designed to integrate with existing infrastructure,
-                    including building management systems, energy management systems,
-                    IoT devices, and other compatible technologies.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    What insights can businesses access through AESORT?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    Businesses can access energy usage data, historical usage patterns,
-                    reporting and analytics, and actionable recommendations. These insights
-                    help teams understand performance, identify areas for improvement, and
-                    make more informed energy decisions.
-                </div>
-            </div>
-
-        </section>
 
 
     </div>
