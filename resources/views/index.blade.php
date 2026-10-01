@@ -1,16 +1,6 @@
 @include('include.header')
 
-<div class="preloader">
 
-    <div class="loading-container">
-
-        <div class="loading"></div>
-
-        <div id="loading-icon"><img src="assets/images/loader-icon.png" alt=""></div>
-
-    </div>
-
-</div>
 
 
 <!-- Hero Layout 2 Section Start -->
@@ -447,7 +437,7 @@
         <div class="price-body">
             <ul>
                 <li>Pricing is based on the scope of analysis and reporting requirements.</li>
-                <li>Detailed energy data insights and analytics covering energy consumption patterns, potential cost-saving opportunities, and environmental performance.</li>
+                <li>Detailed energy insights covering consumption patterns, cost-saving opportunities, and environmental performance.</li>
                 <li>Report-based service for customers requiring detailed analysis and decision-support insights.</li>
             </ul>
         </div>

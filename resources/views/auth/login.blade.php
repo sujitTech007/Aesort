@@ -54,7 +54,7 @@
 
 		<!-- Login Form start -->
 
-		<div class="contact-form wow">
+		<div class="contact-form wow" style="max-width: 590px;">
 
                 @if(session('status'))
 
@@ -368,7 +368,7 @@
 
 					<div class="col-md-12 text-center mb-3">
 
-						<button type="submit" class="btn-default">Login</button>
+						<button type="submit" class="btn-default w-100">Login</button>
 
 
 					</div>
