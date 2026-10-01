@@ -30,7 +30,7 @@
 
 
 
-    <title>Dashboard</title>
+    <title>Admin Login</title>
 
 
 
@@ -54,8 +54,6 @@
 
 
 
-
-
     <!-- App favicon -->
 
 
@@ -64,101 +62,30 @@
 
 
 
-    <link rel="stylesheet" href="{{ asset('assets/admin/css/dataTables.bootstrap5.min.css') }}">
-
-
-
-
-
-
-
-    <!-- Vendor css -->
-
-
-
-    <link href="{{ asset('assets/admin/css/vendor.min.css') }}" rel="stylesheet" type="text/css">
-
-
-
-
-
-
-
-    <!-- App css -->
-
-
-
-    <link href="{{ asset('assets/admin/css/app.min.css') }}" rel="stylesheet" type="text/css" id="app-style">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Icons css -->
-
-
-
-    <link href="{{ asset('assets/admin/css/icons.min.css') }}" rel="stylesheet" type="text/css">
-
-
-
-    <link href="{{ asset('assets/admin/css/custom.css') }}" rel="stylesheet" type="text/css">
-
-
-
-
-
-
-
-    <!-- Theme Config Js -->
-
-
-
-    <script src="{{ asset('assets/admin/js/config.js.download') }}"></script>
-
-
-
-
-
-
-
-    <style>
-        .toast-container {
-
-
-
-            position: fixed;
-
-
-
-            top: 1rem;
-
-
-
-            right: 1rem;
-
-
-
-            z-index: 9999;
-
-
-
-        }
-    </style>
-
-
-
-
+    <link rel="stylesheet" href="{{ asset('assets/admin/css/bootstrap.min.css') }}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<style>
+   
+body{
+     font-family: "Roboto", sans-serif;
+     font-size: 14px;
+}
+.form-control{
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    padding: 10px;
+    height: 45px;
+}
+button.btn{
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    padding: 10px 20px;
+    height: 45px;
+}
+</style>
 
 
 
@@ -186,150 +113,112 @@
 
 
 
-    <!-- Search Modal -->
 
 
 
-    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+<div class="min-vh-100 d-flex align-items-center bg-light py-5">
 
+    <div class="container">
 
+        <div class="row justify-content-center">
 
-        <div class="modal-dialog modal-lg">
+            <div class="col-lg-5 col-md-7 col-sm-10">
 
+                <div class="card border-0 shadow rounded-4">
 
+                    <div class="card-body p-4 p-md-5">
 
-            <div class="modal-content bg-transparent">
-
-
-
-                <form>
-
-
-
-                    <div class="card mb-1">
-
-
-
-                        <div class="px-3 py-2 d-flex flex-row align-items-center" id="top-search">
-
-
-
-                            <i class="ri-search-line fs-22"></i>
-
-
-
-                            <input type="search" class="form-control border-0" id="search-modal-input"
-
-
-
-                                placeholder="Search for actions, people,">
-
-
-
-                            <button type="submit" class="btn p-0" data-bs-dismiss="modal"
-
-
-
-                                aria-label="Close"><i class="ri-close-fill"></i></button>
-
-
-
-                        </div>
-
-
-
-                    </div>
-
-
-
-                </form>
-
-
-
-            </div>
-
-
-
-        </div>
-
-
-
-    </div>
-
-
-
-
-
-    <div class="why-chooseus-layout2">
-
-        <div class="container-fluid">
-
-            <div class="row no-gap row-equal-height  justify-content-center ">
-
-
-
-                <div class="col-lg-12">
-
-                    <div class="contact-form-box">
-                        <div class="logodiv">
-                            <a class="navbar-brand" href="{{route('home')}}">
-
-                                <img src="{{ asset('assets/images/logo1.png ')}}" alt="Logo">
-
+                        <!-- Logo -->
+                        <div class="text-center mb-4">
+                            <a href="{{ route('home') }}" class="d-inline-block">
+                                <img src="{{ asset('assets/images/logo1.png') }}"
+                                     alt="Logo"
+                                     class="img-fluid"
+                                     style="max-height: 65px;">
                             </a>
                         </div>
-                        <div class="section-title">
 
-                            <h2 class="text-anime wow fadeInUp" style="
-    color: #184b1f;
-    font-size: 25px;
-    padding: 0px 0px 20px;
-">Admin Login</h2>
-
+                        <!-- Heading -->
+                        <div class="text-center mb-4">
+                            <h2 class="fw-bold mb-2" style="color: #184b1f;">
+                                Admin Login
+                            </h2>
+                            <p class="text-muted mb-0">
+                                Sign in to access your admin dashboard
+                            </p>
                         </div>
 
-                        <div class="contact-form wow fadeInUp" data-wow-delay="0.75s">
+                        <!-- Success Message -->
+                        @if(session('status'))
+                            <div class="alert alert-success">
+                                {{ session('status') }}
+                            </div>
+                        @endif
 
-                            @if(session('status'))
+                        <!-- Login Form -->
+                        <form action="{{ route('admin.login.perform') }}" method="POST">
 
-                            <div class="alert alert-success">{{ session('status') }}</div>
+                            @csrf
 
-                            @endif
+                            <!-- Email -->
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">
+                                    Email Address
+                                </label>
 
-                            <form action="{{ route('admin.login.perform') }}" method="POST">
-
-                                @csrf
-
-                                <div class="row">
-
-                                    <div class="form-group col-md-12 mb-4">
-
-                                        <input type="email" name="email" class="form-control" placeholder="Email" required value="{{ old('email') }}">
-
-                                        @error('email') <div class="text-danger mt-1">{{ $message }}</div> @enderror
-
-                                    </div>
-
-                                    <div class="form-group col-md-12 mb-4" style="position: relative;">
-
-                                        <input type="password" name="password" class="form-control" placeholder="Password" required>
-
-                                    </div>
-
-                                    <div class="col-md-12 text-center mb-3">
-
-                                        <button type="submit" class="btn-default">Login</button>
-
-                                    </div>
-
+                                <div class="input-group">
+                                   
+                                    <input type="email"
+                                           name="email"
+                                           class="form-control"
+                                           placeholder="Enter your email"
+                                           required
+                                           value="{{ old('email') }}">
                                 </div>
 
-                            </form>
+                                @error('email')
+                                    <div class="text-danger small mt-1">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
 
-                        </div>
+                            <!-- Password -->
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold">
+                                    Password
+                                </label>
+
+                                <div class="input-group">
+                                    
+                                    <input type="password"
+                                           name="password"
+                                           class="form-control"
+                                           placeholder="Enter your password"
+                                           required>
+                                </div>
+                            </div>
+
+                            <!-- Login Button -->
+                            <div class="d-grid">
+                                <button type="submit"
+                                        class="btn btn-success btn-lg rounded-3">
+                                    <i class="fa-solid fa-right-to-bracket me-2"></i>
+                                    Login
+                                </button>
+                            </div>
+
+                        </form>
 
                     </div>
 
+                </div>
+
+                <!-- Footer -->
+                <div class="text-center mt-4">
+                    <small class="text-muted">
+                        Admin Panel
+                    </small>
                 </div>
 
             </div>
@@ -338,221 +227,10 @@
 
     </div>
 
+</div>
 
 
 
-
-
-
-
-
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-    <!-- Vendor js -->
-
-    <script src="{{ asset('assets/admin/js/vendor.min.js.download') }}"></script>
-
-
-
-    <!-- App js -->
-
-    <script src="{{ asset('assets/admin/js/app.js.download') }}"></script>
-
-
-
-    <!-- Apex Chart js -->
-
-    <script src="{{ asset('assets/admin/js/apexcharts.min.js.download') }}"></script>
-
-
-
-    <!-- Projects Analytics Dashboard App js -->
-
-    <script src="{{ asset('assets/admin/js/dashboard.js.download') }}"></script>
-
-
-
-
-
-
-
-    <!-- Toast Container -->
-
-    <div id="toastContainer" style="position: fixed; top: 20px; right: 20px; z-index: 9999;"></div>
-
-
-
-    <style>
-        .invalid-feedback {
-
-            display: block !important;
-
-            color: #dc3545;
-
-            font-size: 0.875rem;
-
-            margin-top: 0.25rem;
-
-        }
-
-
-
-        .is-invalid {
-
-            border-color: #dc3545 !important;
-
-        }
-
-        /* Center whole section */
-        .why-chooseus-layout2 .container-fluid {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* Form Box Design */
-        .contact-form-box {
-            background: #ffffff;
-            padding: 40px 30px;
-            border: 1px solid #e5e5e5;
-            border-radius: 15px;
-            box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.08);
-            text-align: center;
-            position: relative;
-        }
-
-        /* Logo */
-        .contact-form-box::before {
-            content: "";
-            background: url('your-logo.png') no-repeat center;
-            background-size: 100px;
-            width: 100px;
-            height: 100px;
-            position: absolute;
-            top: -60px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        /* Add space for logo */
-        .section-title {
-            margin-top: 30px;
-        }
-
-        /* Input style */
-        .contact-form .form-control {
-            height: 50px;
-            border-radius: 8px;
-            border: 1px solid #dcdcdc;
-            padding-left: 15px;
-        }
-
-        /* Button */
-        .btn-default {
-            width: 100%;
-            height: 50px;
-            border-radius: 8px;
-            background: #97bd4e;
-            color: #fff;
-            border: none;
-            transition: 0.3s;
-        }
-
-        .btn-default:hover {
-            background: #084ec4;
-        }
-    </style>
-
-
-
-    <script>
-        $('.accordian-body').on('show.bs.collapse', function() {
-
-            $(this).closest("table")
-
-                .find(".collapse.in .action")
-
-                .not(this)
-
-                .collapse('toggle')
-
-        })
-
-
-
-        // Toast notification function
-
-        function showToast(message, type = 'info', duration = 3000) {
-
-            const toastId = 'toast-' + Date.now();
-
-            const bgClass = {
-
-                'success': 'bg-success',
-
-                'error': 'bg-danger',
-
-                'warning': 'bg-warning',
-
-                'info': 'bg-info'
-
-            } [type] || 'bg-info';
-
-
-
-            const textColor = type === 'warning' ? 'text-dark' : 'text-white';
-
-
-
-            const toastHTML = `
-
-                <div id="${toastId}" class="toast align-items-center ${bgClass} ${textColor} border-0" role="alert" aria-live="assertive" aria-atomic="true">
-
-                    <div class="d-flex">
-
-                        <div class="toast-body">
-
-                            ${message}
-
-                        </div>
-
-                        <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-
-                    </div>
-
-                </div>
-
-            `;
-
-
-
-            $('#toastContainer').append(toastHTML);
-
-            const toastElement = document.getElementById(toastId);
-
-            const toast = new bootstrap.Toast(toastElement, {
-                delay: duration
-            });
-
-            toast.show();
-
-
-
-            // Remove toast from DOM after it's hidden
-
-            toastElement.addEventListener('hidden.bs.toast', function() {
-
-                toastElement.remove();
-
-            });
-
-        }
-    </script>
 
 
 
