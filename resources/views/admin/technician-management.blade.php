@@ -133,10 +133,10 @@
                                                        
                                                         <td>
                                                             <div class="d-flex align-items-center justify-content-center gap-1">
-                                                                <button data-bs-toggle="modal" data-bs-target="#viewtechnicianModal-{{ $technician->id }}" class="btn btn-default btn-icon  btn-outline-dark btn-view" data-id="{{ $technician->id }}">view</button>
-                                                                <button data-bs-toggle="modal" data-bs-target="#edittechnicianModal-{{ $technician->id }}" class="btn btn-default btn-icon  btn-outline-dark btn-edit" data-id="{{ $technician->id }}">Edit</button>
+                                                                <button data-bs-toggle="modal" data-bs-target="#viewtechnicianModal-{{ $technician->id }}" class="btn btn-default btn-icon  btn-primary btn-view" data-id="{{ $technician->id }}">view</button>
+                                                                <button data-bs-toggle="modal" data-bs-target="#edittechnicianModal-{{ $technician->id }}" class="btn btn-default btn-icon  btn-warning btn-edit" data-id="{{ $technician->id }}">Edit</button>
                                                               
-                                                                <button class="btn btn-default btn-icon  btn-outline-dark btn-delete" 
+                                                                <button class="btn btn-default btn-icon  btn-danger btn-delete" 
                                                                         data-id="{{ $technician->id }}" 
                                                                         data-route="{{ route('admin.technicians.destroy', $technician->id) }}">
                                                                     delete

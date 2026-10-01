@@ -248,9 +248,9 @@
 
                                                 <td>
                                                     <div class="d-flex align-items-center justify-content-center gap-1">
-                                                        <button data-bs-toggle="modal" data-bs-target="#viewClientModal-{{ $client->id }}" class="btn btn-default btn-icon  btn-outline-dark btn-view" data-id="{{ $client->id }}"> View</button>
+                                                        <button data-bs-toggle="modal" data-bs-target="#viewClientModal-{{ $client->id }}" class="btn btn-default btn-icon  btn-primary btn-view" data-id="{{ $client->id }}"> View</button>
 
-                                                        <button data-bs-toggle="modal" data-bs-target="#editClientModal-{{ $client->id }}" class="btn btn-default btn-icon  btn-outline-dark btn-edit" data-id="{{ $client->id }}">Edit</button>
+                                                        <button data-bs-toggle="modal" data-bs-target="#editClientModal-{{ $client->id }}" class="btn btn-default btn-icon  btn-warning btn-edit" data-id="{{ $client->id }}">Edit</button>
 
                                                         <div class="modal fade" id="editClientModal-{{ $client->id }}" tabindex="-1" aria-hidden="true">
                                                             <div class="modal-dialog modal-md">
@@ -283,7 +283,7 @@
 
                                                         <!--<button class="btn btn-default btn-icon  btn-outline-dark btn-delete" data-id="{{ $client->id }}"><i class="ri-delete-bin-line"></i></button>-->
 
-                                                        <button class="btn btn-default btn-icon  btn-outline-dark btn-delete btn-danger"
+                                                        <button class="btn btn-default btn-icon  btn-danger btn-delete btn-danger"
 
                                                             data-id="{{ $client->id }}"
 
