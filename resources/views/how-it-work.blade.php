@@ -114,6 +114,7 @@
 					</div>
 				</div>
 			</div>
+<<<<<<< Updated upstream
 		</div> <!-- FAQ -->
 		<!-- FAQs Section -->
 
@@ -214,6 +215,10 @@
     </div>
 </div>
 
+=======
+		</div>
+	
+>>>>>>> Stashed changes
 	</div>
 </div> <!-- How It Works Page End --> <!-- Footer Ticker -->
 <div class="footer-ticker">

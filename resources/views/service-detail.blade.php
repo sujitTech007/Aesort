@@ -338,6 +338,7 @@ Support building efficiency initiatives and longer-term energy and sustainabilit
 
 <!-- FAQs Section -->
 
+<<<<<<< Updated upstream
 <div class="latest-news">
     <div class="container">
         <div class="row">
@@ -365,6 +366,22 @@ Support building efficiency initiatives and longer-term energy and sustainabilit
                     opportunities to improve energy performance.
                 </div>
             </div>
+=======
+		<div class="text-center mb-4 mb-lg-5">
+			<div class="service-hero-badge mb-3">
+				<i class="fa-solid fa-leaf me-2"></i>FAQs
+			</div>					
+
+			<h2 class="text-anime mb-2">
+				Frequently Asked Questions
+			</h2>
+
+			<p class="text-muted mb-0">
+				Find answers to common questions about renewable energy,
+				energy efficiency, and sustainable solutions.
+			</p>
+		</div>
+>>>>>>> Stashed changes
 
             <div class="faq-item">
                 <button class="faq-question">
