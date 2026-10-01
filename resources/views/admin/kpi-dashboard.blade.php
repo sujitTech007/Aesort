@@ -83,7 +83,7 @@ $kpiVersionPeriod = 'All-time snapshot / ' . now()->format('F Y');
                 <span class="text-muted small">Registered portfolio totals</span>
             </div>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-xxl-4 g-3">
-                <div class="col">
+                <div class="col-md-3">
                     <div class="card kpi-card">
                         <div class="card-body d-flex align-items-start justify-content-between gap-3 pb-0">
                             <div>
@@ -95,7 +95,7 @@ $kpiVersionPeriod = 'All-time snapshot / ' . now()->format('F Y');
                         <div class="card-footer bg-transparent kpi-context"><span><strong>Data updated:</strong> {{ $usersUpdatedAt?->format('M d, Y, h:i A') ?? 'Timestamp unavailable' }}</span><span><strong>Version/period:</strong> {{ $kpiVersionPeriod }}</span></div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-md-3">
                     <div class="card kpi-card">
                         <div class="card-body d-flex align-items-start justify-content-between gap-3 pb-0">
                             <div>
@@ -107,7 +107,7 @@ $kpiVersionPeriod = 'All-time snapshot / ' . now()->format('F Y');
                         <div class="card-footer bg-transparent kpi-context"><span><strong>Data updated:</strong> {{ $sitesUpdatedAt?->format('M d, Y, h:i A') ?? 'Timestamp unavailable' }}</span><span><strong>Version/period:</strong> {{ $kpiVersionPeriod }}</span></div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-md-3">
                     <div class="card kpi-card">
                         <div class="card-body d-flex align-items-start justify-content-between gap-3 pb-0">
                             <div>
@@ -119,7 +119,7 @@ $kpiVersionPeriod = 'All-time snapshot / ' . now()->format('F Y');
                         <div class="card-footer bg-transparent kpi-context"><span><strong>Data updated:</strong> {{ $devicesUpdatedAt?->format('M d, Y, h:i A') ?? 'Timestamp unavailable' }}</span><span><strong>Version/period:</strong> {{ $kpiVersionPeriod }}</span></div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-md-3">
                     <div class="card kpi-card">
                         <div class="card-body d-flex align-items-start justify-content-between gap-3 pb-0">
                             <div>
