@@ -27,9 +27,9 @@ use App\Http\Controllers\Admin\AdminDeviceController;
 use App\Http\Controllers\Admin\AdminBlogController;
 use App\Http\Controllers\Admin\SubscriptionPlanController;
 use App\Http\Controllers\Admin\AdminSiteController;
+use App\Http\Controllers\Admin\RolloutController;
 use App\Http\Controllers\Client\ClientController;
 use App\Http\Controllers\Client\ClientSiteController;
-use App\Http\Controllers\SupportTicketController;
 
 
 Route::get('/', [PagesController::class, 'home'])->name('home');
@@ -114,7 +114,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
 		Route::resource('sites', AdminSiteController::class);
 		Route::get('/get-sites/{user}', [AdminDeviceController::class, 'getSitesByUser'])->name('getSitesByUser');
 		Route::resource('devices', AdminDeviceController::class);
-		Route::resource('subscription_plans', SubscriptionPlanController::class);
+		Route::post('/subscription_plans/{subscriptionPlan}/approve-pricing', [SubscriptionPlanController::class, 'approvePricing'])->middleware('admin.permission:admin.pricing.manage')->name('subscription_plans.approve-pricing');
+		Route::resource('subscription_plans', SubscriptionPlanController::class)->middleware('admin.permission:admin.pricing.manage');
 		Route::resource('blog', AdminBlogController::class);
 
 		// Route::resource('services', AdminServiceController::class);
@@ -123,12 +124,26 @@ Route::prefix('admin')->name('admin.')->group(function () {
 		// Route::get('/devices', [AdminPagesController::class, 'devices'])->name('devices');
 		Route::get('/subscription/index', [AdminPagesController::class, 'subscriptionPurchase'])->name('subscription.index');
 		Route::get('/reports', [AdminPagesController::class, 'reports'])->name('reports');
+		Route::get('/reports/customer-portfolio.csv', [AdminPagesController::class, 'customerPortfolioExport'])->middleware('admin.permission:admin.reports.export')->name('reports.customer-portfolio');
 		Route::get('/energy-savings', [AdminPagesController::class, 'energySavingsEvidence'])->name('energy.savings');
+		Route::get('/rollout', [RolloutController::class, 'index'])->middleware('admin.permission:admin.rollout.view')->name('rollout.index');
+		Route::post('/rollout/baselines', [RolloutController::class, 'storeBaseline'])->middleware('admin.permission:admin.energy.baselines.manage')->name('rollout.baselines.store');
+		Route::post('/rollout/baselines/{id}/review', [RolloutController::class, 'reviewBaseline'])->middleware('admin.permission:admin.energy.baselines.manage')->whereNumber('id')->name('rollout.baselines.review');
+		Route::post('/rollout/savings', [RolloutController::class, 'storeSavingsMeasure'])->middleware('admin.permission:admin.energy.baselines.manage')->name('rollout.savings.store');
+		Route::post('/rollout/savings/{id}/stage', [RolloutController::class, 'updateSavingsStage'])->middleware('admin.permission:admin.energy.savings.verify')->whereNumber('id')->name('rollout.savings.stage');
+		Route::post('/rollout/onboarding', [RolloutController::class, 'storeOnboarding'])->middleware('admin.permission:admin.onboarding.manage')->name('rollout.onboarding.store');
+		Route::post('/rollout/onboarding/{id}', [RolloutController::class, 'updateOnboarding'])->middleware('admin.permission:admin.onboarding.manage')->whereNumber('id')->name('rollout.onboarding.update');
+		Route::post('/rollout/recommendations', [RolloutController::class, 'storeRecommendation'])->middleware('admin.permission:admin.recommendations.manage')->name('rollout.recommendations.store');
+		Route::post('/rollout/recommendations/{id}', [RolloutController::class, 'updateRecommendation'])->middleware('admin.permission:admin.recommendations.manage')->whereNumber('id')->name('rollout.recommendations.update');
+		Route::post('/rollout/benchmarks', [RolloutController::class, 'storeBenchmark'])->middleware('admin.permission:admin.benchmarks.manage')->name('rollout.benchmarks.store');
+		Route::post('/rollout/benchmarks/{id}/approve', [RolloutController::class, 'approveBenchmark'])->middleware('admin.permission:admin.benchmarks.manage')->whereNumber('id')->name('rollout.benchmarks.approve');
+		Route::post('/rollout/incidents', [RolloutController::class, 'storeIncident'])->middleware('admin.permission:admin.incidents.manage')->name('rollout.incidents.store');
+		Route::post('/rollout/incidents/{id}', [RolloutController::class, 'updateIncident'])->middleware('admin.permission:admin.incidents.manage')->whereNumber('id')->name('rollout.incidents.update');
+		Route::post('/rollout/integrations', [RolloutController::class, 'recordIntegrationCheck'])->middleware('admin.permission:admin.integrations.manage')->name('rollout.integrations.store');
+		Route::post('/rollout/roles', [RolloutController::class, 'assignRole'])->middleware('admin.permission:admin.roles.manage')->name('rollout.roles.assign');
 		Route::get('/notifications', [AdminPagesController::class, 'notifications'])->name('notifications');
 		Route::get('/billing', [AdminPagesController::class, 'billing'])->name('billing');
 		Route::get('/users', [AdminPagesController::class, 'users'])->name('users');
-		Route::get('/support', [SupportTicketController::class, 'index'])->name('support');
-		Route::post('/support', [SupportTicketController::class, 'store'])->name('support.store');
 		Route::get('/settings', [AdminPagesController::class, 'settings'])->name('settings');
 		Route::get('/profile', [AdminPagesController::class, 'profile'])->name('profile');
 		Route::post('/profile', [AdminPagesController::class, 'updateProfile'])->name('profile.update');
@@ -166,10 +181,6 @@ Route::middleware('auth')->group(function () {
 	Route::get('/invoices/{id}', [ClientController::class, 'invoiceDetail'])->name('client.invoices.detail');
 	Route::get('/notifications', [\App\Http\Controllers\Client\NotificationController::class, 'index'])->name('client.notifications');
 	Route::post('/notifications/{id}/read', [\App\Http\Controllers\Client\NotificationController::class, 'markAsRead'])->name('client.notifications.read');
-	Route::get('/support', [ClientController::class, 'support'])->name('client.support');
-	Route::post('/support', [ClientController::class, 'submitSupport'])->name('client.support.submit');
-
-
 	Route::resource('client/sites', ClientSiteController::class)->names('client.sites');
 
 });

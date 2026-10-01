@@ -9,6 +9,7 @@ use App\Models\Site;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 
 class ClientSiteController extends Controller
 {
@@ -22,14 +23,17 @@ class ClientSiteController extends Controller
     // Store new site
     public function store(Request $request)
 {
-    $data = $request->only(['user_id','name','address','city','country','area_sqft','type','timezone','status']);
+        $data = $request->only(['name','address','city','country','province','portfolio_name','heating_fuel','operating_hours','area_sqft','type','timezone']);
 
     $validator = Validator::make($data, [
-        'user_id' => 'required|exists:users,id',
         'name' => 'required|string|max:255',
         'address' => 'required|string|max:255',
         'city' => 'required|string|max:100',
         'country' => 'required|string|max:100',
+        'province' => 'nullable|string|max:100',
+        'portfolio_name' => 'nullable|string|max:150',
+        'heating_fuel' => 'nullable|string|max:100',
+        'operating_hours' => 'nullable|string|max:255',
         'area_sqft' => 'required|numeric',
         'type' => 'required|in:office,hotel,retail,hospital,school,other',
         'timezone' => 'required|string|max:50',
@@ -41,11 +45,15 @@ class ClientSiteController extends Controller
     }
 
     $site = Site::create([
-        'user_id' => $data['user_id'],
+        'user_id' => Auth::id(),
         'name' => $data['name'],
         'address' => $data['address'],
         'city' => $data['city'],
         'country' => $data['country'],
+        'province' => $data['province'] ?? null,
+        'portfolio_name' => $data['portfolio_name'] ?? null,
+        'heating_fuel' => $data['heating_fuel'] ?? null,
+        'operating_hours' => $data['operating_hours'] ?? null,
         'area_sqft' => $data['area_sqft'],
         'type' => $data['type'],
         'timezone' => $data['timezone'],
@@ -66,29 +74,35 @@ class ClientSiteController extends Controller
     // Show a site
     public function show(Site $site)
     {
+        abort_unless((int) $site->user_id === (int) Auth::id(), 404);
         return view('client.partials.site-view', compact('site'));
     }
 
     // Edit form
     public function edit(Site $site)
     {
+        abort_unless((int) $site->user_id === (int) Auth::id(), 404);
         return view('client.partials.site-edit', compact('site'));
     }
 
     // Update site
     public function update(Request $request, Site $site)
     {
-        $data = $request->only(['user_id','name','address','city','country','area_sqft','type','timezone','status']);
+        abort_unless((int) $site->user_id === (int) Auth::id(), 404);
+        $data = $request->only(['name','address','city','country','province','portfolio_name','heating_fuel','operating_hours','area_sqft','type','timezone']);
 
         $validator = Validator::make($data, [
             'name' => 'required|string|max:255',
             'address' => 'required|string|max:255',
             'city' => 'required|string|max:100',
             'country' => 'required|string|max:100',
+            'province' => 'nullable|string|max:100',
+            'portfolio_name' => 'nullable|string|max:150',
+            'heating_fuel' => 'nullable|string|max:100',
+            'operating_hours' => 'nullable|string|max:255',
             'area_sqft' => 'required|numeric',
             'type' => 'required|in:office,hotel,retail,hospital,school,other',
             'timezone' => 'required|string|max:50',
-            'status' => 'nullable|in:0,1',
         ]);
 
         if ($validator->fails()) {
@@ -98,15 +112,31 @@ class ClientSiteController extends Controller
             return redirect()->back()->withErrors($validator)->withInput()->with('modal', 'editSiteModal-' . $site->id);
         }
 
+        $before = $site->only(['name', 'address', 'city', 'country', 'province', 'portfolio_name', 'area_sqft', 'type', 'timezone', 'heating_fuel', 'operating_hours']);
         $site->update([
             'name' => $data['name'],
             'address' => $data['address'],
             'city' => $data['city'],
             'country' => $data['country'],
+            'province' => $data['province'] ?? null,
+            'portfolio_name' => $data['portfolio_name'] ?? null,
+            'heating_fuel' => $data['heating_fuel'] ?? null,
+            'operating_hours' => $data['operating_hours'] ?? null,
             'area_sqft' => $data['area_sqft'],
             'type' => $data['type'],
             'timezone' => $data['timezone'],
-            'status' => $data['status'] ?? 1,
+        ]);
+
+        DB::table('admin_audit_logs')->insert([
+            'admin_id' => null,
+            'entity_type' => 'site',
+            'entity_id' => $site->id,
+            'event' => 'client_context_updated',
+            'reason' => 'Site context updated by the owning customer.',
+            'before_values' => json_encode($before),
+            'after_values' => json_encode($site->only(array_keys($before))),
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
 
         if ($request->expectsJson()) {
@@ -119,6 +149,7 @@ class ClientSiteController extends Controller
     // Delete site
     public function destroy(Site $site)
     {
+        abort_unless((int) $site->user_id === (int) Auth::id(), 404);
         $site->delete();
 
         if (request()->expectsJson()) {

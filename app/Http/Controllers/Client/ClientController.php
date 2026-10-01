@@ -205,16 +205,12 @@ class ClientController extends Controller
     public function changePassword(Request $request)
     {
         $request->validate([
-            // 'current_password' => 'required',
+            'current_password' => 'required|current_password',
             'new_password' => 'required|confirmed|min:6',
         ]);
 
         $user = auth()->user();
         
-        // if (!Hash::check($request->current_password, $user->password)) {
-        //     return back()->with('error', 'Current password is incorrect.');
-        // }
-
         $user->password = Hash::make($request->new_password);
         $user->save();
 

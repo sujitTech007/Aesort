@@ -64,7 +64,9 @@
                                                         <th class="sorting gridjs-th" tabindex="0"
                                                             aria-controls="basic-datatable" rowspan="1" colspan="1"
                                                             aria-label="Position: activate to sort column ascending">
-                                                           Client Name</th>
+                                                                              Client</th>
+                                                                          <th>Portfolio</th>
+                                                                          <th>Province / State</th>
                                                         <th class="sorting gridjs-th" tabindex="0"
                                                             aria-controls="basic-datatable" rowspan="1" colspan="1"
                                                             aria-label="Position: activate to sort column ascending">
@@ -72,7 +74,7 @@
                                                         <th class="sorting gridjs-th" tabindex="0"
                                                             aria-controls="basic-datatable" rowspan="1" colspan="1"
                                                             aria-label="Office: activate to sort column ascending">
-                                                            address</th>
+                                                            Address</th>
 
                                                         <th class="sorting gridjs-th" tabindex="0"
                                                             aria-controls="basic-datatable" rowspan="1" colspan="1"
@@ -82,6 +84,10 @@
                                                             aria-controls="basic-datatable" rowspan="1" colspan="1"
                                                             aria-label="Salary: activate to sort column ascending">
                                                          Type</th>
+                                                        <th>Heating fuel</th>
+                                                        <th>Timezone</th>
+                                                        <th>Operating hours</th>
+                                                        <th>Data readiness</th>
                                                         <th class="sorting gridjs-th" tabindex="0"
                                                             aria-controls="basic-datatable" rowspan="1" colspan="1"
                                                             aria-label="Salary: activate to sort column ascending">
@@ -104,10 +110,20 @@ $i = ($sites->currentPage() - 1) * $sites->perPage() + 1;
                                                     <tr class="odd">
                                                         <td class="dtr-control sorting_1" tabindex="0">{{ $i++ }}</td>
                                                         <td>{{ $site->user->name }}</td>
+                                                        <td>{{ $site->portfolio_name ?: 'Unassigned' }}</td>
+                                                        <td>{{ $site->province ?: 'Not set' }}</td>
                                                         <td>{{ $site->name }}</td>
                                                         <td>{{ $site->address }}</td>
                                                         <td>{{ $site->area_sqft }}</td>
                                                         <td>{{ $site->type }}</td>
+                                                        <td>{{ $site->heating_fuel ?: 'Not set' }}</td>
+                                                        <td>{{ $site->timezone ?: 'Not set' }}</td>
+                                                        <td>{{ $site->operating_hours ?: 'Not set' }}</td>
+                                                        <td>
+                                                            @php($siteContextReady = filled($site->portfolio_name) && filled($site->province) && filled($site->area_sqft) && filled($site->type) && filled($site->timezone) && filled($site->heating_fuel) && filled($site->operating_hours))
+                                                            <span class="badge {{ $siteContextReady ? 'bg-success-subtle text-success' : 'bg-warning-subtle text-warning' }}">{{ $siteContextReady ? 'Context complete' : 'Context incomplete' }}</span>
+                                                            <div class="small text-muted">Baseline pending</div>
+                                                        </td>
                                                         <td>
                                                             @if($site->status == 1)
                                                             Active
@@ -314,6 +330,16 @@ $i = ($sites->currentPage() - 1) * $sites->perPage() + 1;
                             <div class="invalid-feedback d-block city-error"></div>
                         </div>
 
+                        <div class="col-md-6 mt-2">
+                            <label for="portfolio_name" class="form-label">Portfolio</label>
+                            <input type="text" name="portfolio_name" class="form-control" id="portfolio_name" value="{{ old('portfolio_name') }}">
+                        </div>
+
+                        <div class="col-md-6 mt-2">
+                            <label for="province" class="form-label">Province / State</label>
+                            <input type="text" name="province" class="form-control" id="province" value="{{ old('province') }}">
+                        </div>
+
                         <!-- Country -->
                         <div class="col-md-6 mt-2">
                             <label for="country" class="form-label">Country</label>
@@ -348,6 +374,16 @@ $i = ($sites->currentPage() - 1) * $sites->perPage() + 1;
                             <label for="timezone" class="form-label">Timezone</label>
                             <input type="text" name="timezone" class="form-control" id="timezone" value="{{ old('timezone') }}" required>
                             <div class="invalid-feedback d-block timezone-error"></div>
+                        </div>
+
+                        <div class="col-md-6 mt-2">
+                            <label for="heating_fuel" class="form-label">Primary heating fuel</label>
+                            <input type="text" name="heating_fuel" class="form-control" id="heating_fuel" value="{{ old('heating_fuel') }}">
+                        </div>
+
+                        <div class="col-md-6 mt-2">
+                            <label for="operating_hours" class="form-label">Typical operating hours</label>
+                            <input type="text" name="operating_hours" class="form-control" id="operating_hours" value="{{ old('operating_hours') }}" placeholder="Mon-Fri 08:00-18:00">
                         </div>
 
                         <!-- Status -->

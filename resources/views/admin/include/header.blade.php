@@ -350,6 +350,14 @@
 
                     </li>
 
+                    <li class="side-nav-item {{ request()->routeIs('admin.rollout.*') ? 'active' : '' }}">
+                        <a href="{{ route('admin.rollout.index') }}" class="side-nav-link {{ request()->routeIs('admin.rollout.*') ? 'active' : '' }}">
+                            <span class="menu-icon"><i class="ri-list-check-2"></i></span>
+                            <span class="menu-text">Rollout Workflows</span>
+                        </a>
+                    </li>
+
+
                     <li class="side-nav-item {{ request()->routeIs('admin.reports') ? 'active' : '' }}">
 
                         <a href="{{ route('admin.reports') }}" class="side-nav-link {{ request()->routeIs('admin.reports') ? 'active' : '' }}">
@@ -357,6 +365,18 @@
                             <span class="menu-icon"><i class="ri-file-chart-line"></i></span>
 
                             <span class="menu-text"> Reports & Insights </span>
+
+                        </a>
+
+                    </li>
+
+                    <li class="side-nav-item {{ request()->routeIs('admin.users') ? 'active' : '' }}">
+
+                        <a href="{{ route('admin.users') }}" class="side-nav-link {{ request()->routeIs('admin.users') ? 'active' : '' }}">
+
+                            <span class="menu-icon"><i class="ri-user-settings-line"></i></span>
+
+                            <span class="menu-text"> User Management </span>
 
                         </a>
 
@@ -374,17 +394,7 @@
 
                     </li>
 
-                    <li class="side-nav-item {{ request()->routeIs('admin.support') ? 'active' : '' }}">
-
-                        <a href="{{ route('admin.support') }}" class="side-nav-link {{ request()->routeIs('admin.support') ? 'active' : '' }}">
-
-                            <span class="menu-icon"><i class="ri-question-fill"></i></span>
-
-                            <span class="menu-text"> Support Tickets </span>
-
-                        </a>
-
-                    </li>  -->
+                    -->
 
                        
 

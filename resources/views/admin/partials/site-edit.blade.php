@@ -39,6 +39,16 @@
             <div class="invalid-feedback country-error"></div>
         </div>
 
+        <div class="col-md-6 mt-2">
+            <label for="portfolio-{{ $site->id }}" class="form-label">Portfolio</label>
+            <input type="text" name="portfolio_name" class="form-control" id="portfolio-{{ $site->id }}" value="{{ old('portfolio_name', $site->portfolio_name) }}">
+        </div>
+
+        <div class="col-md-6 mt-2">
+            <label for="province-{{ $site->id }}" class="form-label">Province / State</label>
+            <input type="text" name="province" class="form-control" id="province-{{ $site->id }}" value="{{ old('province', $site->province) }}">
+        </div>
+
         <!-- Area (sqft) -->
         <div class="col-md-6 mt-2">
             <label for="area_sqft-{{ $site->id }}" class="form-label">Area (sqft)</label>
@@ -66,6 +76,16 @@
             <label for="timezone-{{ $site->id }}" class="form-label">Timezone</label>
             <input type="text" name="timezone" class="form-control" id="timezone-{{ $site->id }}" value="{{ old('timezone', $site->timezone) }}" required>
             <div class="invalid-feedback timezone-error"></div>
+        </div>
+
+        <div class="col-md-6 mt-2">
+            <label for="heating-fuel-{{ $site->id }}" class="form-label">Primary heating fuel</label>
+            <input type="text" name="heating_fuel" class="form-control" id="heating-fuel-{{ $site->id }}" value="{{ old('heating_fuel', $site->heating_fuel) }}">
+        </div>
+
+        <div class="col-md-6 mt-2">
+            <label for="operating-hours-{{ $site->id }}" class="form-label">Typical operating hours</label>
+            <input type="text" name="operating_hours" class="form-control" id="operating-hours-{{ $site->id }}" value="{{ old('operating_hours', $site->operating_hours) }}" placeholder="Mon-Fri 08:00-18:00">
         </div>
 
         <!-- Status -->

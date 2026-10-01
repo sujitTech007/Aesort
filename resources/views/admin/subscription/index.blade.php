@@ -50,20 +50,21 @@
                                                     aria-label="Position: activate to sort column ascending">
                                                     Name
                                                 </th>
+                                                <th>Pricing approval</th>
                                                 <th class="sorting gridjs-th" tabindex="0"
                                                     aria-controls="basic-datatable" rowspan="1" colspan="1"
                                                     aria-label="Office: activate to sort column ascending">
-                                                    Amount
+                                                    Proposed amount (USD)
                                                 </th>
                                                 <th class="sorting gridjs-th" tabindex="0"
                                                     aria-controls="basic-datatable" rowspan="1" colspan="1"
                                                     aria-label="Office: activate to sort column ascending">
-                                                    From SQFT
+                                                    Minimum area (sq ft)
                                                 </th>
                                                 <th class="sorting gridjs-th" tabindex="0"
                                                     aria-controls="basic-datatable" rowspan="1" colspan="1"
                                                     aria-label="Office: activate to sort column ascending">
-                                                    To SQFT
+                                                    Maximum area (sq ft)
                                                 </th>
                                                 <th class="sorting gridjs-th" tabindex="0"
                                                     aria-controls="basic-datatable" rowspan="1" colspan="1"
@@ -86,7 +87,15 @@
                                             <tr class="odd">
                                                 <td class="dtr-control sorting_1" tabindex="0">{{ $i++ }}</td>
                                                 <td>{{ @$plan->name }}</td>
-                                                <td>{{ @$plan->amount }}</td>
+                                                <td>
+                                                    @if($plan->pricing_status === 'approved')
+                                                        <span class="badge bg-success">Approved</span>
+                                                        <div class="small text-muted">{{ $plan->pricing_approved_at?->format('M d, Y') }}</div>
+                                                    @else
+                                                        <span class="badge bg-warning-subtle text-warning">Draft / unapproved</span>
+                                                    @endif
+                                                </td>
+                                                <td>{{ $plan->currency_code ?? 'USD' }} {{ number_format((float) $plan->amount, 2) }}</td>
                                                 <td>{{ @$plan->from_sqft }}</td>
                                                 <td>{{ @$plan->to_sqft }}</td>
                                                 <td>
@@ -99,10 +108,25 @@
 
                                                 <td>
                                                     <a href="{{ route('admin.subscription_plans.edit', @$plan->id) }}" class="btn btn-sm btn-warning">Edit</a>
+                                                    @if($plan->pricing_status !== 'approved')
+                                                        @if((int) $plan->created_by !== (int) Auth::guard('admin')->id() || \App\Models\Admin::count() === 1)
+                                                            <form action="{{ route('admin.subscription_plans.approve-pricing', $plan->id) }}" method="POST" class="mt-2">
+                                                                @csrf
+                                                                <label class="form-label small" for="approval-reason-{{ $plan->id }}">{{ (int) $plan->created_by === (int) Auth::guard('admin')->id() ? 'Single-admin exception reason' : 'Approval reason' }}</label>
+                                                                <input id="approval-reason-{{ $plan->id }}" type="text" name="approval_reason" class="form-control form-control-sm mb-1" minlength="8" required>
+                                                                <button type="submit" class="btn btn-sm btn-success">Approve</button>
+                                                            </form>
+                                                            @if((int) $plan->created_by === (int) Auth::guard('admin')->id())
+                                                                <div class="small text-warning mt-1">Only one admin exists; this approval is audited as a single-admin exception.</div>
+                                                            @endif
+                                                        @else
+                                                            <div class="small text-muted mt-2">Requires approval by another administrator.</div>
+                                                        @endif
+                                                    @endif
                                                     <form action="{{ route('admin.subscription_plans.destroy', @$plan->id) }}" method="POST" style="display:inline;">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button class="btn btn-sm btn-danger" onclick="return confirm('Delete this plan?')">Delete</button>
+                                                        <button class="btn btn-sm btn-outline-danger" onclick="return confirm('Archive this plan? Existing subscription history will be retained.')">Archive</button>
                                                     </form>
                                                 </td>
                                             </tr>

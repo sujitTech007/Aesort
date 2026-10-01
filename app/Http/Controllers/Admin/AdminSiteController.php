@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Site;
+use App\Models\AdminAuditLog;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class AdminSiteController extends Controller
 {
@@ -70,7 +72,7 @@ class AdminSiteController extends Controller
     // Store new site
     public function store(Request $request)
 {
-    $data = $request->only(['user_id','name','address','city','country','area_sqft','type','timezone','status']);
+    $data = $request->only(['user_id','name','address','city','country','province','portfolio_name','heating_fuel','operating_hours','area_sqft','type','timezone','status']);
 
     $validator = Validator::make($data, [
         'user_id' => 'required|exists:users,id',
@@ -78,6 +80,10 @@ class AdminSiteController extends Controller
         'address' => 'required|string|max:255',
         'city' => 'required|string|max:100',
         'country' => 'required|string|max:100',
+        'province' => 'nullable|string|max:100',
+        'portfolio_name' => 'nullable|string|max:150',
+        'heating_fuel' => 'nullable|string|max:100',
+        'operating_hours' => 'nullable|string|max:255',
         'area_sqft' => 'required|numeric',
         'type' => 'required|in:office,hotel,retail,hospital,school,other',
         'timezone' => 'required|string|max:50',
@@ -94,10 +100,23 @@ class AdminSiteController extends Controller
         'address' => $data['address'],
         'city' => $data['city'],
         'country' => $data['country'],
+        'province' => $data['province'] ?? null,
+        'portfolio_name' => $data['portfolio_name'] ?? null,
+        'heating_fuel' => $data['heating_fuel'] ?? null,
+        'operating_hours' => $data['operating_hours'] ?? null,
         'area_sqft' => $data['area_sqft'],
         'type' => $data['type'],
         'timezone' => $data['timezone'],
         'status' => $data['status'] ?? 1,
+    ]);
+
+    AdminAuditLog::create([
+        'admin_id' => Auth::guard('admin')->id(),
+        'entity_type' => 'site',
+        'entity_id' => $site->id,
+        'event' => 'created',
+        'reason' => 'Site record created.',
+        'after_values' => $site->only(['user_id', 'name', 'portfolio_name', 'province', 'city', 'country', 'area_sqft', 'type', 'timezone', 'heating_fuel', 'operating_hours', 'status']),
     ]);
 
     if ($request->expectsJson()) {
@@ -125,7 +144,7 @@ return redirect()->route('admin.sites.index')->with('success', 'Site created suc
     // Update site
     public function update(Request $request, Site $site)
     {
-        $data = $request->only(['user_id','name','address','city','country','area_sqft','type','timezone','status']);
+        $data = $request->only(['user_id','name','address','city','country','province','portfolio_name','heating_fuel','operating_hours','area_sqft','type','timezone','status','change_reason']);
 
         $validator = Validator::make($data, [
             'user_id' => 'required|exists:users,id',
@@ -133,10 +152,15 @@ return redirect()->route('admin.sites.index')->with('success', 'Site created suc
             'address' => 'required|string|max:255',
             'city' => 'required|string|max:100',
             'country' => 'required|string|max:100',
+            'province' => 'nullable|string|max:100',
+            'portfolio_name' => 'nullable|string|max:150',
+            'heating_fuel' => 'nullable|string|max:100',
+            'operating_hours' => 'nullable|string|max:255',
             'area_sqft' => 'required|numeric',
             'type' => 'required|in:office,hotel,retail,hospital,school,other',
             'timezone' => 'required|string|max:50',
             'status' => 'nullable|in:0,1',
+            'change_reason' => 'required|string|min:8|max:1000',
         ]);
 
         if ($validator->fails()) {
@@ -146,16 +170,31 @@ return redirect()->route('admin.sites.index')->with('success', 'Site created suc
             return redirect()->back()->withErrors($validator)->withInput()->with('modal', 'editSiteModal-' . $site->id);
         }
 
+        $before = $site->only(['user_id', 'name', 'address', 'city', 'country', 'province', 'portfolio_name', 'area_sqft', 'type', 'timezone', 'heating_fuel', 'operating_hours', 'status']);
         $site->update([
             'user_id' => $data['user_id'],
             'name' => $data['name'],
             'address' => $data['address'],
             'city' => $data['city'],
             'country' => $data['country'],
+            'province' => $data['province'] ?? null,
+            'portfolio_name' => $data['portfolio_name'] ?? null,
+            'heating_fuel' => $data['heating_fuel'] ?? null,
+            'operating_hours' => $data['operating_hours'] ?? null,
             'area_sqft' => $data['area_sqft'],
             'type' => $data['type'],
             'timezone' => $data['timezone'],
             'status' => $data['status'] ?? 1,
+        ]);
+
+        AdminAuditLog::create([
+            'admin_id' => Auth::guard('admin')->id(),
+            'entity_type' => 'site',
+            'entity_id' => $site->id,
+            'event' => 'updated',
+            'reason' => $data['change_reason'],
+            'before_values' => $before,
+            'after_values' => $site->only(array_keys($before)),
         ]);
 
         if ($request->expectsJson()) {
