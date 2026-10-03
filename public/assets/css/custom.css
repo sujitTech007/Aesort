@@ -3913,7 +3913,7 @@ header.main-header .header-sticky.active {
 
 .skillbar .skill-data .count {
 
-	color: var(--accent-color);
+	color: var(--primary-color);
 
 	font-size: 22px;
 
