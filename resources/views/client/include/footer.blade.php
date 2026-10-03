@@ -171,15 +171,11 @@
 
 									<ul>
 
-										<li><a href="{{ route('about') }}">About Us</a></li>
-
-										<li><a href="{{ route('services') }}">Services</a></li>
-
-										<li><a href="{{ route('blog') }}">Blog</a></li>
-
-										<li><a href="{{ route('contact') }}">Contact Us</a></li>
-										
-										<li><a href="{{ route('faqs') }}">FAQs</a></li>
+										<li><a href="{{ route('client.dashboard') }}">Dashboard</a></li>
+										<li><a href="{{ route('client.analytics') }}">Portfolio Analytics</a></li>
+										<li><a href="{{ route('client.sites') }}">Sites</a></li>
+										<li><a href="{{ route('client.devices') }}">Devices &amp; Sensors</a></li>
+										<li><a href="{{ route('client.value-reports') }}">Value Reports</a></li>
 
 									</ul>
 
@@ -187,9 +183,7 @@
 
 								<!-- Footer Links End -->
 
-							</div>@php 
-							 $services_links = App\Models\Service::where('status' , 1)->limit(5)->get();
-							 @endphp
+							</div>
 
 							<div class="col-lg-3 col-md-4">
 
@@ -197,12 +191,13 @@
 
 								<div class="footer-links">
 
-									<h2>Services</h2>
+										<h2>Readings &amp; Account</h2>
 
 									<ul>
-                                    @foreach($services_links as $services_link)
-										<li><a href="{{ route('service.detail', $services_link->slug ) }}">{{ $services_link->title}}</a></li>
-									@endforeach
+										<li><a href="{{ route('client.energy-readings') }}">Energy Readings</a></li>
+										<li><a href="{{ route('client.notifications') }}">Notifications</a></li>
+										<li><a href="{{ route('client.subscription') }}">Subscription &amp; Billing</a></li>
+										<li><a href="{{ route('client.profile') }}">Profile</a></li>
 
 									</ul>
 

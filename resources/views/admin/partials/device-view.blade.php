@@ -84,3 +84,28 @@
 
 </div>
 
+<section class="border rounded p-3 mt-3">
+    <h5 class="mb-2">Reading API setup @if($device->is_demo)<span class="badge bg-secondary">Demo data</span>@endif</h5>
+    @if($device->is_demo)
+        <div class="alert alert-secondary small">This is sample data for testing the admin device list. Demo devices are intentionally rejected by the readings API and are not shown in a customer's live portal.</div>
+    @endif
+    <p class="text-muted mb-2">Registering a device does not automatically provide meter readings. Configure the meter or gateway to send an HTTP POST request to the endpoint below for each reading. The gateway/API integration is configured in the device or gateway software, not in this website form.</p>
+    <label class="form-label fw-semibold" for="device-reading-endpoint-{{ $device->id }}">Is device ka endpoint</label>
+    <div class="input-group mb-3">
+        <input id="device-reading-endpoint-{{ $device->id }}" type="text" class="form-control font-monospace" value="{{ url('/api/devices/' . $device->id . '/readings') }}" readonly>
+        <button type="button" class="btn btn-outline-secondary" onclick="navigator.clipboard.writeText(document.getElementById('device-reading-endpoint-{{ $device->id }}').value)">Copy URL</button>
+    </div>
+    <div class="small mb-2"><strong>Method:</strong> POST · <strong>Content-Type:</strong> application/json · <strong>Authentication:</strong> Authorization: Bearer &lt;customer Sanctum token&gt;</div>
+    <p class="small text-warning mb-2">Important: The API currently requires a customer Sanctum token. This admin screen does not issue tokens. Before connecting a gateway, configure the customer's token securely in the gateway. Do not share the token on public or customer-facing screens.</p>
+    <label class="form-label fw-semibold">JSON example</label>
+    <pre class="bg-light border rounded p-2 mb-2"><code>{
+  "reading_time": "2026-10-03T14:00:00Z",
+  "voltage": 230,
+  "current": 4.2,
+  "power": 0.97,
+  "energy": 12.5,
+  "temperature": 22.4
+}</code></pre>
+    <p class="small text-muted mb-0">A successful request returns HTTP 201, saves the measurement to device_readings, and updates Last Report. The saved reading should then appear on the customer's Energy Readings page. Actual meter data must come from the gateway or firmware; the sample JSON is only a format example.</p>
+</section>
+

@@ -176,7 +176,7 @@
 
                                                         <tbody>
 
-                                                            @foreach($subscriptions as $index => $subscription)
+                                                            @forelse($subscriptions as $index => $subscription)
 
                                                                 <tr class="odd">
 
@@ -186,7 +186,7 @@
 
                                                                     <td>{{ $subscription->plan->name ?? '-' }}</td>
 
-                                                                    <td>${{ number_format($subscription->amount, 2) }}</td>
+                                                                    <td>{{ strtoupper($subscription->currency_code ?: 'USD') }} {{ number_format($subscription->amount, 2) }}</td>
 
                                                                 <td>
 
@@ -254,7 +254,9 @@
 
                                                                 </tr>
 
-                                                            @endforeach
+                                                            @empty
+                                                            <tr><td colspan="8" class="text-center py-5"><strong>No active subscriptions are recorded.</strong><div class="small text-muted mb-3">Review a site and choose an approved plan that matches its area.</div><a href="{{ route('client.sites') }}" class="btn btn-sm btn-primary">Review sites and plans</a></td></tr>
+                                                            @endforelse
 
                                                             <tr>
 

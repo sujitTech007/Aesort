@@ -22,6 +22,11 @@ class Site extends Model
         'type',
         'timezone',
         'status',
+        'is_demo',
+    ];
+
+    protected $casts = [
+        'is_demo' => 'boolean',
     ];
     
      public function user()

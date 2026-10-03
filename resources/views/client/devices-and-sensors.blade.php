@@ -113,7 +113,7 @@
 
                                             <tbody>
 
-                                                @foreach($devices as $device)
+                                                @forelse($devices as $device)
 
                                                 <tr id="deviceRow{{ $device->id }}">
 
@@ -127,7 +127,7 @@
 
                                                     <td>{{ $device->firmware_version }}</td>
 
-                                                    <td>{{ \Carbon\Carbon::parse($device->last_active)->format('d M Y | h:i A') }}</td>
+                                                    <td>{{ $device->last_active?->format('d M Y | h:i A') ?? 'N/A' }}</td>
 
                                                     
 
@@ -135,7 +135,7 @@
 
                                                 
 
-                                                    <td>{{ \Carbon\Carbon::parse($device->installed_at)->format('d M Y | h:i A') }}</td>
+                                                    <td>{{ $device->installed_at?->format('d M Y | h:i A') ?? 'N/A' }}</td>
 
                                                     <!-- <td class="d-flex gap-1">
 
@@ -163,7 +163,9 @@
 
                                                 </tr>
 
-                                                @endforeach
+                                                @empty
+                                                <tr><td colspan="8" class="text-center py-4"><strong>No devices are registered for your sites.</strong><div class="small text-muted">After adding a site, ask your account manager to commission a device. Telemetry appears here only after real device reports arrive.</div><a href="{{ route('client.sites') }}" class="btn btn-sm btn-outline-primary mt-2">Review sites</a></td></tr>
+                                                @endforelse
 
                                             </tbody>
 

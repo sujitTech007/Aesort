@@ -20,6 +20,13 @@ class AdminAuthController extends Controller
         return view('admin.login');
     }
 
+    public function entry()
+    {
+        return Auth::guard('admin')->check()
+            ? redirect()->route('admin.dashboard')
+            : redirect()->route('admin.login');
+    }
+
     public function login(Request $request)
     {
         $request->validate([

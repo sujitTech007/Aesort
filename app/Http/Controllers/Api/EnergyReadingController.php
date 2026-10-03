@@ -18,7 +18,7 @@ class EnergyReadingController extends Controller
         abort_unless($user instanceof User, 403);
 
         $device = Device::with('site')->findOrFail($deviceId);
-        abort_unless($device->site && (int) $device->site->user_id === (int) $user->id, 404);
+        abort_unless($device->site && !$device->is_demo && !$device->site->is_demo && (int) $device->site->user_id === (int) $user->id, 404);
 
         $data = Validator::make($request->all(), [
             'reading_time' => 'required|date|before_or_equal:now',

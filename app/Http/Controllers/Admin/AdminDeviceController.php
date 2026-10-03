@@ -32,8 +32,8 @@ class AdminDeviceController extends Controller
                 ->paginate(10)
                 ->withQueryString();
         
-            $sites = Site::all();
-            $clients = User::where('role', 1)->get();
+            $sites = Site::where('is_demo', false)->get();
+            $clients = User::where('role', 1)->where('status', 1)->get();
         
             // AJAX request → return only table
             if ($request->ajax()) {
@@ -151,7 +151,7 @@ class AdminDeviceController extends Controller
     
     public function getSitesByUser($userId)
 {
-    $sites = \App\Models\Site::where('user_id', $userId)->get();
+    $sites = \App\Models\Site::where('user_id', $userId)->where('is_demo', false)->get();
 
     return response()->json($sites);
 }

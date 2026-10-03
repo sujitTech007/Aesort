@@ -30,6 +30,7 @@ use App\Http\Controllers\Admin\AdminSiteController;
 use App\Http\Controllers\Admin\RolloutController;
 use App\Http\Controllers\Client\ClientController;
 use App\Http\Controllers\Client\ClientSiteController;
+use App\Http\Controllers\Client\CustomerPortalController;
 
 
 Route::get('/', [PagesController::class, 'home'])->name('home');
@@ -91,7 +92,7 @@ Route::get('auth/google/callback', [GoogleController::class, 'callback']);
 // Admin routes
 Route::prefix('admin')->name('admin.')->group(function () {
 	Route::get('/login', [AdminAuthController::class, 'showLoginForm'])->name('login');
-	Route::get('/', [AdminAuthController::class, 'showLoginForm'])->name('login');
+	Route::get('/', [AdminAuthController::class, 'entry'])->name('entry');
 	Route::post('/login', [AdminAuthController::class, 'login'])->name('login.perform');
 	Route::post('/logout', [AdminAuthController::class, 'logout'])->name('logout.perform');
 	Route::put('/update-profile', [AdminAuthController::class, 'updateProfile'])->name('updateProfile');
@@ -99,7 +100,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 	// Protected admin routes
 
 	Route::middleware('auth:admin')->group(function () {
-		Route::get('/', [AdminAuthController::class, 'dashboard'])->name('dashboard');
+		Route::get('/dashboard', [AdminAuthController::class, 'dashboard'])->name('dashboard');
       
 
 		// Admin pages
@@ -156,6 +157,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
 // Client dashboard (protected)
 Route::middleware('auth')->group(function () {
 	Route::get('/dashboard', [ClientController::class, 'dashboard'])->name('client.dashboard');
+	Route::get('/portfolio-analytics', [CustomerPortalController::class, 'analytics'])->name('client.analytics');
+	Route::get('/value-reports', [CustomerPortalController::class, 'reports'])->name('client.value-reports');
+	Route::post('/value-reports', [CustomerPortalController::class, 'generateReport'])->name('client.value-reports.generate');
+	Route::get('/value-reports/{id}/download', [CustomerPortalController::class, 'downloadReport'])->whereNumber('id')->name('client.value-reports.download');
+	Route::post('/recommendations/{id}/acknowledge', [CustomerPortalController::class, 'acknowledgeRecommendation'])->whereNumber('id')->name('client.recommendations.acknowledge');
+	Route::post('/incidents/{id}/acknowledge', [CustomerPortalController::class, 'acknowledgeIncident'])->whereNumber('id')->name('client.incidents.acknowledge');
 	Route::get('/profile', [ClientController::class, 'profile'])->name('client.profile');
 	Route::post('/profile', [ClientController::class, 'updateProfile'])->name('client.profile.update');
 	Route::get('/change-password', [ClientController::class, 'changePasswordForm'])->name('client.password.change.form');

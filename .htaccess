@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+    Options -Indexes
+    RewriteEngine On
+
+    # Serve public files from their real location without exposing /public.
+    RewriteRule ^(assets|uploads|build|robots\.txt|favicon\.ico)(/.*)?$ public/$1$2 [L]
+
+    # Route application URLs directly to Laravel's front controller.
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [L]
+</IfModule>

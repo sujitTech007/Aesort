@@ -16,7 +16,7 @@ class ClientSiteController extends Controller
     // List all sites
     public function index(Request $request)
     {
-        $sites = Site::orderBy('id', 'desc')->where('user_id', auth()->id())->paginate(15)->withQueryString();
+        $sites = Site::orderBy('id', 'desc')->where('user_id', auth()->id())->where('is_demo', false)->paginate(15)->withQueryString();
         return view('client.my-site', compact('sites'));  
     }
 
@@ -74,21 +74,21 @@ class ClientSiteController extends Controller
     // Show a site
     public function show(Site $site)
     {
-        abort_unless((int) $site->user_id === (int) Auth::id(), 404);
+        abort_unless((int) $site->user_id === (int) Auth::id() && !$site->is_demo, 404);
         return view('client.partials.site-view', compact('site'));
     }
 
     // Edit form
     public function edit(Site $site)
     {
-        abort_unless((int) $site->user_id === (int) Auth::id(), 404);
+        abort_unless((int) $site->user_id === (int) Auth::id() && !$site->is_demo, 404);
         return view('client.partials.site-edit', compact('site'));
     }
 
     // Update site
     public function update(Request $request, Site $site)
     {
-        abort_unless((int) $site->user_id === (int) Auth::id(), 404);
+        abort_unless((int) $site->user_id === (int) Auth::id() && !$site->is_demo, 404);
         $data = $request->only(['name','address','city','country','province','portfolio_name','heating_fuel','operating_hours','area_sqft','type','timezone']);
 
         $validator = Validator::make($data, [
@@ -149,7 +149,7 @@ class ClientSiteController extends Controller
     // Delete site
     public function destroy(Site $site)
     {
-        abort_unless((int) $site->user_id === (int) Auth::id(), 404);
+        abort_unless((int) $site->user_id === (int) Auth::id() && !$site->is_demo, 404);
         $site->delete();
 
         if (request()->expectsJson()) {

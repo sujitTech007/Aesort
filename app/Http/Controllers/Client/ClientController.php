@@ -11,13 +11,48 @@ use App\Models\Device;
 use App\Models\DeviceReading;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class ClientController extends Controller
 {
-    public function dashboard()
+    public function dashboard(Request $request)
     {
-        $totalSites = Site::where('user_id', auth()->id())->count();
-        return view('client.index', compact('totalSites'));
+        $filters = $request->validate([
+            'site_id' => 'nullable|integer',
+            'period' => 'nullable|in:30d,90d,12m',
+        ]);
+        $userId = Auth::id();
+        $allSites = Site::where('user_id', $userId)->where('is_demo', false)->orderBy('name')->get();
+        $selectedSite = null;
+        if (!empty($filters['site_id'])) {
+            $selectedSite = $allSites->firstWhere('id', (int) $filters['site_id']);
+            abort_unless($selectedSite, 404);
+        }
+
+        $sites = $selectedSite ? collect([$selectedSite]) : $allSites;
+        $siteIds = $selectedSite ? collect([$selectedSite->id]) : $sites->pluck('id');
+        $devices = Device::whereIn('site_id', $siteIds)->where('is_demo', false)->get();
+        $deviceIds = $devices->pluck('id');
+        $period = $filters['period'] ?? '30d';
+        $periodEnd = now()->endOfDay();
+        $periodStart = match ($period) {
+            '90d' => $periodEnd->copy()->subDays(89)->startOfDay(),
+            '12m' => $periodEnd->copy()->subMonths(11)->startOfMonth(),
+            default => $periodEnd->copy()->subDays(29)->startOfDay(),
+        };
+        $latestReading = DeviceReading::with('device.site')->whereIn('device_id', $deviceIds)->whereBetween('reading_time', [$periodStart, $periodEnd])->orderByDesc('reading_time')->first();
+        $latestReportAt = $devices->whereNotNull('last_active')->max('last_active');
+        $onboarding = DB::table('onboarding_projects')->where('user_id', $userId)->where('is_demo', false)->orderByDesc('updated_at')->first();
+        $actionCount = DB::table('recommendations')->whereIn('site_id', $siteIds)->where('is_demo', false)->whereIn('status', ['open', 'in_progress'])->count();
+        $unreadNotifications = \App\Models\Notification::where('user_id', $userId)->where('is_read', false)->count();
+        $totalReadings = DeviceReading::whereIn('device_id', $deviceIds)->whereBetween('reading_time', [$periodStart, $periodEnd])->count();
+        $periodLabel = $periodStart->format('M d, Y') . ' – ' . $periodEnd->format('M d, Y');
+
+        return view('client.index', compact(
+            'allSites', 'sites', 'selectedSite', 'devices', 'latestReading', 'latestReportAt',
+            'onboarding', 'actionCount', 'unreadNotifications', 'totalReadings', 'period', 'periodLabel'
+        ));
     }
     public function profile()
     {
@@ -64,7 +99,7 @@ class ClientController extends Controller
     
     public function sites(Request $request)
     {
-        $sites = Site::where('user_id', auth()->id())
+        $sites = Site::where('user_id', auth()->id())->where('is_demo', false)
             ->when($request->keyword, function ($query) use ($request) {
                 $query->where(function ($q) use ($request) {
                     $q->where('name', 'like', '%' . $request->keyword . '%')
@@ -73,6 +108,7 @@ class ClientController extends Controller
                       ->orWhere('country', 'like', '%' . $request->keyword . '%')
                       ->orWhere('type', 'like', '%' . $request->keyword . '%')
                       ->orWhere('timezone', 'like', '%' . $request->keyword . '%')
+                      ->orWhere('portfolio_name', 'like', '%' . $request->keyword . '%')
                       ->orWhere('status', 'like', '%' . $request->keyword . '%');
                 });
             })
@@ -85,8 +121,9 @@ class ClientController extends Controller
 
     public function siteDetail($id)
     {
-        // Fetch site details by $id
-        return view('client.site-detail', compact('id'));
+        Site::where('user_id', Auth::id())->where('is_demo', false)->findOrFail($id);
+
+        return redirect()->route('client.sites');
     }
     // public function devices()
     // {
@@ -97,9 +134,9 @@ class ClientController extends Controller
     // }
     public function devices(Request $request)
     {
-        $sites = Site::where('user_id', auth()->id())->get();
+        $sites = Site::where('user_id', auth()->id())->where('is_demo', false)->get();
     
-        $devices = Device::whereIn('site_id', $sites->pluck('id'))
+        $devices = Device::whereIn('site_id', $sites->pluck('id'))->where('is_demo', false)->with('site')
             ->when($request->keyword, function ($query) use ($request) {
                 $query->where(function ($q) use ($request) {
                     $q->where('serial_number', 'like', '%' . $request->keyword . '%')
@@ -116,8 +153,9 @@ class ClientController extends Controller
 
     public function deviceDetail($id)
     {
-        // Fetch device details by $id
-        return view('client.device-detail', compact('id'));
+        $device = Device::where('is_demo', false)->whereHas('site', fn ($query) => $query->where('user_id', Auth::id())->where('is_demo', false))->findOrFail($id);
+
+        return redirect()->route('client.energy-readings', ['device_id' => $device->id]);
     }
     
     public function subscriptions()
@@ -128,6 +166,7 @@ class ClientController extends Controller
     // Fetch all subscriptions for this user (you can also eager load site and plan)
     $subscriptions = Subscription::with(['site', 'plan'])
         ->where('user_id', $user->id)->where('status', 'succeeded')
+        ->whereHas('site', fn ($query) => $query->where('is_demo', false))
         ->orderBy('created_at', 'desc')
         ->get();
 
@@ -144,7 +183,8 @@ class ClientController extends Controller
     public function energyReadings(Request $request)
     {
         $devices = Device::with('site')
-            ->whereHas('site', fn ($query) => $query->where('user_id', Auth::id()))
+            ->where('is_demo', false)
+            ->whereHas('site', fn ($query) => $query->where('user_id', Auth::id())->where('is_demo', false))
             ->orderBy('name')
             ->get();
 
@@ -173,9 +213,7 @@ class ClientController extends Controller
     }
  public function viewDevices()
     {
-        $user = Auth::user();
-
-        return view('client.devices', compact('user'));
+        return redirect()->route('client.devices');
     }
  public function viewSpaces()
     {
@@ -191,9 +229,7 @@ class ClientController extends Controller
     }
  public function devDetail()
     {
-        $user = Auth::user();
-
-        return view('client.device-detail', compact('user'));
+        return redirect()->route('client.devices');
     }
     
     

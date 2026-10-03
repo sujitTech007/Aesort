@@ -17,9 +17,7 @@ class RolloutDemoSeeder extends Seeder
     public function run(): void
     {
         $admin = Admin::first();
-        $user = User::first();
-        $site = Site::first();
-        $device = Device::first();
+        $user = User::where('email', 'rollout-demo@aesort.local')->first();
 
         if (! $admin) {
             $this->command->warn('No admin account found. Skipping rollout demo seed.');
@@ -27,10 +25,11 @@ class RolloutDemoSeeder extends Seeder
         }
 
         if (! $user) {
-            $this->command->warn('No client user found. Skipping rollout demo seed.');
+            $this->command->warn('Create a dedicated customer with email rollout-demo@aesort.local before seeding. No customer data was changed.');
             return;
         }
 
+        $site = Site::where('user_id', $user->id)->where('name', 'North Tower Campus')->first();
         if (! $site) {
             $site = Site::create([
                 'user_id' => $user->id,
@@ -46,9 +45,12 @@ class RolloutDemoSeeder extends Seeder
                 'type' => 'office',
                 'timezone' => 'Africa/Johannesburg',
                 'status' => 1,
+                'is_demo' => true,
             ]);
         }
+        $site->update(['is_demo' => true]);
 
+        $device = Device::where('site_id', $site->id)->where('serial_number', 'AES-ROLL-1001')->first();
         if (! $device) {
             $device = Device::create([
                 'site_id' => $site->id,
@@ -62,24 +64,29 @@ class RolloutDemoSeeder extends Seeder
                 'last_active' => now()->subMinutes(20),
                 'status' => 'online',
                 'installed_at' => now()->subMonths(4),
+                'is_demo' => true,
             ]);
         }
+        $device->update(['is_demo' => true]);
 
-        $baselineId = DB::table('energy_baselines')->insertGetId([
-            'site_id' => $site->id,
-            'name' => 'Baseline Q3 2026',
-            'period_start' => now()->startOfMonth()->subMonth()->toDateString(),
-            'period_end' => now()->endOfMonth()->subMonth()->toDateString(),
-            'methodology' => 'Utility billing review with 30-day interval reconciliation.',
-            'baseline_kwh' => 41250.000,
-            'status' => 'approved',
-            'created_by' => $admin->id,
-            'approved_by' => $admin->id,
-            'approved_at' => now()->subDay(),
-            'approval_note' => 'Baseline approved for rollout review and savings tracking.',
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
+        DB::table('energy_baselines')->updateOrInsert(
+            ['site_id' => $site->id, 'name' => 'Baseline Q3 2026'],
+            [
+                'period_start' => now()->startOfMonth()->subMonth()->toDateString(),
+                'period_end' => now()->endOfMonth()->subMonth()->toDateString(),
+                'methodology' => 'Utility billing review with 30-day interval reconciliation.',
+                'baseline_kwh' => 41250.000,
+                'status' => 'approved',
+                'created_by' => $admin->id,
+                'approved_by' => $admin->id,
+                'approved_at' => now()->subDay(),
+                'approval_note' => 'Baseline approved for rollout review and savings tracking.',
+                'is_demo' => true,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]
+        );
+        $baselineId = DB::table('energy_baselines')->where('site_id', $site->id)->where('name', 'Baseline Q3 2026')->value('id');
 
         DB::table('savings_measures')->updateOrInsert(
             ['site_id' => $site->id, 'title' => 'LED replacement programme'],
@@ -95,6 +102,7 @@ class RolloutDemoSeeder extends Seeder
                 'owner_id' => $admin->id,
                 'verified_by' => $admin->id,
                 'verified_at' => now()->subHours(6),
+                'is_demo' => true,
                 'created_at' => now(),
                 'updated_at' => now(),
             ]
@@ -110,6 +118,7 @@ class RolloutDemoSeeder extends Seeder
                 'assigned_to' => $admin->id,
                 'due_date' => now()->addDays(12)->toDateString(),
                 'completion_note' => 'Monitoring on-going with site team validation.',
+                'is_demo' => true,
                 'created_at' => now(),
                 'updated_at' => now(),
             ]
@@ -122,6 +131,7 @@ class RolloutDemoSeeder extends Seeder
                 'owner_id' => $admin->id,
                 'target_date' => now()->addDays(15)->toDateString(),
                 'activated_at' => now()->subDays(3),
+                'is_demo' => true,
                 'created_at' => now(),
                 'updated_at' => now(),
             ]
@@ -142,6 +152,7 @@ class RolloutDemoSeeder extends Seeder
                 'approved_by' => $admin->id,
                 'approved_at' => now()->subDays(2),
                 'created_by' => $admin->id,
+                'is_demo' => true,
                 'created_at' => now(),
                 'updated_at' => now(),
             ]
@@ -157,6 +168,7 @@ class RolloutDemoSeeder extends Seeder
                 'assigned_to' => $admin->id,
                 'occurred_at' => now()->subHours(18),
                 'resolution_note' => 'Awaiting technician field review and control setpoint validation.',
+                'is_demo' => true,
                 'created_at' => now(),
                 'updated_at' => now(),
             ]
@@ -169,6 +181,7 @@ class RolloutDemoSeeder extends Seeder
                 'status' => 'degraded',
                 'checked_at' => now(),
                 'details' => 'Data feed received but one import file was delayed by 12 hours.',
+                'is_demo' => true,
                 'created_at' => now(),
                 'updated_at' => now(),
             ]

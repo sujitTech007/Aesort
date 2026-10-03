@@ -121,7 +121,7 @@
 
                                     <td>{{ $device->asset_name ?: 'Not linked' }}</td>
 
-                                    <td>{{ $device->serial_number }}</td>
+                                    <td>{{ $device->serial_number }} @if($device->is_demo)<span class="badge bg-secondary ms-1">Demo</span>@endif</td>
 
                                     <td>{{ $device->name }}</td>
 
@@ -258,6 +258,10 @@
             </div>
 
             <div class="modal-body">
+
+                <div class="alert alert-info small">
+                    Creating a device adds it to inventory; it does not automatically produce meter readings. After creation, open the device's <strong>View</strong> to find its API endpoint and sample payload. Configure the meter or gateway software to POST readings to that endpoint.
+                </div>
 
                 <form id="createDeviceForm">
 

@@ -192,7 +192,11 @@
                                             @endforeach
                                             @else
                                             <tr>
-                                                <td colspan="7" class="text-center">No clients found.</td>
+                                                <td colspan="7" class="text-center py-4">
+                                                    <strong>No sites registered yet.</strong>
+                                                    <div class="small text-muted mb-2">Create a site to connect equipment and start receiving real readings.</div>
+                                                    <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#createSiteModal">Set up a site</button>
+                                                </td>
                                             </tr>
                                             @endif
                                         </tbody>

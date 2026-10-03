@@ -5,6 +5,11 @@
 
     RewriteEngine On
 
+    # Redirect browser requests that expose /public; internal rewrites are unaffected.
+    RewriteCond %{THE_REQUEST} \s/+[^\s?]*/public(?:/|\s|\?) [NC]
+    RewriteCond %{REQUEST_URI} ^(.*)/public/(.*)$
+    RewriteRule ^ %1/%2 [R=301,L]
+
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]

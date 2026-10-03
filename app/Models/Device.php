@@ -20,11 +20,13 @@ class Device extends Model
         'last_active',
         'status',
         'installed_at',
+        'is_demo',
     ];
     
    protected $casts = [
     'last_active' => 'datetime',
     'installed_at' => 'datetime',
+    'is_demo' => 'boolean',
 ];
 
 public function site()

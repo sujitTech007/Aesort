@@ -97,19 +97,17 @@
         <div class="header-sticky">
             <nav class="navbar navbar-expand-lg p-0">
                 <div class="container">
-                    <a class="navbar-brand" href="{{ route('home') }}"><img src="{{ asset('assets/images/logo1.png') }}" alt="Logo"></a>
+                    <a class="navbar-brand" href="{{ route('client.dashboard') }}"><img src="{{ asset('assets/images/logo1.png') }}" alt="AESORT customer dashboard"></a>
                     <div class="collapse navbar-collapse justify-content-between main-menu">
-                        <ul class="navbar-nav mx-auto" id="menu">                            
-                            <li class="nav-item"><a class="nav-link {{ ($currentPage ?? '') == 'home' ? 'active' : '' }}" href="{{ route('home') }}">Home</a></li>                                
-                            <li class="nav-item"><a class="nav-link {{ ($currentPage ?? '') == 'about' ? 'active' : '' }}" href="{{ route('about') }}">About us</a></li>
-                            <li class="nav-item"><a class="nav-link {{ ($currentPage ?? '') == 'services' ? 'active' : '' }}" href="{{ route('services') }}">Services</a></li>
-                            <li class="nav-item"><a class="nav-link {{ ($currentPage ?? '') == 'subscription' ? 'active' : '' }}" href="{{ route('subscription') }}">Subscription</a></li>
-                            <li class="nav-item"><a class="nav-link {{ ($currentPage ?? '') == 'blog' ? 'active' : '' }}" href="{{ route('blog') }}">Blog</a></li>
-                            <li class="nav-item"><a class="nav-link {{ ($currentPage ?? '') == 'contact' ? 'active' : '' }}" href="{{ route('contact') }}">Contact</a></li>
+                        <ul class="navbar-nav mx-auto" id="menu">
+                            <li class="nav-item"><a class="nav-link {{ request()->routeIs('client.dashboard') ? 'active' : '' }}" href="{{ route('client.dashboard') }}">Dashboard</a></li>
+                            <li class="nav-item"><a class="nav-link {{ request()->routeIs('client.analytics') ? 'active' : '' }}" href="{{ route('client.analytics') }}">Portfolio analytics</a></li>
+                            <li class="nav-item"><a class="nav-link {{ request()->routeIs('client.energy-readings') ? 'active' : '' }}" href="{{ route('client.energy-readings') }}">Energy readings</a></li>
+                            <li class="nav-item"><a class="nav-link {{ request()->routeIs('client.value-reports*') ? 'active' : '' }}" href="{{ route('client.value-reports') }}">Value reports</a></li>
                         </ul>
                         <div class="d-flex align-items-center gap-2">
                             <div class="topbar-item nav-user border-0 gap-0 h-auto" style="min-height: auto;"><div class="dropdown">
-                                <a href="#" class="topbar-link dropdown-toggle drop-arrow-none d-flex align-items-center" data-bs-toggle="dropdown" data-bs-offset="0,25" aria-expanded="false">
+                                    <a href="#" class="topbar-link dropdown-toggle drop-arrow-none d-flex align-items-center" data-bs-toggle="dropdown" data-bs-offset="0,25" aria-expanded="false">
                                     <img src="{{ asset('assets/admin/images/avatar-3.jpg') }}" width="32" class="rounded-circle me-lg-2 d-flex" alt="user-image">
                                     <span class="d-lg-flex flex-column gap-1 d-none">{{ auth()->user()->name }}</span><i class="ri-arrow-down-s-line d-none d-lg-block align-middle pt-1" style="font-size: 18px;"></i>
                                 </a>
@@ -119,7 +117,8 @@
                                     </div>
                                     <a href="{{ route('client.profile') }}" class="dropdown-item"><i class="ri-account-circle-line me-1 fs-16 align-middle"></i><span class="align-middle">Profile</span></a>
                                     <div class="dropdown-divider"></div>
-                                    <a href="{{ route('client.logout') }}" class="dropdown-item fw-semibold text-danger"><i class="ri-logout-box-line me-1 fs-16 align-middle"></i><span class="align-middle">Sign Out</span></a>
+                                    <form id="client-logout-topbar-form" action="{{ route('client.logout') }}" method="POST">@csrf</form>
+                                    <button type="submit" form="client-logout-topbar-form" class="dropdown-item fw-semibold text-danger"><i class="ri-logout-box-line me-1 fs-16 align-middle"></i><span class="align-middle">Sign Out</span></button>
                                 </div>
                             </div>
                         </div>
