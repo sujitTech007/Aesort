@@ -85,7 +85,7 @@
 					</div> <!-- Step 6 -->
 					<div class="col-lg-4 col-md-6">
 						<div class="benefits-item p-4 border rounded-4">
-							<div class="icon-box"> <i class="fa-solid fa-file-chart-column"></i> </div>
+							<div class="icon-box"> <i class="fa-solid fa-file-lines"></i> </div>
 							<h3 class="h5 fw-bold"> 06. Report & Act </h3>
 							<p class="mb-0"> Insights can be presented through dashboards, reports, analytics, and recommendations to help teams make informed energy-management decisions. </p>
 						</div>
