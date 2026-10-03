@@ -17,33 +17,35 @@
     <form method="POST" action="{{ route('admin.subscription_plans.update', $subscriptionPlan->id) }}">
         @csrf
         @method('PUT')
-
-        <div class="mb-3">
+<div class="row">
+        <div class="col-md-6 mb-3">
             <label>Name</label>
             <input type="text" name="name" class="form-control" value="{{ old('name', $subscriptionPlan->name) }}" required>
         </div>
 
-        <div class="mb-3">
+        <div class="col-md-6 mb-3">
             <label>Proposed amount (USD)</label>
             <input type="number" step="0.01" name="amount" class="form-control" value="{{ old('amount', $subscriptionPlan->amount) }}" required>
         </div>
-
-        <div class="mb-3">
+        </div>
+<div class="row">
+        <div class="mb-3 col-md-6">
             <label>Minimum eligibility area (sq ft)</label>
             <input type="number" min="0" name="from_sqft" class="form-control" value="{{ old('from_sqft', $subscriptionPlan->from_sqft) }}" required>
         </div>
 
-        <div class="mb-3">
+        <div class="mb-3 col-md-6">
             <label>Maximum eligibility area (sq ft)</label>
             <input type="number" min="0" name="to_sqft" class="form-control" value="{{ old('to_sqft', $subscriptionPlan->to_sqft) }}" required>
         </div>
-
-        <div class="mb-3">
+        </div>
+<div class="row">
+        <div class="mb-3 col-md-6">
             <label>Reason for change</label>
             <textarea name="change_reason" class="form-control" minlength="8" maxlength="1000" required>{{ old('change_reason') }}</textarea>
         </div>
 
-        <div class="mb-3">
+        <div class="mb-3 col-md-6">
             <label>Features</label>
             <div id="features-wrapper">
                 @php
@@ -57,6 +59,7 @@
                 @endforeach
             </div>
             <button type="button" class="btn btn-success btn-sm mt-2" id="add-feature">Add Feature</button>
+        </div>
         </div>
 
         <button type="submit" class="btn btn-primary">Update</button>

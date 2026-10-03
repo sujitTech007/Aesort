@@ -924,7 +924,7 @@
                     </div>
 
                     <div class="post-item-body">
-                        <h2> <a href="{{ route('blog.detail') }}"> Why Energy Monitoring Matters for Businesses </a>
+                        <h2> <a href="{{ route('blog.detail') }}">Why Real-Time Monitoring is a Game Changer for Businesses</a>
                         </h2>
                         <div class="post-meta">
                             <ul>
@@ -950,7 +950,7 @@
                     </div>
 
                     <div class="post-item-body">
-                        <h2><a href="{{ route('blog.detail') }}">Sustainability Trends to Watch in 2025</a></h2>
+                        <h2><a href="{{ route('blog.detail') }}">Sustainability Trends to Watch in 2025 → Sustainability Trends to Watch</a></h2>
                         <div class="post-meta">
                             <ul>
                                 <li><a href=" #"><i class="fa-regular fa-calendar-days"></i> 09 Feb 2025</a></li>

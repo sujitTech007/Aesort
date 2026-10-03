@@ -651,7 +651,7 @@ a:focus {
 
 .section-title h2 span {
 
-	color: var(--accent-color);
+	/* color: var(--accent-color); */
 
 }
 
@@ -3755,7 +3755,7 @@ header.main-header .header-sticky.active {
 
 
 
-.video-play-button a:before {
+/* .video-play-button a:before {
 
 	content: '';
 
@@ -3779,11 +3779,11 @@ header.main-header .header-sticky.active {
 
 	animation: border-zooming 1s infinite linear;
 
-}
+} */
 
 
 
-.video-play-button a:after {
+/* .video-play-button a:after {
 
 	content: '';
 
@@ -3809,7 +3809,7 @@ header.main-header .header-sticky.active {
 
 	animation-delay: .3s;
 
-}
+} */
 
 
 
